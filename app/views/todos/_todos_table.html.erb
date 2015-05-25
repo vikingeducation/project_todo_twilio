@@ -1,0 +1,18 @@
+<div class="row">
+    <main class="col-sm-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td><b>ID</b></td>
+                    <td><b>Completion Date</b></td>
+                    <td><b>ToDo</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <% todos.each do |todo| %>
+                    <%= render partial: 'todo', :locals => {:todo => todo} %>
+                <% end %>
+            </tbody>
+        </table>
+    </main>
+</div>

@@ -1,0 +1,14 @@
+<%= render partial: 'navbar' %>
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Start the ToDo section -->
+    <h1>Here's what you have to do!</h1>
+    
+    <!-- Renders the todos table. Internally, each todo comes from _todo.html.erb -->    
+    <%= render partial: 'todos_table', :locals => {:todos => @todos} %>
+
+    <%= render partial: 'footer' %>
+
+</div>
+<!-- /.container -->
