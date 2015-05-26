@@ -2,4 +2,5 @@
     <td><%= todo["id"] %></td>
     <td><%= todo["completion_date"] %></td>
     <td><%= todo["text"] %></td>
+    <td><%= link_to "Delete ToDo", "/todos/#{todo["id"]}", :method => "delete" %>
 </tr>

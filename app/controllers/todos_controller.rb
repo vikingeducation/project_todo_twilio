@@ -9,6 +9,13 @@ class TodosController < ApplicationController
 		session[:todos] = @todos.to_json
 		redirect_to todos_path
 	end
+
+	def destroy
+		create_todos
+		delete_todo(params[:id])
+		session[:todos] = @todos.to_json
+		redirect_to todos_path
+	end
 	
 private
 	# Creates the todos instance variable from the session if available
@@ -28,5 +35,11 @@ private
 			max_id = (todo["id"] > max_id ? todo["id"] : max_id)
 		end
 		max_id + 1
+	end
+
+	def delete_todo(id)
+		@todos.delete_if do |todo|
+			todo["id"].to_s == id
+		end
 	end
 end
