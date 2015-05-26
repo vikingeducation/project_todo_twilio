@@ -5,7 +5,7 @@ class TodosController < ApplicationController
 
 	def create
 		create_todos
-		@todos << {:id => view_context.next_id(@todos), :text => params[:text], :completion_date => params["completion_date"]}
+		@todos << {:id => next_id(@todos), :text => params[:text], :completion_date => params["completion_date"]}
 		session[:todos] = @todos.to_json
 		redirect_to todos_path
 	end
@@ -18,7 +18,8 @@ class TodosController < ApplicationController
 	end
 	
 private
-	# Creates the todos instance variable from the session if available
+	# Creates the todos instance variable from the session if available.
+	# Otherwise creates a blank session[:todos]
 	def create_todos
 		if !session[:todos] || session[:todos].empty?
 			session[:todos] = []
@@ -30,6 +31,8 @@ private
 
 	# Get the next ID for our ToDo's
 	def next_id(todos)
+		# If there are no todos presently then return 1
+		return 1 if todos.empty?
 		max_id = 0
 		todos.each do |todo|
 			max_id = (todo["id"] > max_id ? todo["id"] : max_id)
