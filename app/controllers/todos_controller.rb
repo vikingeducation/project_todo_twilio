@@ -1,9 +1,32 @@
-require 'json'
-
 class TodosController < ApplicationController
 	def index
-		# Hard code some cookes for testing purposes
-		session[:todos] = [{:id => 1,:text => "Test ToDO 1",:completion_date => "5-30-2015"},{:id => 2,:text => "Test ToDO 2",:completion_date => "5-29-2015"}].to_json
-		@todos = JSON.parse session[:todos] 
+		create_todos
+	end
+
+	def create
+		create_todos
+		@todos << {:id => view_context.next_id(@todos), :text => params[:text], :completion_date => params["completion_date"]}
+		session[:todos] = @todos.to_json
+		redirect_to todos_path
+	end
+	
+private
+	# Creates the todos instance variable from the session if available
+	def create_todos
+		if !session[:todos] || session[:todos].empty?
+			session[:todos] = []
+			@todos = []
+		else
+			@todos = JSON.parse session[:todos]
+		end
+	end
+
+	# Get the next ID for our ToDo's
+	def next_id(todos)
+		max_id = 0
+		todos.each do |todo|
+			max_id = (todo["id"] > max_id ? todo["id"] : max_id)
+		end
+		max_id + 1
 	end
 end

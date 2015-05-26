@@ -9,7 +9,7 @@
                 </tr>
             </thead>
             <tbody>
-                <% todos.each do |todo| %>
+                <% todos.reverse.each do |todo| %>
                     <%= render partial: 'todo', :locals => {:todo => todo} %>
                 <% end %>
             </tbody>
