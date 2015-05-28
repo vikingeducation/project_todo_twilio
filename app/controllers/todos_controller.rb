@@ -6,17 +6,31 @@ class TodosController < ApplicationController
 	def create
 		create_todos
 		@todos << {:id => next_id(@todos), :text => params[:text], :completion_date => params["completion_date"]}
-		session[:todos] = @todos.to_json
+		save_session(@todos)
 		redirect_to todos_path
 	end
 
 	def destroy
 		create_todos
 		delete_todo(params[:id])
-		session[:todos] = @todos.to_json
+		save_session(@todos)
 		redirect_to todos_path
 	end
 	
+	def edit
+		create_todos
+		@current_todo = @todos.select { |todo| todo['id'].to_i == params['id'].to_i }[0]
+	end
+
+	def update
+		create_todos
+		# Find the index of the todo which matches params['id'] and replaces it
+		todo_index = @todos.find_index{ |todo| todo['id'].to_i == params['id'].to_i }
+		@todos[todo_index] = {:id => params[:id], :text => params[:text], :completion_date => params["completion_date"]}
+		save_session(@todos)
+		redirect_to todos_path
+	end
+
 private
 	# Creates the todos instance variable from the session if available.
 	# Otherwise creates a blank session[:todos]
@@ -27,6 +41,11 @@ private
 		else
 			@todos = JSON.parse session[:todos]
 		end
+	end
+
+	# Save the session as a JSON object
+	def save_session(todos)
+		session[:todos] = todos.to_json
 	end
 
 	# Get the next ID for our ToDo's

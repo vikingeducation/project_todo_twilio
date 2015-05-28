@@ -1,6 +1,8 @@
+<!-- This partial renders the actual todo table row --> 
 <tr>
     <td><%= todo["id"] %></td>
     <td><%= todo["completion_date"] %></td>
     <td><%= todo["text"] %></td>
-    <td><%= link_to "Delete ToDo", "/todos/#{todo["id"]}", :method => "delete" %>
+    <td><%= link_to "Complete", "/todos/#{todo["id"]}", :method => "delete" %>
+    <td><%= link_to "Edit", "/todos/#{todo["id"]}/edit" %>
 </tr>

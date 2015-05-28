@@ -6,10 +6,12 @@
                     <td><b>ID</b></td>
                     <td><b>Completion Date</b></td>
                     <td><b>ToDo</b></td>
-                    <td><b>Delete?</b></td>
+                    <td><b>Completed?</b></td>
+                    <td><b>Edit?</b></td>
                 </tr>
             </thead>
             <tbody>
+                <!-- Reverse causes the newest todo to be on top, per the spec -->
                 <% todos.reverse.each do |todo| %>
                     <%= render partial: 'todo', :locals => {:todo => todo} %>
                 <% end %>
