@@ -8,9 +8,9 @@
     <!-- Start the ToDo section -->
     <h1>Here are your ToDo's:</h1>
     
-    <% unless @todos.empty? %>
+    <% unless @todos.all_todos.empty? %>
         <!-- Renders the todos table. Internally, each todo comes from _todo.html.erb -->    
-        <%= render partial: 'todos_table', :locals => {:todos => @todos} %>
+        <%= render partial: 'todos_table', :locals => {:todos => @todos.all_todos} %>
     <% else %>
         <p>Sorry, you don't have any todos! Why don't you create one above?</p>
     <% end %>

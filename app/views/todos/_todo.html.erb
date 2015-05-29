@@ -3,6 +3,13 @@
     <td><%= todo["id"] %></td>
     <td><%= todo["completion_date"] %></td>
     <td><%= todo["text"] %></td>
-    <td><%= link_to "Complete", "/todos/#{todo["id"]}", :method => "delete" %>
-    <td><%= link_to "Edit", "/todos/#{todo["id"]}/edit" %>
+    <td><%= link_to "Complete", "/todos/#{todo["id"]}", :method => "delete" %></td>
+    <td><%= link_to "Edit", "/todos/#{todo["id"]}/edit" %></td>
+    <td>
+    	<%= form_tag "/texts", method: 'post' do %>
+  			<%= hidden_field_tag(:text, todo["text"]) %>
+  			<%= hidden_field_tag(:date, todo["completion_date"]) %>
+  			<%= submit_tag("Send Reminder", :class => "btn btn-success") %>			
+  		<% end %>
+    </td>
 </tr>
