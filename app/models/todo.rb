@@ -8,7 +8,7 @@ class Todo < ActiveRecord::Base
 	# Creates the todos instance variable from the session if available.
 	# Otherwise creates a blank session[:todos]
 	def initiate_session
-		if @todos_session.empty?
+		if @todos_session.nil?
 			@todos = []
 		else
 			@todos = JSON.parse @todos_session
@@ -34,6 +34,10 @@ class Todo < ActiveRecord::Base
 		end
 	end
 
+	def all_todos
+		@todos
+	end
+	
 private
 
 	# Get the next ID for our ToDo's
@@ -55,9 +59,5 @@ private
 		else
 			"Please enter a completion date!"
 		end
-	end
-
-	def all_todos
-		@todos
 	end
 end
