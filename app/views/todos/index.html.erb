@@ -1,0 +1,21 @@
+<%= render partial: 'navbar' %>
+
+<!-- Page Content -->
+<div class="container">
+    <h1>Create a new ToDo:</h1>
+    <%= render partial: 'new_todo_form', :locals => {:todos => @todos} %>
+
+    <!-- Start the ToDo section -->
+    <h1>Here are your ToDo's:</h1>
+    
+    <% unless @todos.all_todos.empty? %>
+        <!-- Renders the todos table. Internally, each todo comes from _todo.html.erb -->    
+        <%= render partial: 'todos_table', :locals => {:todos => @todos.all_todos} %>
+    <% else %>
+        <p>Sorry, you don't have any todos! Why don't you create one above?</p>
+    <% end %>
+
+    <%= render partial: 'footer' %>
+
+</div>
+<!-- /.container -->

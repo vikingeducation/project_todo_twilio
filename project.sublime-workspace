@@ -1,0 +1,1059 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"today",
+				"today_date"
+			],
+			[
+				"articles",
+				"articles#index"
+			],
+			[
+				"listing_location",
+				"listing_location_match_data"
+			],
+			[
+				"max",
+				"max_price"
+			],
+			[
+				"resul",
+				"results_page"
+			],
+			[
+				"CSV",
+				"CSVSaver"
+			],
+			[
+				"calen",
+				"calendar_page"
+			],
+			[
+				"value",
+				"value_as_int"
+			],
+			[
+				"player",
+				"player_cards"
+			],
+			[
+				"deal",
+				"deal_card"
+			],
+			[
+				"search",
+				"search_result"
+			],
+			[
+				"all",
+				"all_fifths"
+			],
+			[
+				"dictionary",
+				"dictionary_analyzer"
+			],
+			[
+				"surrounding",
+				"surrounding_mines"
+			],
+			[
+				"raise",
+				"raise_error"
+			],
+			[
+				"new",
+				"new_board"
+			],
+			[
+				"get_square",
+				"get_square([1,1"
+			],
+			[
+				"flag",
+				"flags_remaining"
+			],
+			[
+				"display",
+				"displayed"
+			],
+			[
+				"surr",
+				"surrounding_mines"
+			],
+			[
+				"adja",
+				"adjacent_squares"
+			],
+			[
+				"is",
+				"is_valid"
+			],
+			[
+				"get",
+				"get_input"
+			],
+			[
+				"call",
+				"call_damage_with_fists"
+			],
+			[
+				"receive",
+				"receive_attack"
+			],
+			[
+				"drop",
+				"drop_weapon"
+			],
+			[
+				"pick",
+				"pick_up_weapon"
+			],
+			[
+				"NUM_CO",
+				"NUM_COLUMNS"
+			],
+			[
+				"player_1",
+				"player_1_wins"
+			],
+			[
+				"to",
+				"to_i"
+			],
+			[
+				"master_code",
+				"master_code_input"
+			],
+			[
+				"delete",
+				"delete_at"
+			],
+			[
+				"ending",
+				"ending_type"
+			],
+			[
+				"err",
+				"error_message"
+			],
+			[
+				"outpu",
+				"output_buffer"
+			],
+			[
+				"play",
+				"t.play"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"each",
+				"each_with_index"
+			],
+			[
+				"number",
+				"number_array"
+			],
+			[
+				"map",
+				"number_array.map"
+			],
+			[
+				"return",
+				"return_two_digit_number"
+			],
+			[
+				"words",
+				"words_to_19"
+			],
+			[
+				"up",
+				"up_to_20_in_words"
+			],
+			[
+				"run",
+				"run_times"
+			],
+			[
+				"capital",
+				"capitalize_index"
+			],
+			[
+				"capitaliz",
+				"capitalize_index"
+			],
+			[
+				"this",
+				"this_word"
+			],
+			[
+				"inclu",
+				"vowels.include?"
+			],
+			[
+				"num",
+				"num_players"
+			],
+			[
+				"curren",
+				"current_number"
+			],
+			[
+				"current",
+				"current_index"
+			],
+			[
+				"count",
+				"counting_game"
+			],
+			[
+				"coun",
+				"counting_game"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/views/todos/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 637,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/todos_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1025,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 122,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/todos/_todo.html.erb",
+			"settings":
+			{
+				"buffer_size": 272,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/todos/_todos_table.html.erb",
+			"settings":
+			{
+				"buffer_size": 627,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"last_filter": "git push",
+		"selected_items":
+		[
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git add .",
+				"Git: Add..."
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git commit ",
+				"Git: Commit"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"git pul",
+				"Git: Pull Current Branch"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"git add ",
+				"Git: Add..."
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"package remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"color",
+				"Toggle Colorcode on this view"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"colorcode",
+				"Tweak Colorcode to current color scheme"
+			],
+			[
+				"ruby colo",
+				"Set Syntax: Ruby (Colorcode)"
+			],
+			[
+				"colorco",
+				"Toggle Colorcode on this view"
+			],
+			[
+				"install packa",
+				"Package Control: Install Package"
+			],
+			[
+				"emmet",
+				"Emmet: Merge Lines"
+			],
+			[
+				"emmet exp",
+				"Emmet: Expand Abbreviation"
+			],
+			[
+				"set html",
+				"Set Syntax: HTML"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"package insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Git commit",
+				"Git: Commit"
+			],
+			[
+				"git",
+				"Git: Push"
+			],
+			[
+				"beau",
+				"BeautifyRuby"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"load",
+				"SublimeREPL: Load current file"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"sublime",
+				"SublimeREPL: Load current file"
+			],
+			[
+				"laod",
+				"SublimeREPL: Load current file"
+			],
+			[
+				"load ",
+				"SublimeREPL: Load current file"
+			],
+			[
+				"repl rub",
+				"SublimeREPL: Ruby"
+			],
+			[
+				"ruby irb",
+				"SublimeREPL: Ruby IRB (deprecated)"
+			],
+			[
+				"sublime ruby",
+				"SublimeREPL: Ruby"
+			],
+			[
+				"ru y",
+				"SublimeREPL: Ruby"
+			],
+			[
+				"reby",
+				"SublimeREPL: Ruby"
+			],
+			[
+				"rub",
+				"SublimeREPL: Ruby"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/helpers",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/views",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/views/todos"
+	],
+	"file_history":
+	[
+		"/Users/telwell/Desktop/information_schema-data-20150521.sql",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/views/todos/_todos_table.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/helpers/todos_helper.rb",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/models/todo.rb",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/views/todos/_new_todo_form.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/views/todos/_todo.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/Gemfile",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/db/development.sqlite3",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/config/database.yml",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/config/secrets.yml",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/views/todos/_navbar.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/views/todos/_footer.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/assets/javascripts/application.js",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/views/layouts/application.html.erb",
+		"/Users/telwell/Downloads/startbootstrap-heroic-features-1.0.3/index.html",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/assets/stylesheets/todos.scss",
+		"/Users/telwell/Downloads/startbootstrap-heroic-features-1.0.3/js/jquery.js",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/assets/javascripts/jquery.js",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/assets/javascripts/bootstrap.js",
+		"/Users/telwell/Downloads/startbootstrap-heroic-features-1.0.3/js/bootstrap.js",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/app/views/layouts/index.html.erb",
+		"/Users/telwell/Downloads/startbootstrap-bare-1.0.3/index.html",
+		"/Users/telwell/Desktop/VCS/week_7/todo_twilio/README.md",
+		"/Users/telwell/.bash_profile",
+		"/Users/telwell/Desktop/VCS/week_7/ruby_api_calls/weather.rb",
+		"/Users/telwell/Desktop/VCS/week_7/ruby_api_calls/Gemfile",
+		"/Users/telwell/Desktop/VCS/week_7/ruby_api_calls/README.md",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/app/views/static_pages/_top_navbar.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/README.md",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/app/views/static_pages/friends.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/app/controllers/static_pages_controller.rb",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/config/routes.rb",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/app/assets/stylesheets/static_pages.scss",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/Gemfile",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/config/database.yml",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/app/views/static_pages/timeline.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/app/views/static_pages/_main_navbar.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/app/views/static_pages/about.html.erb",
+		"/Users/telwell/Desktop/VCS/prep_facebook_pages/about.html",
+		"/Users/telwell/Desktop/VCS/prep_facebook_pages/newsfeed.html",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/app/views/static_pages/home_page.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/danebook/app/views/layouts/application.html.erb",
+		"/Users/telwell/Desktop/VCS/prep_facebook_pages/friends.html",
+		"/Users/telwell/Desktop/VCS/prep_facebook_pages/style.css",
+		"/Users/telwell/Desktop/VCS/prep_facebook_pages/index.html",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_crud/app/views/users/new.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_crud/app/views/users/show.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_crud/app/views/users/edit.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_crud/app/views/users/_user_form.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_crud/app/views/users/index.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_crud/app/views/users/_errors.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_crud/db/migrate/20150525005117_create_users.rb",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_crud/Gemfile",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_muscle_memory/app/views/articles/show.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_muscle_memory/app/views/articles/new.html.erb",
+		"/Users/telwell/Desktop/VCS/week_7/assignment_muscle_memory/Gemfile",
+		"/Users/telwell/Library/Application Support/Sublime Text 3/Packages/User/Emmet.sublime-settings",
+		"/Users/telwell/Library/Application Support/Sublime Text 3/Packages/Emmet/Default (OSX).sublime-keymap",
+		"/Users/telwell/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/telwell/Desktop/euler/rubeque_numbers_to_commas.rb",
+		"/Users/telwell/Library/Application Support/Sublime Text 3/Packages/ERB Autocomplete/Default (OSX).sublime-keymap",
+		"/Users/telwell/Desktop/BYOps/admin/modules_admin/.gitignore",
+		"/Users/telwell/Desktop/BYOps/admin/modules_admin/eval/Evaluations.php",
+		"/Users/telwell/Desktop/BYOps/admin/modules_admin/admin_user/helpers/widgetNotifications.inc.php",
+		"/Users/telwell/Desktop/BYOps/admin/modules_admin/admin_user/includes/AdminUserManager.inc.php",
+		"/Users/telwell/Desktop/BYOps/admin/modules_admin/sales_admin/views/showDashboard.inc.php",
+		"/Users/telwell/Desktop/BYOps/admin/modules_admin/stats/Stats.php",
+		"/Users/telwell/Desktop/BYOps/admin/modules_admin/stats/views/userDemographics.inc.php",
+		"/Users/telwell/Desktop/BYOps/admin/modules_admin/stats/views/timeToConversion.inc.php",
+		"/Users/telwell/Desktop/VCS/week_7/blogger/app/models/article.rb",
+		"/Users/telwell/Desktop/VCS/week_7/blogger/db/migrate/20150520015832_create_articles.rb",
+		"/Users/telwell/Desktop/VCS/week_7/blogger/log/.keep",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/views/craigslist.erb",
+		"/Users/telwell/Desktop/BYOps/admin/index.php",
+		"/Users/telwell/Desktop/BYOps/admin/favicon.ico",
+		"/etc/hosts",
+		"/Users/telwell/.ssh/id_rsa.pub",
+		"/Users/telwell/Desktop/DUTA_ORG.sql",
+		"/Users/telwell/Desktop/DUTA_NET.sql",
+		"/Users/telwell/Desktop/DUTA_COM.sql",
+		"/Users/telwell/Desktop/VCS/learn_ruby/15_in_words/in_words_spec.rb",
+		"/Users/telwell/Desktop/VCS/learn_ruby/15_in_words/in_words.rb",
+		"/Users/telwell/Desktop/VCS/learn_ruby/15_in_words/index.html",
+		"/Users/telwell/Desktop/VCS/learn_ruby/15_in_words/.in_words.rb.swp",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/models/craigslist.rb",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/app.rb",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/saver.rb",
+		"/etc/host",
+		"/Users/telwell/Desktop/Kim Backup/COM/DB/KIM_COM.sql",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/public/style.css",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/views/index.erb",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/config.ru",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_web_scraper/scrape.rb",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_web_scraper/saver.rb",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_web_scraper/.gitignore",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/.gitignore",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/views/layout.erb",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/views/home.erb",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/views/layout.erb",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/app.rb",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/Gemfile",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/Gemfile",
+		"/Users/telwell/Desktop/VCS/week_6/project_sinatra_dashboard/README.md",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/public/style.css",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/views/stay.erb",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/deck.rb",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/player.rb",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/helpers/blackjack_helper.rb",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/config.ru",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/Procfile",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/README.md",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/Gemfile.lock",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_blackjack/GEMFILE",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_web_scraper/GEMFILE",
+		"/Users/telwell/Desktop/css/style.css",
+		"/Users/telwell/Desktop/css/index.html",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_web_scraper/README.md",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_web_scraper/csv_file.csv",
+		"/Users/telwell/Desktop/VCS/week_6/sinatra_testing/hello.rb",
+		"/Users/telwell/Desktop/VCS/week_6/assignment_web_scraper/Gemfile.lock",
+		"/Users/telwell/Desktop/NAKED ASSETS BK/DB/NAKED_ASSETS_COM.sql",
+		"/Users/telwell/Desktop/REISS_COM.sql",
+		"/Users/telwell/Desktop/FRIAS_NET.sql",
+		"/Users/telwell/Desktop/PROF_FRIAS_COM.sql",
+		"/Users/telwell/Desktop/FRIAS_COM.sql",
+		"/Users/telwell/Desktop/VCS/week_4/project_dom_tree/README.md",
+		"/Users/telwell/Desktop/VCS/week_4/project_dom_tree/test.html",
+		"/Users/telwell/Desktop/VCS/week_4/project_dom_tree/tree.rb"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"*.php",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"wp_194",
+			"		\n",
+			"today",
+			"<img src=\"img/(.*?)\">",
+			"---",
+			"<img src=\"img/(.*?)\">",
+			"---",
+			"<img src=\"img/(.*?)\">",
+			"<img src=\"img/(.*?)>",
+			"title",
+			"<%",
+			"num",
+			"1",
+			"wp_22_",
+			"wp_21_",
+			"wp-content/uploads/sites/20",
+			"wp-content/uploads",
+			"wp_20_",
+			"multisitelogin.com/youngmikim-com",
+			"wp_835_",
+			"weather",
+			"min_price",
+			"query",
+			"<label for=\"query\">Apartment Query:</label>\n	<input type=\"text\" class=\"form-control\" name=\"query\" id=\"query\" placeholder=\"Search\">",
+			"min_price",
+			"zip",
+			"scraped",
+			"td",
+			"frank",
+			".sum",
+			"sum",
+			"is_ace",
+			"kidan",
+			"multisitelogin.com/barenakedassets-com",
+			"wp_554_",
+			"$",
+			"wp-content/uploads/toryreiss-com",
+			"multisitelogin.com/toryreiss-com",
+			"wp_555_",
+			"wp-content/uploads/kellifrias-net",
+			"multisitelogin.com/kellifrias-net",
+			"wp_312_",
+			"wp-content/uploads/professorkellifrias-com",
+			"multisitelogin.com/professorkellifrias-com",
+			"wp_311_",
+			"wp-content/uploads/kellifrias-com",
+			"multisitelogin.com/kellifrias-com",
+			"kellifrias.com",
+			"wp_309_",
+			"classes",
+			"Classes",
+			"classes",
+			"get_name",
+			"node",
+			"id",
+			".\n",
+			"input",
+			"valid_move_type",
+			"B",
+			"b",
+			"[10] pry(main)*",
+			"victory_board",
+			"@board.board",
+			"true",
+			"valid = ",
+			"outcome",
+			"#navcnt",
+			"let(:t){TowersOfHanoi.new(4)}",
+			"name",
+			"require",
+			"temp",
+			"is_circular",
+			"css",
+			"wp_head",
+			"link",
+			"#323944",
+			".header",
+			"header",
+			"falsey",
+			"product",
+			"multiply",
+			"product",
+			"multiply",
+			"difference",
+			"subtract",
+			"sum",
+			"add",
+			"better",
+			"7",
+			"a",
+			"include",
+			"7",
+			"Down",
+			"  ",
+			"binding.",
+			"pry",
+			"size",
+			"http://",
+			"\\n",
+			"duta",
+			"http://andreiduta.com/wp-content/uploads",
+			"wp-content/uploads",
+			"wp_",
+			"/wp-.+",
+			"/wp-*+",
+			"/home/users/web/b2798/pow.bevansbranhamcom/",
+			"<?php $ldjamm=chr(99)",
+			"wp_",
+			"larry_",
+			"throw err",
+			"bottom",
+			"/sites/",
+			"multisitelogin.com/carlceder-org",
+			"wp_472_",
+			"uploads/carlceder-com/sites",
+			"multisitelogin.com/carlceder-com",
+			"wp_469_",
+			"--",
+			"uploads/carldavidceder-com/sites",
+			"/sites/",
+			"uploads/sites/468",
+			"uploads/carldavidceder-com",
+			"carldavidceder-com",
+			"multisitelogin.com/carldavidceder-com",
+			"wp_468_",
+			"@@words ",
+			"@@words",
+			"capitalized_index"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"<%= image_tag \"\\1\" %>",
+			"--",
+			"<%= image_tag \"\\1\" %>",
+			"--",
+			"<%= image_tag \"\\1\" %>",
+			"<%= \"\\1\" %>",
+			"<%= \"(.*?) %>",
+			"wp_",
+			"youngmikim.com",
+			"wp_",
+			"barenakedassets.com",
+			"wp_",
+			"wp-content/uploads/sites",
+			"toryreiss.com",
+			"wp_",
+			"wp-content/uploads/sites",
+			"kellifrias.net",
+			"wp_",
+			"wp-content/uploads/sites",
+			"professorkellifrias.com",
+			"wp_",
+			"wp-content/uploads/sites",
+			"kellifrias.com",
+			"wp_",
+			"",
+			" ",
+			"http://andreiduta.com/wp-content/uploads/sites/20",
+			"wp_20_",
+			"",
+			"wp_2_",
+			"wp_",
+			"carlceder.org",
+			"wp_",
+			"uploads/sites",
+			"carlceder.com",
+			"wp_",
+			"uploads/sites",
+			"uploads/sites/468",
+			"carldavidceder.com",
+			"wp_",
+			"@words"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/todos/index.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								616,
+								616
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/todos_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1025,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								523,
+								523
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config/routes.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 122,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								116,
+								116
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/todos/_todo.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								262,
+								262
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/todos/_todos_table.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								343,
+								343
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 25.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 120.0
+	},
+	"pinned_build_system": "",
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 177.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
