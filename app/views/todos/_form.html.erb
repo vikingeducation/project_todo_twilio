@@ -1,0 +1,27 @@
+<section id="form">
+
+  <div class="panel well">
+
+    <div class="panel-body">
+
+      <div class="row">
+
+        <%= form_tag("/create", method: "post") do %>
+
+          <div class="col-md-10">
+            <%= text_field(:todo, :task, class: "form-control", placeholder: "Add new task") %>
+          </div>
+
+          <div class="col-md-2">
+            <%= submit_tag("Save New Task", class: "btn btn-info btn-block") %>
+          </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

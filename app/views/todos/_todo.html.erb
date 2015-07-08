@@ -1,4 +1,13 @@
-<li>
-  <%= todo.task %>
-  <%= todo.completion_date %>
-</li>
+<tr>
+
+  <td><%= todo.task %></td>
+
+  <td>
+    <% if todo.completion_date.nil? %>
+      <%= link_to "Mark Completed", "#", class: "btn btn-info btn-xs", role: "button" %>
+    <% else %>
+      <%= todo.completion_date.strftime('%a, %b %e, %Y') %>
+    <% end %>
+  </td>
+
+</tr>

@@ -9,6 +9,7 @@ class TodosController < ApplicationController
     @test_todos = [t1, t2, t3, t4, t5]
 
     # @todos = Todo.order(:completion_date => 'DESC')
+    @new_task = Todo.new
   end
 
 

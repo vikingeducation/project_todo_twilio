@@ -1,5 +1,9 @@
 <main class="container">
 
+
+  <%= render :partial => "form", :locals => { :new_task => @new_task } %>
+
+
   <section id="index">
 
 
@@ -7,9 +11,36 @@
 
       <div class="col-xs-12">
 
-        <ul><%= render @test_todos %></ul>
+        <h3>Current Tasks</h3>
+
+      </div>
+
+    </div>
 
 
+
+    <div class="row">
+
+      <div class="col-xs-12">
+
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover">
+
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Completion Date</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <%= render @test_todos %>
+
+            </tbody>
+
+          </table>
+        </div> <!-- end of table-responsive -->
 
       </div>
 
