@@ -16,6 +16,10 @@
   </td>
 
   <td>
+    <%= link_to "Send SMS", send_text_path(todo[:id]) %>
+  </td>
+
+  <td>
     <%= link_to "Delete!", todo, :method => :delete %>
   </td>
 

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :todos, :only => [:index, :create, :destroy, :edit, :update]
 
-  
+  get "todos/send_text/:id" => "texts#send_text", as: :send_text
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
