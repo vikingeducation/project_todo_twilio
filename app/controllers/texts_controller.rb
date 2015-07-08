@@ -5,9 +5,13 @@ class TextsController < ApplicationController
     @todo = Todo.find(params[:id])
 
     texter = Texter.new
-    texter.send_sms(@todo.task, @todo.due_date)
+    response = texter.send_sms(@todo.task, @todo.due_date)
 
-    flash[:success] = "SMS sent!"
+    if response
+      flash[:success] = "SMS sent!"
+    else
+      flash[:danger] = "SMS failed to sen - please try again."
+    end
 
     redirect_to todos_url
   end
