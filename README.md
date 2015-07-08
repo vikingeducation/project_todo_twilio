@@ -1,6 +1,7 @@
 The Viking Task Manager
 =======================
 Rails Project from [Viking Code School][1]
+------------------------------------------
 
 ### Student: [Adam Kinson][2]
 
