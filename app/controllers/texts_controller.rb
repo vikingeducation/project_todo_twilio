@@ -1,5 +1,5 @@
 class TextsController < ApplicationController
-  require "texter.rb"
+  # require "texter.rb"
 
   def send_text
     @todo = Todo.find(params[:id])
@@ -9,7 +9,7 @@ class TextsController < ApplicationController
 
     flash[:success] = "SMS sent!"
 
-    redirect_to :back
+    redirect_to todos_url
   end
 
 end

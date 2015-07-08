@@ -1,5 +1,6 @@
-class Texter
-  require 'twilio-ruby'
+class Texter < ActiveRecord::Base
+
+  # require 'twilio-ruby'
 
   def initialize
     account_sid = ENV['TWILIO_SID']
