@@ -6,7 +6,7 @@
 
       <div class="row">
 
-        <%= form_tag(todos_path, method: "post") do %>
+        <%= form_tag(todos_path, method: :post) do %>
 
           <div class="col-md-10">
             <%= text_field(:todo, :task, class: "form-control", placeholder: "Add new task") %>
