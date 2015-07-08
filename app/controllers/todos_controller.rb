@@ -2,7 +2,7 @@ class TodosController < ApplicationController
 
   def index
     @todos = Todo.order(:completion_date => 'DESC')
-    @new_task = Todo.new
+    @todo = Todo.new
   end
 
 
@@ -24,6 +24,25 @@ class TodosController < ApplicationController
     # flash success
     redirect_to todos_path
   end
+
+
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+
+
+  def update
+    @todo = Todo.find(params[:id])
+
+    if @todo.update(whitelisted_params)
+      # success flash
+      redirect_to todos_path
+    else
+      # fail flash.now
+      render :edit
+    end
+  end
+
 
 
   private

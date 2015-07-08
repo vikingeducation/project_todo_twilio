@@ -6,14 +6,14 @@
 
       <div class="row">
 
-        <%= form_tag(todos_path, method: :post) do %>
+        <%= form_for todo do |t| %>
 
           <div class="col-md-10">
-            <%= text_field(:todo, :task, class: "form-control", placeholder: "Add new task") %>
+            <%= t.text_field(:task, class: "form-control", placeholder: "Add new task") %>
           </div>
 
           <div class="col-md-2">
-            <%= submit_tag("Save New Task", class: "btn btn-info btn-block") %>
+            <%= t.submit("Save New Task", class: "btn btn-info btn-block") %>
           </div>
 
         <% end %>

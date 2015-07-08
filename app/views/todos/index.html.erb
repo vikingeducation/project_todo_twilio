@@ -1,7 +1,7 @@
 <main class="container">
 
 
-  <%= render :partial => "form", :locals => { :new_task => @new_task } %>
+  <%= render :partial => "form", :locals => { :todo => @todo } %>
 
 
   <section id="index">
@@ -30,6 +30,7 @@
               <tr>
                 <th>Task</th>
                 <th>Completion Date</th>
+                <th>Update</th>
                 <th>Delete</th>
               </tr>
             </thead>

@@ -11,6 +11,10 @@
   </td>
 
   <td>
+    <%= link_to "Update", edit_todo_path(todo[:id]) %>
+  </td>
+
+  <td>
     <%= link_to "Delete!", todo, :method => :delete %>
   </td>
 
