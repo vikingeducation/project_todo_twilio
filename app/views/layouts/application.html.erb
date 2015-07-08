@@ -11,7 +11,14 @@
 
   <%= render "shared/navbar" %>
 
-  <%= yield %>
+
+  <main class="container">
+
+    <%= bootstrap_flash %>
+
+    <%= yield %>
+
+  </main>
 
 </body>
 </html>

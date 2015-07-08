@@ -10,10 +10,10 @@ class TodosController < ApplicationController
     @todo = Todo.new(whitelisted_params)
 
     if @todo.save
-      # success flash
+      flash[:success] = "New task created!"
       redirect_to todos_path
     else
-      # fail flash.now
+      flash.now[:danger] = "Failed to add task to list - please try again."
       render todos_path
     end
   end
@@ -21,7 +21,7 @@ class TodosController < ApplicationController
 
   def destroy
     @todo = Todo.find(params[:id]).destroy!
-    # flash success
+    flash[:warning] = "Task deleted."
     redirect_to todos_path
   end
 
@@ -35,10 +35,10 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
 
     if @todo.update(whitelisted_params)
-      # success flash
+      flash[:success] = "Task updated!"
       redirect_to todos_path
     else
-      # fail flash.now
+      flash.now[:danger] = "Failed to edit task - please try again."
       render :edit
     end
   end
