@@ -48,3 +48,5 @@ group :development do
 end
 gem 'binding_of_caller'
 
+gem "twitter-bootstrap-rails"
+
