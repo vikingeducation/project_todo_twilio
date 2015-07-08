@@ -1,6 +1,7 @@
 <tr>
 
   <td><%= todo.task %></td>
+  <td><%= todo.due_date.strftime('%a, %b %e, %Y') unless todo.due_date.nil? %></td>
 
   <td>
     <% if todo.completion_date.nil? %>

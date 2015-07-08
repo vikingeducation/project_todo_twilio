@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
 
   def index
-    @todos = Todo.order(:completion_date => 'DESC')
+    @todos = Todo.order('due_date IS NULL, due_date ASC')
     @todo = Todo.new
   end
 
@@ -48,7 +48,7 @@ class TodosController < ApplicationController
   private
 
   def whitelisted_params
-    params.require(:todo).permit(:task)
+    params.require(:todo).permit(:task, :due_date)
   end
 
 

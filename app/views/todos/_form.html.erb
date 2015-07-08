@@ -8,12 +8,26 @@
 
         <%= form_for todo do |t| %>
 
-          <div class="col-md-10">
-            <%= t.text_field(:task, class: "form-control", placeholder: "Add new task") %>
+          <div class="row"> <!-- for labels -->
+            <div class="col-md-3 col-md-offset-7 text-center">
+              <%= t.label(:due_date, "Due Date") %>
+            </div>
+
           </div>
 
-          <div class="col-md-2">
-            <%= t.submit("Save New Task", class: "btn btn-info btn-block") %>
+          <div class="row"> <!-- for fields -->
+
+            <div class="col-md-7">
+              <%= t.text_field(:task, class: "form-control", placeholder: "Add new task") %>
+            </div>
+
+            <div class="col-md-3">
+              <%= t.date_field(:due_date, class: "form-control text-center") %>
+            </div>
+
+            <div class="col-md-2">
+              <%= t.submit("Save Task", class: "btn btn-info btn-block") %>
+            </div>
           </div>
 
         <% end %>
