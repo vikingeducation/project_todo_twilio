@@ -1,0 +1,37 @@
+<tr>
+
+  <td><%= todo.task %></td>
+  <td><%= todo.due_date.strftime('%a, %b %e, %Y') unless todo.due_date.nil? %></td>
+
+
+  <td>
+
+    <% if todo.completion_date.nil? %>
+
+      <%= form_for todo do |t| %>
+        <%= t.date_field(:completion_date, value: Date.today, class: "hidden") %>
+        <%= t.submit("Mark Completed", class: "btn btn-info btn-xs") %>
+      <% end %>
+
+    <% else %>
+      <%= todo.completion_date.strftime('%a, %b %e, %Y') %>
+    <% end %>
+
+  </td>
+
+
+  <td>
+    <%= link_to "Update", edit_todo_path(todo[:id]) %>
+  </td>
+
+
+  <td>
+    <%= link_to "Send SMS", send_text_path(todo[:id]) %>
+  </td>
+
+
+  <td>
+    <%= link_to "Delete!", todo, :method => :delete %>
+  </td>
+
+</tr>

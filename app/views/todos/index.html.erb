@@ -1,0 +1,50 @@
+<%= render :partial => "form", :locals => { :todo => @todo } %>
+
+
+<section id="index">
+
+
+  <div class="row">
+
+    <div class="col-xs-12">
+
+      <h3>Current Tasks</h3>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="row">
+
+    <div class="col-xs-12">
+
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Due Date</th>
+              <th>Completion Date</th>
+              <th>Update</th>
+              <th>Twilio</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <%= render @todos %>
+
+          </tbody>
+
+        </table>
+      </div> <!-- end of table-responsive -->
+
+    </div>
+
+  </div>
+
+</div>
