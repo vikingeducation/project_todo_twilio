@@ -1,4 +1,4 @@
-class Texter < ActiveRecord::Base
+class Texter
 
   # require 'twilio-ruby'
 
