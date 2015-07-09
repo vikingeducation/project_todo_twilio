@@ -1,5 +1,5 @@
 class TextsController < ApplicationController
-  # require "texter.rb"
+  require "texter.rb"
 
   def send_text
     @todo = Todo.find(params[:id])
