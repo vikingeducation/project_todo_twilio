@@ -1,7 +1,5 @@
 class Texter
 
-  # require 'twilio-ruby'
-
   def initialize
     account_sid = ENV['TWILIO_SID']
     auth_token = ENV['TWILIO_TOKEN']

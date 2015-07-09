@@ -65,9 +65,5 @@ class TodosController < ApplicationController
     params.require(:todo).permit(:task, :due_date, :completion_date)
   end
 
-#  def whitelisted_complete
-#    params.require(:todo).permit()
-#  end
-
 
 end
