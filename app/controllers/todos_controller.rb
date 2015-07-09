@@ -44,12 +44,30 @@ class TodosController < ApplicationController
   end
 
 
+  def complete
+    @todo = Todo.find(params[:id])
+
+    if @todo.update(whitelisted_complete)
+      flash[:success] = "Task completed!"
+      redirect_to todos_path
+    else
+      flash.now[:warning] = "Failed to mark as complete - please try again."
+      render todos_path
+    end
+
+  end
+
+
 
   private
 
   def whitelisted_params
-    params.require(:todo).permit(:task, :due_date)
+    params.require(:todo).permit(:task, :due_date, :completion_date)
   end
+
+#  def whitelisted_complete
+#    params.require(:todo).permit()
+#  end
 
 
 end
