@@ -19,7 +19,8 @@
         </div>
 
         <div class = "col-md-4">
-          <%= link_to "Edit Task", edit_task_path(task) %>
+          <h6><%= link_to "Edit Task", edit_task_path(task) %></h6>
+          <h6><%= link_to "Delete Task", task_path(task), method: :delete, class: "alert-danger" %></h6>
         </div>
 
       </div>
@@ -36,7 +37,7 @@
           </h6>
         </div>
         <div class = "col-md-4">
-          <%= link_to "Task Completed", mark_complete_path(task), method: :put %>
+          <h6><%= link_to "Task Completed", mark_complete_path(task), method: :put %></h6>
         </div>
       </div>
 

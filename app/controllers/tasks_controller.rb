@@ -10,8 +10,8 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params_hash)
-
     @task.save
+    flash[:success] = "New task '#{@task.todo}' was created!"
     redirect_to tasks_path
   end
 
@@ -22,7 +22,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(params_hash)
-    flash.notice = "Your task was updated!"
+    flash[:notice] = "Your task was updated!"
     redirect_to tasks_path
   end
 
@@ -30,14 +30,14 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.completion_date = Time.now
     @task.save
-    flash.notice = "You have completed #{@task.todo}!"
+    flash[:success] = "You have completed #{@task.todo}!"
     redirect_to tasks_path
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    flash.notice = "Your task was deleted!"
+    flash[:alert] = "Your task was deleted!"
     redirect_to tasks_path
   end
 
