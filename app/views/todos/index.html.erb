@@ -1,5 +1,5 @@
 <h1>To Do List</h1>
 <h3><%= link_to "Create a new to do item", new_todo_path %>
 <% @todos.each do |t| %>
-  <li><%=link_to t.goal, t %></li>
+  <li><%=link_to t.goal, t %><%= link_to "Send SMS!", {controller: "texts", action: "send_text", id: t.id}%></li>
   <% end %>
