@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   put 'tasks/:id/mark_complete' => 'tasks#mark_complete', as: :mark_complete
 
-  resources :tasks
+
+  resources :users do
+    resources :tasks
+  end
 
 
 
