@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class = "row">
+    <div class = "col-sm-4 col-sm-offset-5">
+      <h1>Your tasks</h1>
+    </div>
+  </div>
+
+  <div class = "row">
+  <% @tasks.each do |task| %>
+    <div class = "col-md-6">
+
+      <div class = "row">
+        <div class = "col-md-8">
+          <h4>
+            <%= task.todo %>
+          </h4>
+        </div>
+      </div>
+
+      <div class = "row">
+        <div class = "col-md-8">
+          <h6>
+            <%= task.completion_date %>
+          </h6>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+  </div>
+
+</div>
