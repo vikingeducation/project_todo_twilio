@@ -1,5 +1,4 @@
-<%= form_for [@user, @todo] do |f| %>
-<%= f.hidden_field :user_id, @user.id %>
+<%= form_for [@todo.user, @todo] do |f| %>
 <%= f.label "What do you want to do?" %>
 <%= f.text_field :goal %>
 <br>
@@ -8,3 +7,4 @@
 <br>
 <%= f.submit %>
 <% end %>
+<%= link_to "Return to users index.", users_path %>

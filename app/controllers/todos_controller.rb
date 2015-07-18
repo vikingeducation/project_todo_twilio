@@ -1,23 +1,19 @@
 class TodosController < ApplicationController
 
-  def index
-    @todos = Todo.all
-  end
-
-  def show
-    @todo = Todo.find(params[:id])
-  end
-
   def new
-    @todo = Todo.new
+    @todo = Todo.new(white_list_params)
+    @todo.user_id = params[:user_id]
+    @todo.save
+
+    redirect_to user_path(params[:user_id])
   end
 
   def create
     @todo = Todo.new(white_list_params)
-    @todo.user_id = @user_id
+    @todo.user_id = params[:user_id]
     if @todo.save
       flash[:notice] = "To do successfully created!"
-      redirect_to @todo
+      redirect_to user_path(params[:user_id])
     else
       flash[:notice] = "There was a problem saving your to do."
       render :new
@@ -32,7 +28,7 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     if @todo.update(white_list_params)
       flash[:notice] = "To do successfully updated!"
-      redirect_to @todo
+      redirect_to user_path(params[:user_id])
     else
       flash[:notice] = "There was a problem saving your to do."
       render :new
@@ -43,7 +39,7 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     if @todo.destroy
       flash[:notice] = "To do successfully deleted"
-      redirect_to todos_path
+      redirect_to user_path(params[:user_id])
     else
       flash[:notice] = "There was a problem deleting this to do"
       render :new
@@ -54,7 +50,7 @@ class TodosController < ApplicationController
   private
 
   def white_list_params
-    params.require(:todo).permit(:goal, :completion_date, :user_id)
+    params.require(:todo).permit(:goal, :completion_date)
   end
 
 end

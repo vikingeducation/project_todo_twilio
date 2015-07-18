@@ -16,6 +16,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @todo = Todo.new
+    @todo.user_id = @user.id
   end
 
   def index

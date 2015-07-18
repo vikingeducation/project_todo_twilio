@@ -5,7 +5,8 @@ class TextsController < ApplicationController
     account_sid = ENV["TWILIO_SID"]
     auth_token  = ENV["TWILIO_AUTH"]
     from_number = ENV["TWILIO_NUMBER"] #+2345678912
-    to_number   = ENV["SELF_NUMBER"]
+    user = User.find_by_id(params[:user_id])
+    to_number   = user.number
     begin
         client = Twilio::REST::Client.new account_sid, auth_token
         client.account.messages.create(
@@ -16,6 +17,7 @@ class TextsController < ApplicationController
     rescue Twilio::REST::RequestError => e
         puts e.message
     end
-    redirect_to todos_path
+    flash[:notice] = "Text message sent!"
+    redirect_to user
   end
 end
