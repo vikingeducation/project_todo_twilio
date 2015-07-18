@@ -9,9 +9,9 @@ class TextsController < ApplicationController
     begin
         client = Twilio::REST::Client.new account_sid, auth_token
         client.account.messages.create(
-          from => from_number,
-          to =>   to_number,
-          body => sms_body
+          :from => from_number,
+          :to =>   to_number,
+          :body => sms_body
         )
     rescue Twilio::REST::RequestError => e
         puts e.message
