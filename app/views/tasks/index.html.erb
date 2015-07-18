@@ -37,7 +37,13 @@
           </h6>
         </div>
         <div class = "col-md-4">
-          <h6><%= link_to "Task Completed", mark_complete_path(task), method: :put %></h6>
+          <h6>
+            <% if task.completion_date %>
+                <%= link_to "Undo Completion", mark_complete_path(task), method: :put, class: "alert-warning" %>
+              <% else %>
+                <%= link_to "Mark Complete", mark_complete_path(task), method: :put, class: "alert-success" %>
+              <% end %>
+          </h6>
         </div>
       </div>
 
