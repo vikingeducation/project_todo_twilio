@@ -44,28 +44,19 @@ class TasksController < ApplicationController
     @task.destroy
     flash[:alert] = "Your task was deleted!"
     redirect_to tasks_path
+    SMS.send_sms(Rails.application.secrets.twilio_phone_from,
+      Rails.application.secrets.twilio_phone_to,
+      'This is a test message'
+      )
   end
 
 
   private
 
-    def params_hash
-      params.require(:task).permit(:todo, :completion_date)
-    end
+  def params_hash
+    params.require(:task).permit(:todo, :completion_date)
+  end
 
-=begin
-      # put your own credentials here
-  account_sid = 'AC822fe3e4ffd7ccd8fda1eb9de9f3abf4'
-  auth_token = '[AuthToken]'
-
-  # set up a client to talk to the Twilio REST API
-  @client = Twilio::REST::Client.new account_sid, auth_token
-
-  @client.account.messages.create({
-  	:from => '+14243254669',
-  	:to => '3104255131',
-  	:body => 'This is a test message for VCS Twilio app',
-  })
 end
 
-=end
+
