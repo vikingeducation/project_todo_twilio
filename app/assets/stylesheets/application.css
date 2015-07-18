@@ -14,3 +14,12 @@
  *= require_self
  *= require bootstrap_and_overrides
  */
+
+.user_entry {
+	height:80px;
+	font-size: 30px;
+}
+
+.todo_entry {
+	height:300px;
+}

@@ -3,13 +3,10 @@
 </div>
 
 <div class="container text-center">
-  <% @users.each do |user| %>
   <div class="row">
-    <%= link_to user.name, user %>
-  </div>
+  <% @users.each do |user| %>
+    <%= link_to user.name, user, class:"col-xs-6 user_entry" %>
     <% end %>
-</div>
-<div class="container text-center">
-  <%= link_to "Create a new user!", new_user_path %>
+  </div>
 </div>
 
