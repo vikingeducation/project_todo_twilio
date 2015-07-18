@@ -1,0 +1,7 @@
+<h1> Users! </h1>
+
+<% @users.each do |user| %>
+	<li><%= user.name %>:<%= user.number %></li>
+<% end %>
+
+<%= link_to "Create a new user!", new_user_path %>

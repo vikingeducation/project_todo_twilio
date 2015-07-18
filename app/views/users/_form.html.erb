@@ -1,0 +1,9 @@
+<%= form_for @user do |f| %>
+	<%= f.label "Enter name!" %>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label "Enter number! (+12345678910)" %>
+	<%= f.text_field :number %>
+	<br>
+	<%= f.submit %>
+<% end %>
