@@ -1,0 +1,10 @@
+<h1>Edit Your To Do</h1>
+<%= form_for @todo do |f| %>
+<%= f.label "What do you want to do?" %>
+<%= f.text_field :goal %>
+<br>
+<%= f.label "When do you want to complete this?" %>
+<%= f.date_field :completion_date %>
+<br>
+<%= f.submit %>
+<% end %>
