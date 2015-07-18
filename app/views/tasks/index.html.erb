@@ -1,10 +1,11 @@
 
 <div class="container">
   <div class = "row">
-    <div class = "col-sm-4 col-sm-offset-5">
+    <div class = "col-sm-4 col-sm-offset-3">
       <h1>Your tasks</h1>
     </div>
   </div>
+  <hr>
 
   <div class = "row">
   <% @tasks.each do |task| %>
@@ -13,7 +14,7 @@
       <div class = "row">
         <div class = "col-md-8">
           <h4>
-            <%= task.todo %>
+            Task: <%= task.todo %>
           </h4>
         </div>
       </div>
@@ -21,13 +22,32 @@
       <div class = "row">
         <div class = "col-md-8">
           <h6>
-            <%= task.completion_date %>
+            Completion Date:
+              <% if task.completion_date %>
+                <%= task.completion_date %>
+              <% else %>
+                Not yet completed
+              <% end %>
           </h6>
+        </div>
+        <div class = "col-md-4">
+          <%= link_to "Task Completed", task_path, method: :patch %>
         </div>
       </div>
 
     </div>
   <% end %>
+
+    <div class="row">
+      <div class = "col-md-6">
+        <div class = "row">
+          <div class = "col-md-8">
+            <h4>
+              <%= link_to "New Task", new_task_path %>
+            </h4>
+          </div>
+        </div>
+      </div>
   </div>
 
 </div>
