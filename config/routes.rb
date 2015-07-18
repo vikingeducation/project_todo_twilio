@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'tasks#index'
 
+  put 'tasks/:id/mark_complete' => 'tasks#mark_complete', as: :mark_complete
+
   resources :tasks
 
 

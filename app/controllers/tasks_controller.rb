@@ -15,15 +15,30 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
   def update
     @task = Task.find(params[:id])
-
-    @task.completion_date = Time.now
-
-    @task.save
-
+    @task.update(params_hash)
+    flash.notice = "Your task was updated!"
     redirect_to tasks_path
+  end
 
+  def mark_complete
+    @task = Task.find(params[:id])
+    @task.completion_date = Time.now
+    @task.save
+    flash.notice = "You have completed #{@task.todo}!"
+    redirect_to tasks_path
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    flash.notice = "Your task was deleted!"
+    redirect_to tasks_path
   end
 
 
