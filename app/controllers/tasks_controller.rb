@@ -28,9 +28,14 @@ class TasksController < ApplicationController
 
   def mark_complete
     @task = Task.find(params[:id])
-    @task.completion_date = Time.now
+
+    @task.completion_date ? @task.completion_date = nil : @task.completion_date = Time.now
     @task.save
-    flash[:success] = "You have completed #{@task.todo}!"
+    if @task.completion_date
+      flash[:success] = "You have completed #{@task.todo}!"
+    else
+      flash[:alert] = "You have set #{@task.todo} to 'Not Completed'"
+    end
     redirect_to tasks_path
   end
 
