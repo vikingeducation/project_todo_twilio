@@ -1,4 +1,5 @@
-<%= form_for @todo do |f| %>
+<%= form_for [@user, @todo] do |f| %>
+<%= f.hidden_field :user_id, @user.id %>
 <%= f.label "What do you want to do?" %>
 <%= f.text_field :goal %>
 <br>

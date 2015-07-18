@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: "todos#index"
+  root to: "users#index"
   resources :users do
     resources :todos
   end

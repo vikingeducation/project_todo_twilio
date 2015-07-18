@@ -14,6 +14,7 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(white_list_params)
+    @todo.user_id = @user_id
     if @todo.save
       flash[:notice] = "To do successfully created!"
       redirect_to @todo
@@ -53,7 +54,7 @@ class TodosController < ApplicationController
   private
 
   def white_list_params
-    params.require(:todo).permit(:goal, :completion_date)
+    params.require(:todo).permit(:goal, :completion_date, :user_id)
   end
 
 end
