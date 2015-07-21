@@ -1,0 +1,12 @@
+<h1>To Do List</h1>
+<h3><%= link_to "Create a new to do item", new_todo_path %>
+<% @todos.each do |t| %>
+  <li>
+  	<%=link_to t.goal, t %><%= form_tag(texts_path, method: "post") do %>
+  		<%= hidden_field_tag 'id', t.id %><%= button_tag "Send SMS!" %>
+  	<% end %>
+
+  	<%= link_to "Edit this To Do", edit_todo_path(t) %>
+	<%= link_to "Delete this To Do", t, method: "delete" %>
+  </li>
+<% end %>

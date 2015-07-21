@@ -1,0 +1,6 @@
+<h1>To Do</h1>
+<h3><%= @todo.goal %> : <%= @todo.completion_date %></h3>
+<%= link_to "Edit this To Do", edit_todo_path %>
+<%= link_to "Delete this To Do", @todo, method: "delete" %>
+
+<%= link_to "Back to Index", todos_path %>
