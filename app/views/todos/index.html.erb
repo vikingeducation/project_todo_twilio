@@ -1,0 +1,12 @@
+<div class="container">
+<h1>todo_list test with twilio</h1>
+<% @todos.each do |todo| %>
+<h2>at Time: <%= todo.timedate%> Event: <%= todo.event%></h2>
+<div class="btn-group" role="group" aria-label="...">
+  <%= link_to "Details", todo_path(todo), :class => "btn btn-default" %>
+  <%= link_to "Edit", edit_todo_path(todo), :class => "btn btn-default" %>
+  <%= link_to "Delete", todo, :class => "btn btn-default", :data => {:confirm => 'Are you sure?', :method => :delete} %>
+</div>
+<%= link_to"Remind through SMS", todo, :class => "btn btn-default btn-lg" %>
+<% end %>
+</div>

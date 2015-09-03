@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TodoList</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-no-turbolink="true">
+<nav class="navbar navbar-default">
+  <form class="navbar-form navbar-left" action="/todos">
+      <%= link_to "Index", todos_path, :class => "btn btn-default" %>
+      <%= link_to "Add", new_todo_path, :class => "btn btn-default" %>
+  </form>
+</nav>
+<% flash.each do |key, value| %>
+    <div class="alert alert-info">
+      <strong>Notice!</strong><%= value%>
+    </div>
+<% end %>
+<%= yield %>
+
+</body>
+</html>
