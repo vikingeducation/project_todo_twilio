@@ -42,6 +42,13 @@ class TodosController < ApplicationController
     redirect_to todos_path, :notice => "you event has been deleted"
   end
   
+  def sms
+    @todo = Todo.find(params[:id])
+    #@todo.destroy
+    Todo.sms_info(@todo.event, @todo.note, @todo.timedate)
+    redirect_to todo_path, :notice => "you message has been send"
+  end
+  
   def todo_params
     params.require(:todo).permit(:id, :event, :note, :timedate)
   end
