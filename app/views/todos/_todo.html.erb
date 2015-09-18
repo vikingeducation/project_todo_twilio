@@ -1,0 +1,20 @@
+<div class="todo">
+	<h6>
+		Description:
+	</h6>
+	<p>
+		<%= link_to(todo.value, todo_path(todo.id)) %>
+	</p>
+	<h6>
+		Due Date:
+	</h6>
+	<p>
+		<time datetime="<%= todo.due %>">
+			<%= todo.due.strftime('%l:%M %P - %B %d, %Y') %>
+		</time>
+	</p>
+	<p>
+		<%= link_to('Edit', edit_todo_path(todo.id)) %>
+		<%= link_to('Delete', todo_path(todo.id), :method => :delete, :style => 'color:red') %>
+	</p>
+</div>

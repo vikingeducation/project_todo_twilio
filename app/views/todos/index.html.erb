@@ -1,1 +1,15 @@
+<h2>+ New Todo</h2>
+<%= render :partial => 'form', :locals => {:todo => Todo.new, :path => todos_path} %>
+
 <h1>Todos</h1>
+<% unless @todos.empty? %>
+	<ul>
+		<% @todos.each do |todo| %>
+			<li>
+				<%= render todo %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>Let's get <strong>todo</strong>ing something!</p>
+<% end %>
