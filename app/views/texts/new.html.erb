@@ -1,0 +1,18 @@
+<h1>Send SMS</h1>
+
+<div class="alert alert-info">
+	NOTE: SMS message sending is only for testing by verified numbers by the developer at the moment.
+</div>
+
+<p>
+	Send this todo as a SMS message:
+	<%= @message %>
+</p>
+<%= form_tag(texts_path) do %>
+	<div class="form-group">
+		<%= label_tag(:to, 'Receiver Phone Number') %>
+		<%= text_field_tag(:to, nil, :placeholder => '+1 (555) 123-1234', :class => 'form-control') %>
+	</div>
+	<%= hidden_field_tag(:message, @message) %>
+	<%= submit_tag('Submit', :class => 'btn btn-primary') %>
+<% end %>
