@@ -9,3 +9,6 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+
+Rails.application.config.serve_static_assets = true
+Rails.application.config.action_dispatch.x_sendfile_header = nil

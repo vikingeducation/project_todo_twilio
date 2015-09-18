@@ -10,11 +10,14 @@
 	</h6>
 	<p>
 		<time datetime="<%= todo.due %>">
-			<%= todo.due.strftime('%l:%M %P - %B %d, %Y') %>
+			<%= todo.formatted_due %>
 		</time>
 	</p>
 	<p>
 		<%= link_to('Edit', edit_todo_path(todo.id)) %>
 		<%= link_to('Delete', todo_path(todo.id), :method => :delete, :style => 'color:red') %>
+	</p>
+	<p>
+		<%= link_to('Send SMS', texts_new_path(:message => "TODO: #{todo.value}, DUE: #{todo.formatted_due}")) %>
 	</p>
 </div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/texts/new', :to => 'texts#new'
+  post '/texts', :to => 'texts#create'
   resources :todos, :except => [:new]
   root :to => 'todos#index'
 
