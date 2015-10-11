@@ -10,11 +10,11 @@ class SMS
   end
 
 
-  def send_message(description, completion)
+  def send_message(description, due)
     begin @client.messages.create(
       from: '+19803133582',
       to: '+17044938352',
-      body: "Task Due: #{completion}\n#{description}",
+      body: "Task Due: #{due}\n#{description}",
       )
       {status: "success", message: "Text Sent!"}
     rescue

@@ -3,7 +3,7 @@
 <%= content_tag :tr, class: highlighted_row do %>
   <th scope="row"><%= todo.id %></th>
   <td><%= todo.description %></td>
-  <td><%= todo.completion.strftime("%m-%d-%Y") %></td>
+  <td><%= todo.due.strftime("%m-%d-%Y") %></td>
   <td>
     <%= link_to send_text_path(id: todo.id), class: "btn btn-default btn-xs disabled" do %>
       <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
