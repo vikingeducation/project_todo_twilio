@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :todos, except: [:new, :show]
 
-  get '/send_todo/:id' => 'texts#send_text' 
+  get '/send_todo/:id' => 'texts#send_text', as: 'send_text'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,28 +5,21 @@
   <td><%= todo.description %></td>
   <td><%= todo.completion.strftime("%m-%d-%Y") %></td>
   <td>
-    <div class="hover-btn">
-      <%= link_to controller: "texts", action: "send_text", id: todo.id do %>
-        <button type="button" class="btn btn-default btn-xs" aria-label="Edit Todo">
-        <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-        Send as SMS
-        </button>
-      <% end %>
+    <%= link_to send_text_path(id: todo.id), class: "btn btn-default btn-xs disabled" do %>
+      <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+      Send as SMS
+    <% end %>
 
-      <%= link_to edit_todo_path(todo) do %>
-        <button type="button" class="btn btn-default btn-xs" aria-label="Edit Todo">
-        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        Edit
-        </button>
-      <% end %>
+    <%= link_to edit_todo_path(todo), class: "btn btn-default btn-xs disabled" do %>
+      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+      Edit
+    <% end %>
 
-      <%= link_to todo, method: :delete, 
-                        data: { confirm: "Delete this Todo?" } do  %>
-        <button type="button" class="btn btn-danger btn-xs" aria-label="Delete Todo">
-        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-        Delete
-        </button>
-      <% end %>
-    </div>
+    <%= link_to todo, method: :delete, 
+                      data: { confirm: "Delete this Todo?" }, 
+                      class: "btn btn-danger btn-xs disabled" do  %>
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      Delete
+    <% end %>
   </td>
 <% end %>

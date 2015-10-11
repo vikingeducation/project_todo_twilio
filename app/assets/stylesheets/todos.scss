@@ -10,17 +10,6 @@
   margin-bottom: 40px;
 }
 
-.table {
-  position: relative;
-
-  tr td div.hover-btn {
-     position: absolute;
-     right: 15px;
-     display: none;
-  }
-
-  tr:hover td div.hover-btn {
-     display: block;
-  }
-
+table tr td:last-child {
+    text-align: right;
 }
