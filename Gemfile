@@ -35,6 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Boostrap stuff
 gem 'bootstrap-sass'
 
+# Twilio
+gem 'twilio-ruby', '~> 4.2.1'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
@@ -52,6 +55,9 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  # ENV
+  gem 'figaro'
     
 end
 

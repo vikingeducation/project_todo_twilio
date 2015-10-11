@@ -19,7 +19,7 @@ class TodosController < ApplicationController
       redirect_to todos_path
     else
       flash.now[:danger] = "Whoops, something went wrong."
-      @todos  = Todo.order(:completion)
+      @todos = Todo.order(:completion)
       render :index
     end
   end
@@ -40,7 +40,7 @@ class TodosController < ApplicationController
       redirect_to todos_path
     else
       flash.now[:danger] = "Whoops, something went wrong."
-      @todos  = Todo.order(:completion)
+      @todos = Todo.order(:completion)
       render :index
     end
   end
