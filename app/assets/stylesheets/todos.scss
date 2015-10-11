@@ -1,0 +1,26 @@
+// Place all the styles related to the Todos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.field_with_errors {
+  @extend .has-error;
+}
+
+.todo-form {
+  margin-bottom: 40px;
+}
+
+.table {
+  position: relative;
+
+  tr td div.hover-btn {
+     position: absolute;
+     right: 15px;
+     display: none;
+  }
+
+  tr:hover td div.hover-btn {
+     display: block;
+  }
+
+}

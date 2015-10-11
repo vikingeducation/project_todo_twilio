@@ -1,0 +1,23 @@
+<% highlighted_row = flash_row(todo.id) %>
+
+<%= content_tag :tr, class: highlighted_row do %>
+  <th scope="row"><%= todo.id %></th>
+  <td><%= todo.description %></td>
+  <td><%= todo.completion.strftime("%m-%d-%Y") %></td>
+  <td>
+    <div class="hover-btn">
+      <%= link_to edit_todo_path(todo) do %>
+        <button type="button" class="btn btn-default btn-xs" aria-label="Edit Todo">
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+        </button>
+      <% end %>
+
+      <%= link_to todo, method: :delete, 
+                        data: { confirm: "Delete this Todo?" } do  %>
+        <button type="button" class="btn btn-danger btn-xs" aria-label="Delete Todo">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button>
+      <% end %>
+    </div>
+  </td>
+<% end %>
