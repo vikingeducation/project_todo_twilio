@@ -1,6 +1,4 @@
-<% highlighted_row = flash_row(todo.id) %>
-
-<%= content_tag :tr, class: highlighted_row do %>
+<tr>
   <th scope="row"><%= todo.id %></th>
   <td><%= todo.description %></td>
   <td><%= todo.due.strftime("%m-%d-%Y") %></td>
@@ -22,4 +20,4 @@
       Delete
     <% end %>
   </td>
-<% end %>
+</tr>
