@@ -1,0 +1,23 @@
+<tr>
+  <th scope="row"><%= todo.id %></th>
+  <td><%= todo.description %></td>
+  <td><%= todo.due.strftime("%m-%d-%Y") %></td>
+  <td>
+    <%= link_to send_text_path(id: todo.id), class: "btn btn-default btn-xs disabled" do %>
+      <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+      Send as SMS
+    <% end %>
+
+    <%= link_to edit_todo_path(todo), class: "btn btn-default btn-xs disabled" do %>
+      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+      Edit
+    <% end %>
+
+    <%= link_to todo, method: :delete, 
+                      data: { confirm: "Delete this Todo?" }, 
+                      class: "btn btn-danger btn-xs disabled" do  %>
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      Delete
+    <% end %>
+  </td>
+</tr>
