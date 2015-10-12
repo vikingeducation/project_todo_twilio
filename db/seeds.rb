@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+100.times do
+  description = Faker::Lorem.paragraph(2)
+  due = DateTime.now + rand(0..100) 
+  Todo.create(due: due, description: description)
+end

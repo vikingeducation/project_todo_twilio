@@ -7,7 +7,7 @@ class TodosController < ApplicationController
 
   def index
     @todo   = Todo.new
-    @todos  = Todo.order(:due)
+    @todos  = Todo.order(:due).paginate(:page => params[:page])
   end
 
 
@@ -19,7 +19,7 @@ class TodosController < ApplicationController
       redirect_to todos_path
     else
       flash.now[:danger] = "Whoops, something went wrong."
-      @todos = Todo.order(:due)
+      @todos = Todo.order(:due).paginate(:page => params[:page])
       render :index
     end
   end
@@ -27,7 +27,7 @@ class TodosController < ApplicationController
 
   def edit
     @todo = Todo.find(params[:id])
-    @todos  = Todo.order(:due)
+    @todos  = Todo.order(:due).paginate(:page => params[:page])
     render :index
   end
 
@@ -40,7 +40,7 @@ class TodosController < ApplicationController
       redirect_to todos_path
     else
       flash.now[:danger] = "Whoops, something went wrong."
-      @todos = Todo.order(:due)
+      @todos = Todo.order(:due).paginate(:page => params[:page])
       render :index
     end
   end

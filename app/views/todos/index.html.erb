@@ -1,7 +1,7 @@
 <%= render "todo_form" %>
 
 <% unless @todos.empty? %>
-
+  
   <table class="table table-hover">
     <thead>
       <tr>
@@ -14,5 +14,9 @@
 
     <%= render @todos %>
   </table>
+
+  <div class="text-center">
+    <%= will_paginate @todos, renderer: BootstrapPagination::Rails %>
+  </div>
   
 <% end %>

@@ -38,6 +38,13 @@ gem 'bootstrap-sass'
 # Twilio
 gem 'twilio-ruby', '~> 4.2.1'
 
+# Paginate
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
+
+# Faker
+gem 'faker'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
