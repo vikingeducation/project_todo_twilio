@@ -1,5 +1,7 @@
 <h1>My Todos</h1>
 
-<%= link_to fa_icon('plus', text: "Add Todo"), new_todo_path, class: 'btn btn-primary' %>
+<div class="well">
+  <%= render 'form' %>
+</div>
 
 <%= render @todos %>
