@@ -1,4 +1,6 @@
-# todo_twilio
+# Todo Manager App
+
+A basic task manager app but with Twilio integration for SMS notifications!
 
 [The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
 
