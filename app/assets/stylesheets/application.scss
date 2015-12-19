@@ -1,6 +1,9 @@
+$brand-primary: #7C6154;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "pages";
 
 body {
   padding-top: 50px;
