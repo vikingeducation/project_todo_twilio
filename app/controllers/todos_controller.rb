@@ -19,6 +19,26 @@ class TodosController < ApplicationController
     redirect_to todos_url
   end
 
+  def edit
+    todos = Todo.new(retrieve_todos, retrieve_last_id)
+    # More efficient to pass whole todo in params, but maybe changing this to active record in future anyway?
+    @todo = todos.find_todo(params[:id].to_i)
+  end
+
+  def update
+    todos = Todo.new(retrieve_todos, retrieve_last_id)
+
+    description = params[:description]
+    due = params[:due]
+    id = params[:id].to_i
+    todo_list = todos.update_todo(description, due, id)
+
+    save_todos(todo_list, todos.last_id)
+
+    flash[:notice] = "Successfully updated '#{description}'!"
+    redirect_to todos_url
+  end
+
   def destroy
     todos = Todo.new(retrieve_todos, retrieve_last_id)
 

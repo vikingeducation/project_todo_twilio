@@ -1,0 +1,17 @@
+<h1>Edit Todo</h1>
+
+<%= form_tag(todo_path(@todo['id']), method: :put, class: 'form-inline') do  %>
+  <div class="form-group">
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @todo['description'], class: "form-control", placeholder: 'Make groceries'  %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :due %>
+    <%= date_field_tag :due, @todo['due'], class: "form-control" %>
+  </div>
+
+  <%= hidden_field_tag :id, @todo['id'] %>
+
+  <%= button_tag fa_icon('pencil', text: "Update Todo"), class: 'btn btn-primary' %>
+<% end %>
