@@ -14,6 +14,8 @@ gem 'awesome_print'
 gem 'thin'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
+gem 'twilio-ruby', '~> 4.2.1'
+gem 'figaro'
 
 group :production do
   gem 'pg'
