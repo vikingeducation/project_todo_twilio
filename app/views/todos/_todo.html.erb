@@ -1,3 +1,3 @@
 <p>
-  <%= todo['description'] %> (<%= todo['due'] %>)
+  <%= todo['id'] %>: <%= todo['description'] %> (<em>Due: <%= todo['due'] %></em>) <%= link_to fa_icon('trash'), todo_path(todo['id']), method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>

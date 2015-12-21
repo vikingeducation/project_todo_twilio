@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :todos, only: [:index, :create]
+  resources :todos, only: [:index, :create, :destroy]
 
   get 'pages/index'
 

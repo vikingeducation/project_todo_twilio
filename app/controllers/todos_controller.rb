@@ -2,7 +2,7 @@ require 'json'
 
 class TodosController < ApplicationController
   def index
-    todos = Todo.new(retrieve_todos)
+    todos = Todo.new(retrieve_todos, retrieve_last_id)
     @todo_list = todos.todo_list
   end
 
@@ -13,9 +13,19 @@ class TodosController < ApplicationController
     due = params[:due]
     todo_list = todos.insert_todo(description, due)
 
-    save_todos(todo_list)
+    save_todos(todo_list, todos.last_id)
 
     flash[:notice] = "Successfully added '#{description}'!"
+    redirect_to todos_url
+  end
+
+  def destroy
+    todos = Todo.new(retrieve_todos, retrieve_last_id)
+
+    todo_list = todos.remove_todo(params[:id].to_i)
+    save_todos(todo_list, todos.last_id)
+
+    flash[:notice] = "Successfully deleted!"
     redirect_to todos_url
   end
 
@@ -30,14 +40,11 @@ class TodosController < ApplicationController
   end
 
   def retrieve_last_id
-    if cookies[:last_id]
-      JSON.parse(cookies[:last_id])
-    else
-      0
-    end
+    cookies[:last_id].to_i
   end
 
-  def save_todos(todo_list)
+  def save_todos(todo_list, last_id)
     cookies.permanent[:todo_list] = todo_list.to_json
+    cookies.permanent[:last_id] = last_id
   end
 end

@@ -28,4 +28,7 @@ class Todo
     @todo_list
   end
 
+  def remove_todo(todo_id)
+    @todo_list.select!{|todo| todo['id'] != todo_id}
+  end
 end
