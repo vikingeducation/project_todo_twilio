@@ -4,4 +4,8 @@
   <%= render 'form' %>
 </div>
 
-<%= render @todos %>
+<% @todos.each do |todo| %>
+  <p>
+    <%= todo.description %> (<%= todo.due %>)
+  </p>
+<% end %>
