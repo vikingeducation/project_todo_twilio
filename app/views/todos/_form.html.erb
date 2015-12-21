@@ -1,0 +1,13 @@
+<%= form_tag(todos_path, method: :post, class: 'form-inline') do  %>
+  <div class="form-group">
+    <%= label_tag :description %>
+    <%= text_field_tag :description, nil, class: "form-control", placeholder: 'Make groceries' %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :due %>
+    <%= date_field_tag :due, nil, class: "form-control" %>
+  </div>
+
+  <%= button_tag fa_icon('plus', text: "Add Todo"), class: 'btn btn-primary' %>
+<% end %>
