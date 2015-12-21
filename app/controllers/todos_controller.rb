@@ -8,10 +8,14 @@ class TodosController < ApplicationController
 
   def create
     todos = Todo.new(retrieve_todos, retrieve_last_id)
+
     description = params[:description]
     due = params[:due]
     todo_list = todos.insert_todo(description, due)
+
     save_todos(todo_list)
+
+    flash[:notice] = "Successfully added '#{description}'!"
     redirect_to todos_url
   end
 
