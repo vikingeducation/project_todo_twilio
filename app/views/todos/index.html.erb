@@ -4,8 +4,8 @@
   <%= render 'form' %>
 </div>
 
-<% @todos.each do |todo| %>
+<% @todo_list.each do |todo| %>
   <p>
-    <%= todo.description %> (<%= todo.due %>)
+    <%= todo['description'] %> (<%= todo['due'] %>)
   </p>
 <% end %>
