@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :todos, only: [:index, :create, :destroy, :edit, :update]
 
+  post 'send_text' => 'texts#send_text'
   get 'pages/index'
 
   root 'pages#index'
