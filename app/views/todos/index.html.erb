@@ -1,0 +1,8 @@
+<h1>Todo List</h1>
+<ul>
+  <% @sorted_todos.each do |todo| %>
+    <%= render partial: 'todo', locals: {todo: todo} %>
+  <% end %>
+</ul>
+
+<%= render partial: 'form', locals: {todo: @todo} %>
