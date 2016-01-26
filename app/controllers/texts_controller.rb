@@ -1,10 +1,9 @@
 class TextsController < ApplicationController
 
   def send_text
-    byebug
-    
-    @handler = SMSHandler.new(API_ID, TOKEN)
-    if @handler.send_text(NUMBER, MY_NUMBER, desc)
+
+    @handler = SMSHandler.new
+    if @handler.send_text(params[:desc])
       flash[:success] = "Text sent"
       redirect_to todos_path
     else
