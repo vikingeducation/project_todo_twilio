@@ -1,8 +1,14 @@
 <h1>Todo List</h1>
-<ul>
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Due Date</th>
+    <th>Update Task</th>
+    <th>Delete Task</th>
+  </tr>
   <% @sorted_todos.each do |todo| %>
     <%= render partial: 'todo', locals: {todo: todo} %>
   <% end %>
-</ul>
+</table>
 
 <%= render partial: 'form', locals: {todo: @todo} %>
