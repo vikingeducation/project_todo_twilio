@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root 'todos#index'
   resources :todos
 
+  # text route, send the to-do item's text
+  post 'texts/' => 'texts#send_text'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
