@@ -8,8 +8,13 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(whitelisted_params)
-    @todo.save
-    redirect_to todos_path
+    if @todo.save
+      redirect_to todos_path
+      flash[:success] = "Task created"
+    else
+      render 'index'
+      flash.now[:error] = "Create failed"
+    end
   end
 
   def show
@@ -18,9 +23,29 @@ class TodosController < ApplicationController
 
   def destroy
     @todo = Todo.find(params[:id])
-    @todo.destroy
-    redirect_to todos_path
-  end 
+    if @todo.destroy
+      redirect_to todos_path
+      flash[:success] = "Task deleted"
+    else
+      render 'index'
+      flash.now[:error] = "Delete failed"
+    end
+  end
+
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+
+  def update
+    @todo = Todo.find(params[:id])
+    if @todo.update(whitelisted_params)
+      redirect_to todos_path
+      flash[:success] = "Task updated"
+    else
+      render 'edit'
+      flash.now[:error] = "Update failed"
+    end
+  end
 
   private
 

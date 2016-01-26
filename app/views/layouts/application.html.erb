@@ -8,6 +8,9 @@
 </head>
 <body>
 
+<% if flash %>
+  <%= render partial: 'flash', locals: {flash: flash} %>
+<% end %>
 <%= yield %>
 
 </body>
