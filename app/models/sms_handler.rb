@@ -5,6 +5,7 @@ class SMSHandler
     environment: "production",
     path: "config/application.yml"
   )
+  
   Figaro.load
 
   API_ID = Figaro.env.API_ID
