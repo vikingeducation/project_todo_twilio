@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
 
-  def index  # combination of new and index
+  def index  # combination of new, edit and index
     @todos = Todo.sorted
     @todo = Todo.new
   end
@@ -16,6 +16,7 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
+
   def update
     @todo = Todo.find(params[:id])
     if @todo.update(whitelisted_params)
@@ -25,6 +26,7 @@ class TodosController < ApplicationController
     end
     redirect_to todos_path
   end
+
 
   def destroy
     @todo = Todo.find(params[:id])
