@@ -3,7 +3,7 @@ class CreateTodos < ActiveRecord::Migration
     create_table :todos do |t|
 
       t.string :text
-      t.timestamp :completion_date 
+      t.timestamp :completion_date, null: false, default: Time.now
 
       t.timestamps null: false
     end

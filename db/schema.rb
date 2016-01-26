@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20160126174025) do
 
   create_table "todos", force: :cascade do |t|
     t.string   "text"
-    t.datetime "completion_date"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "completion_date", default: '2016-01-26 19:20:56', null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
 end

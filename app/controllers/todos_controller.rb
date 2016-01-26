@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
 
   def index  # combination of new and index
-    @todos = Todo.all
+    @todos = Todo.sorted
     @todo = Todo.new
   end
 
