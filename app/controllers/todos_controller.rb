@@ -2,7 +2,12 @@ class TodosController < ApplicationController
 
   def index  # combination of new and index
     @todos = Todo.sorted
-    @todo = Todo.new
+    
+    if params[:id]  
+      @todo = Todo.find(params[:id])
+    else
+      @todo = Todo.new
+    end
   end
 
 
@@ -16,8 +21,29 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
+  def edit
+    @todo = Todo.find(params[:id])
+  end
 
+  def update
+    @todo = Todo.find(params[:id])
+    if @todo.update(whitelisted_params)
+      flash[:success] = "#{@todo.text} saved"
+    else
+      flash[:error] = "Failed to save #{@todo.text}"
+    end
+    redirect_to todos_path
+  end
 
+  def destroy
+    @todo = Todo.find(params[:id])
+    if @todo.destroy
+      flash[:success] = "#{@todo.text} deleted"
+    else
+      flash[:error] = "Failed to delete #{@todo.text}"
+    end
+    redirect_to todos_path
+  end
 
 
 
