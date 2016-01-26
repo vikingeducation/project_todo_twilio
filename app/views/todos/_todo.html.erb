@@ -1,0 +1,4 @@
+<li><%= link_to "#{todo.text}",todo_path(todo.id)%></li>
+<li>Completion Date: <%=todo.date %></li>
+<%= link_to "Edit", edit_todo_path(todo.id) %>
+<%= link_to "Delete", todo_path(todo.id), method: :delete, data: { confirm: "Really delete this task?"} %></li>
