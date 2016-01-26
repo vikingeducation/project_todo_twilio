@@ -1,14 +1,25 @@
 class SMSHandler
   attr_accessor :client
 
-  def initialize(api_id, token)
-    @client = Twilio::REST::Client.new(api_id, token)
+  Figaro.application = Figaro::Application.new(
+    environment: 'production',
+    path: 'config/application.yml'
+    )
+  Figaro.load
+
+  API_ID = Figaro.env.API_ID
+  TOKEN = Figaro.env.TOKEN
+  NUMBER = Figaro.env.NUMBER
+  MY_NUMBER = Figaro.env.MY_NUMBER
+
+  def initialize
+    @client = Twilio::REST::Client.new(API_ID, TOKEN)
   end
 
-  def send_text(from, to, body)
+  def send_text(body)
     @client.messages.create(
-      from: from,
-      to: to,
+      from: NUMBER,
+      to: MY_NUMBER,
       body: body
       )
   end
