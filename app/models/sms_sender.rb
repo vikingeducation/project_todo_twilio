@@ -14,7 +14,7 @@ class SMSSender
     @twilio_phone = Figaro.env.twilio_phone
     @my_phone = Figaro.env.my_phone
     @client = Twilio::REST::Client.new( acct_sid, acct_token )
-    binding.pry
+    
   end
 
   def send_sms(message)
