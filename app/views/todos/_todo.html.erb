@@ -1,4 +1,5 @@
 <li>
   <%= todo.description %>
-  <%= todo.due_date %>
+  <%= todo.due_date.strftime("%A, %b %d, %Y") %>
+  <%= link_to "Delete Task", todo_path(todo), method: :delete, data: {confirm: "Did you finish the Task?"} %>
 </li>

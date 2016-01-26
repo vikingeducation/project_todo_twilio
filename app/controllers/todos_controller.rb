@@ -9,12 +9,18 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(whitelisted_params)
     @todo.save
-    redirect_to todo_path(@todo)
+    redirect_to todos_path
   end
 
   def show
     @todo = Todo.find(params[:id])
   end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+    redirect_to todos_path
+  end 
 
   private
 
