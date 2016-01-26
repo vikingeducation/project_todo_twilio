@@ -2,12 +2,7 @@ class TodosController < ApplicationController
 
   def index  # combination of new and index
     @todos = Todo.sorted
-    
-    if params[:id]  
-      @todo = Todo.find(params[:id])
-    else
-      @todo = Todo.new
-    end
+    @todo = Todo.new
   end
 
 

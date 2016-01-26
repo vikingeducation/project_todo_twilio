@@ -24,6 +24,7 @@
       <% @todos.each do |todo| %>
 
         <%= render partial: "todo_item", locals: {:todo => todo} %>
+        <%= render partial: "edit_form", locals: {:id => todo.id} %>
       <% end %>
 
     </table>
