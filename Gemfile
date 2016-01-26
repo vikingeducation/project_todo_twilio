@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #Figaro
 gem 'figaro'
 
+#Twilio
+gem 'twilio-ruby', '~> 4.9'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
