@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
     resources :todos
 
+    get "/texts/:text" => "texts#send_message"
+
     root 'todos#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
