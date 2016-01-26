@@ -1,6 +1,6 @@
-class TextsController
+class TextsController < ApplicationController
 
-  def send_message
+  def create
     sms = SMSSender.new
     sms.send_sms(params[:text])
     redirect_to todos_path

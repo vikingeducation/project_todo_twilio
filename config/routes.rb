@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
     resources :todos
-
-    get "/texts/:text" => "texts#send_message"
+    resources :texts, only: [:create]
+    #post "" => "texts#send_message"
 
     root 'todos#index'
 
