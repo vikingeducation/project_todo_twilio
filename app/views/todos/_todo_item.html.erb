@@ -1,7 +1,10 @@
 <tr>
-  <td><%=link_to "Edit", edit_todo_path(todo), :class => "btn btn-default" %></td>
+  <!-- <td><%=link_to "Edit", edit_todo_path(todo), :class => "btn btn-default" %></td>-->
+  <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModalEdit">Edit</button></td>
   <td><%= todo.id %></td>
   <td><%= todo.text %></td>
   <td><%= format_time(todo.completion_date) %></td>
   <td><%= link_to "Delete", todo_path(todo), method: "delete" %></td>
 </tr>
+
+        <%= render partial: "edit_form", locals: {:id => todo.id} %>
