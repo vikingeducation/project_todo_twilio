@@ -5,7 +5,7 @@ class SMSSender
 
   def initialize
     Figaro.application = Figaro::Application.new( {
-    environment: "development",
+    environment: "production",
     path:"./config/application.yml"} )
     Figaro.load
 
