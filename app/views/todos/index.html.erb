@@ -1,0 +1,9 @@
+<h1>All Tasks</h1>
+
+<ul>
+<% @todos.each do |todo| %>
+
+  <%= render partial: "todo", locals: { todo: todo }%>
+
+<% end %>
+</ul>
