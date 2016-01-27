@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
+
 # Use sqlite3 as the database for Active Record
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -41,6 +43,11 @@ gem 'twilio-ruby'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+<<<<<<< HEAD
+=======
+
+  # Use sqlite3 as the database for Active Record
+>>>>>>> 76847ecc8d43295aff799efcb45db038ce7927d8
   gem 'sqlite3'
 end
 
@@ -54,6 +61,12 @@ group :development do
 end
 
 group :production do
+<<<<<<< HEAD
   gem 'rails_12factor'
   gem 'pg'
 end
+=======
+  gem 'pg'
+  gem 'rails_12factor'
+end
+>>>>>>> 76847ecc8d43295aff799efcb45db038ce7927d8
