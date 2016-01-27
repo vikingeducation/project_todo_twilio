@@ -2,6 +2,6 @@
   <td><%= todo.description %></td>
   <td><%= todo.due_date.strftime("%A, %b %d, %Y") %></td>
   <td><%= link_to "Update Task", edit_todo_path(todo) %></td>
-  <td><%= link_to "Delete Task", todo_path(todo), method: :delete, data: {confirm: "Did you finish the Task?"} %></td>
+  <td class='danger'><%= link_to "Delete Task", todo_path(todo), method: :delete, data: {confirm: "Did you finish the Task?"} %></td>
   <td><%= link_to "Send Text", {controller: 'texts', action: 'send_text', desc: todo.description} %></td>
 </tr>

@@ -1,14 +1,24 @@
-<h1>Todo List</h1>
-<table>
-  <tr>
-    <th>Description</th>
-    <th>Due Date</th>
-    <th>Update Task</th>
-    <th>Delete Task</th>
-  </tr>
-  <% @sorted_todos.each do |todo| %>
-    <%= render partial: 'todo', locals: {todo: todo} %>
-  <% end %>
-</table>
+<div class='container'>
+  <div class='row text-center'>
+    <h1>Todo List</h1>
+  </div>
 
-<%= render partial: 'form', locals: {todo: @todo} %>
+  <div class='row'>
+    <table class='table table-striped table-bordered'>
+      <tr>
+        <th>Description</th>
+        <th>Due Date</th>
+        <th>Update Task</th>
+        <th class='danger'>Delete Task</th>
+        <th>Send Text Reminder</th>
+      </tr>
+      <% @sorted_todos.each do |todo| %>
+        <%= render partial: 'todo', locals: {todo: todo} %>
+      <% end %>
+    </table>
+  </div>
+  
+  <div class='row'>
+    <%= render partial: 'form', locals: {todo: @todo} %>
+  </div>
+</div>
