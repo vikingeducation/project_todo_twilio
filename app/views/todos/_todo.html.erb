@@ -5,4 +5,4 @@
 
 <%= link_to "Delete", todo_path(todo.id), method: :delete, data: { confirm: "Really delete this task?"} %></li>
 
-<%= link_to "Send SMS", texts_path(text: "#{todo.text}"), method: :post %>
+<%= link_to "Send SMS", texts_path(text: todo.text), method: :post %>
