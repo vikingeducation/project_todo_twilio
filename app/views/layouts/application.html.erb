@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ProjectTodoTwilio</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= render partial: 'bootstrap' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if flash %>
+  <%= render partial: 'flash', locals: {flash: flash} %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>
