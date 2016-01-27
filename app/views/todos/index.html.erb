@@ -1,0 +1,37 @@
+<!-- Trigger the modal with a button -->
+<div class = "row well">
+  <div class = "col-sm-10">
+
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create new to-do item</button>
+  </div>
+</div>
+
+<div class = "row">
+  <div class = "col-sm-10">
+      <!-- new form -->
+      <%= render partial: "form", locals: {:todo => @todo} %>
+
+
+    <table class = "table table-striped">
+
+      <tr>
+        <th>Done</th>
+        <th></th>
+        <th>Text Reminder</th>
+        <th>Id</th>
+        <th>Item</th>
+        <th>Due Date</th> 
+        <th>        </th>
+      </tr>
+
+      <% @todos.each do |todo| %>
+        <!-- edit form -->
+        <%= render partial: "todo_item", locals: {:todo => todo} %>
+        <%= render partial: "edit_form", locals: {:id => todo.id} %>
+      <% end %>
+
+    </table>
+
+  </div>
+</div>
+

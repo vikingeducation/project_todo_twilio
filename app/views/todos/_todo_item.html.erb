@@ -1,0 +1,29 @@
+<tr class = "<%= todo.complete %>">
+  <td>
+    <% unless todo.complete %>
+    <%= link_to "Complete","todos/complete/#{todo.id}", :method => 'post'  %>
+    <% end %>
+  </td>
+
+  <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModalEdit">Edit</button></td>
+
+  <td>
+    <%= form_for todo, :url=> "/texts", :html => {:method => :post} do |f| %>
+
+      <%= f.hidden_field :text %>
+      <%= f.hidden_field :completion_date %>
+
+      <%= f.submit "Send SMS Reminder", :class => "btn btn-primary btn-sm" %>
+
+    <% end %>
+  </td>
+
+
+  <td><%= todo.id %></td>
+  <td><%= todo.text %></td>
+  <td><%= format_time(todo.completion_date) %></td>
+
+  <td><%= link_to "Delete", todo_path(todo), method: "delete" %></td>
+
+</tr>
+
