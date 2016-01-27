@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'todos#index'
   resources :todos
+  post 'todos/complete/:id' => 'todos#complete_task'
 
   # text route, send the to-do item's text
   post 'texts/' => 'texts#send_text'

@@ -1,4 +1,10 @@
-<tr>
+<tr class = "<%= todo.complete %>">
+  <td>
+    <% unless todo.complete %>
+    <%= link_to "Complete","todos/complete/#{todo.id}", :method => 'post'  %>
+    <% end %>
+  </td>
+
   <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModalEdit">Edit</button></td>
 
   <td>
@@ -16,6 +22,8 @@
   <td><%= todo.id %></td>
   <td><%= todo.text %></td>
   <td><%= format_time(todo.completion_date) %></td>
+
   <td><%= link_to "Delete", todo_path(todo), method: "delete" %></td>
+
 </tr>
 

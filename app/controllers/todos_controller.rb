@@ -9,9 +9,9 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(whitelisted_params)
     if @todo.save
-      flash[:success] = "#{@todo.text} saved"
+      flash[:success] = "#{@todo.id} saved"
     else
-      flash[:error] = "Failed to save #{@todo.text}"
+      flash[:danger] = "Failed to save #{@todo.id}"
     end
     redirect_to todos_path
   end
@@ -20,9 +20,9 @@ class TodosController < ApplicationController
   def update
     @todo = Todo.find(params[:id])
     if @todo.update(whitelisted_params)
-      flash[:success] = "#{@todo.text} saved"
+      flash[:success] = "#{@todo.id} saved"
     else
-      flash[:error] = "Failed to save #{@todo.text}"
+      flash[:danger] = "Failed to save #{@todo.id}"
     end
     redirect_to todos_path
   end
@@ -31,9 +31,19 @@ class TodosController < ApplicationController
   def destroy
     @todo = Todo.find(params[:id])
     if @todo.destroy
-      flash[:success] = "#{@todo.text} deleted"
+      flash[:success] = "#{@todo.id} deleted"
     else
-      flash[:error] = "Failed to delete #{@todo.text}"
+      flash[:danger] = "Failed to delete #{@todo.id}"
+    end
+    redirect_to todos_path
+  end
+
+  def complete_task
+    @todo = Todo.find(params[:id])
+    if @todo.update(:complete => true)
+      flash[:success] = "#{@todo.id} Completed"
+    else
+      flash[:danger] = "Failed to complete #{@todo.id}"
     end
     redirect_to todos_path
   end
@@ -43,7 +53,7 @@ class TodosController < ApplicationController
 
 
   def whitelisted_params
-    params.require(:todo).permit(:text, :completion_date)
+    params.require(:todo).permit(:text, :completion_date, :complete)
   end
 
 end
