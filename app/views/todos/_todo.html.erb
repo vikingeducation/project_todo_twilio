@@ -1,0 +1,9 @@
+
+<span>
+  <div><%= todo.task %></div>
+  <div><%= todo.date %></div>
+  <%= link_to "Delete", todo_path(todo.id), method: "delete" %>
+  <%= link_to "Edit", edit_todo_path(todo.id) %>
+</span>
+
+<!--to_formatted_s(:rfc822)-->
