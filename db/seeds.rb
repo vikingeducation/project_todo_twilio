@@ -9,3 +9,5 @@
 10.times do |num|
   Todo.create(text: "#{num} to-do item", completion_date: Time.now)
 end 
+
+Todo.create(text: "I'm Done", completion_date: Time.now, complete: true)

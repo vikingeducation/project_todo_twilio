@@ -1,6 +1,5 @@
 class Todo < ActiveRecord::Base
 
-  scope :sorted, lambda {order("todos.id DESC")}
-
+  scope :sorted, lambda {order("todos.complete ASC, todos.id DESC")}
 
 end

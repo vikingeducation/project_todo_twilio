@@ -10,7 +10,7 @@
   <div class = "container">
     
     <% flash.each do |type, message| %>
-      <div>
+      <div class="alert-<%=type%>">
         <strong><%= type %>! <%= message %></strong>
       </div>
     <% end %>
