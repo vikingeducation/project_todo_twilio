@@ -1,0 +1,9 @@
+<h1>Todo List</h1>
+
+<%= render partial: "form", locals: { todo: Todo.new }%>
+
+<% if @todos %>
+  <% @todos.each do |todo| %>
+    <%= render partial: "todo", locals: { todo: todo } %>
+  <% end %>
+<% end %>
