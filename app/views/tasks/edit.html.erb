@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Edit Task</h1>
+    <%= form_for @task do |f| %>
+
+      <ul>
+        <% @task.errors.full_messages.each do |err| %>
+          <li><%= err %></li>
+        <% end %>
+      </ul>
+
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control", placeholder: "Pick up dry cleaning" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control", placeholder: "Kim's Cleaners on W58 and 7th. Don't forget the pick up ticket!" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :deadline %>
+        <%= f.text_field :deadline, class: "form-control", placeholder: "YYYY-MM-DD" %>
+      </div>
+
+      <%= f.submit "Update Task", class: "btn btn-large btn-primary btn-block" %>
+
+    <% end %>
+  </div>
+</div>

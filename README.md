@@ -1,3 +1,7 @@
-# todo_twilio
+# CRUDdy Task Management
 
-[The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
+An assignment completed by [Stephen Mayeux](https://github.com/StephenMayeux) for [Viking Code School](http://vikingcodeschool.com)
+
+## Project Description
+
+A simple project management tool build with Ruby on Rails. Create new tasks, display them, and delete them when you are done!
