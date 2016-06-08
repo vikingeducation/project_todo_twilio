@@ -1,0 +1,6 @@
+<div class="col-md-10 col-md-offset-1">
+  <h2><%= @task.title %></h2>
+  <p>Due in <%= distance_of_time_in_words(Time.now, @task.deadline) %></p>
+  <hr>
+  <p><%= @task.description %></p>
+</div>
