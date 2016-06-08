@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Task.destroy_all
+
+(1..9).each do |task_num|
+  task_num = Task.new
+  task_num.title = "Example Task"
+  task_num.description = "Lorem ipsum blah blah blah. Lorem ipsum blah blah blah. Lorem ipsum blah blah blah. Lorem ipsum blah blah blah."
+  task_num.deadline = "2016-07-04"
+  task_num.save
+end

@@ -1,0 +1,5 @@
+<div class="task-box">
+  <h2><%= task.title %></h2>
+  <p>Due in <%= distance_of_time_in_words(Time.now, task.deadline) %></p>
+  <p><%= task.description %></p>
+</div>
