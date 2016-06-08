@@ -15,9 +15,11 @@ class TasksController < ApplicationController
     def create
       @task = Task.new(white_listed_params)
       if @task.save
+        flash[:success] = "New task was created!"
         redirect_to task_path(@task)
       else
-        render 'new'
+        flash[:danger] = "The task couldn't be created!"
+        render :new
       end
     end
 
@@ -25,6 +27,19 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
       @task.destroy
       redirect_to root_path
+    end
+
+    def edit
+      @task = Task.find(params[:id])
+    end
+
+    def update
+      @task = Task.find(params[:id])
+      if @task.update_attributes(white_listed_params)
+        redirect_to task_path(@task)
+      else
+        render :edit
+      end
     end
 
     private
