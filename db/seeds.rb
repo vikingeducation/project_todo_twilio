@@ -9,5 +9,5 @@
 time = Time.now.strftime("%Y-%m-%d")
 
 5.times do |i|
-  Task.create({ title: "Hello #{i}", description: "This is a task", complete_date: time })
+  Task.create({ title: "Hello #{i}", description: "This is a task", complete_date: time, priority: (0..5).to_a.sample })
 end

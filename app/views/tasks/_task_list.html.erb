@@ -4,7 +4,7 @@
   <% if task.completed %>
     <strike> <%= task.title %> </strike>
   <% else %>
-    <p><%= task.priority %></p>
+    <%= task.priority %>
     <%= link_to "#{task.title}", task %>
     <%= link_to "edit", edit_task_path(task) %>
     <%= link_to "complete", complete_path(task), :method => :post %>
