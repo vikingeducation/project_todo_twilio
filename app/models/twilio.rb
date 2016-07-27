@@ -1,4 +1,4 @@
-class Twilio
+class TwilioAPI
   attr_reader :client
 
   def initialize
@@ -19,10 +19,10 @@ class Twilio
     @client = Twilio::REST::Client.new
   end
 
-  def text(from, to, message)
+  def text(message)
     @client.messages.create(
-      from: from,
-      to: to,
+      from: '15093591086',
+      to: '15092709717',
       body: message
       )
   end
