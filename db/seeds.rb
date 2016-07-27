@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+time = Time.now.strftime("%Y-%m-%d")
+
+5.times do |i|
+  Task.create({ title: "Hello #{i}", description: "This is a task", complete_date: time })
+end
