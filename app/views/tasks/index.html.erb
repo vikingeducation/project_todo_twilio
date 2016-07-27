@@ -1,6 +1,8 @@
 <h1>All tasks (according to deadline)</h1>
 
-<% @tasks.each do |task| %>
 <ul>
-  <li></li>
+  <% @tasks.each do |task| %>
+  <%= render :partial => "task_output", :locals => { :task => task } %>
+  <br>
+  <% end %>
 </ul>
