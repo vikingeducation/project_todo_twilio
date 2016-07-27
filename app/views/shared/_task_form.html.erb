@@ -3,7 +3,5 @@
   <%= f.text_field :description %>
   <%= f.label "Completed?" %>
   <%= f.check_box :completed_at, {}, Time.now %>
-  <%= f.label "Soft Delete" %>
-  <%= f.check_box :soft_delete, {}, true %>
   <%= f.submit %>
 <% end %>

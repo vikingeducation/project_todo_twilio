@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727173903) do
+ActiveRecord::Schema.define(version: 20160727192636) do
 
   create_table "tasks", force: :cascade do |t|
     t.text     "description"
     t.datetime "completed_at"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.boolean  "soft_delete"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "soft_delete",  default: false
   end
 
 end

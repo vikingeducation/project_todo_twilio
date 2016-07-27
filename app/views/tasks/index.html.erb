@@ -3,4 +3,12 @@
   <%= render partial: 'shared/task_display', locals: { task: task } %>
   <span><%= link_to "edit", edit_task_path(task) %>
   <span><%= link_to "delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" }%></span>
+  <span>
+    <form action="<%= task_path(task) %>", method="post">
+      <input type="hidden" name="authenticity_token"  value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="task[soft_delete]" value="true">
+      <input type="submit" value="soft delete">
+    </form>
+  </span>
 <% end %>
