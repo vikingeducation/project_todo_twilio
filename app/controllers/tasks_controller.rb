@@ -24,21 +24,22 @@ class TasksController < ApplicationController
     end
   end
 
-  def soft_delete
-    @task = Task.find(params[:id])
-    @task.soft_delete = true
-    flash[:success] = "Task #{@task.title} was soft deleted(?)"
-  end
-
   def edit
     @task = Task.find(params[:id])
   end
 
   def update
     @task = Task.find(params[:id])
-    @task.update(task_params)
-    flash[:success] = "Task #{@task.title} was updated"
-    redirect_to task_path(@task)
+    if params[:task][:soft_delete]
+      @task.soft_delete_flag = true
+      @task.save
+      flash[:success] = "Task #{@task.title} was soft deleted(?)"
+      redirect_to tasks_path
+    else
+      @task.update(task_params)
+      flash[:success] = "Task #{@task.title} was updated"
+      redirect_to task_path(@task)
+    end
   end
 
   def destroy
@@ -50,6 +51,6 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :description,:completion_date)
+    params.require(:task).permit(:title, :description,:completion_date, :soft_delete_flag)
   end
 end
