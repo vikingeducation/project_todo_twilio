@@ -1,3 +1,4 @@
-# todo_twilio
+#Twilio TODO App
+## by Graham T and Adrian M
 
-[The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
+Description here: 
