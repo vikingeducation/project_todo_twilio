@@ -20,5 +20,5 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore environment_vars env.
-environment_vars.env
+# Ignore env.
+.env

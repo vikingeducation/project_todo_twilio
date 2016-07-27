@@ -24,11 +24,16 @@ class TextsController < ApplicationController
   end
 
   def send_text
+    flash[:success] = "Text message sent."
     @twilio = TwilioAPI.new
     @twilio.client.messages.create(
       from: "#{TwilioAPI::TWILIO_PHONE}",
       to: "#{TwilioAPI::MY_PHONE}",
       body: "From CJ and Chris's Task Twilio app"
     )
+    if flash[:success] = "Text message sent."
+      redirect_to tasks_path
+    end
+
   end
 end
