@@ -6,4 +6,10 @@ module TasksHelper
     end
   end
 
+  def parse_date(params)
+    %w(1 2 3).map { |e| params["task"]["date(#{e}i)"].to_i }
+  end
+
+
+
 end

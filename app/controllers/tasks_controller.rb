@@ -1,6 +1,8 @@
 require 'date'
 class TasksController < ApplicationController
 
+  include TasksHelper
+
   def index
     @tasks = Task.all
   end
@@ -14,7 +16,9 @@ class TasksController < ApplicationController
   end
 
   def create
+    date = parse_date(params)
     @task = Task.new(whitelisted_task_params)
+    @task.date = date
     if @task.save
       flash[:success] = "Task Saved!"
       redirect_to @task
@@ -55,6 +59,6 @@ class TasksController < ApplicationController
   private
 
   def whitelisted_task_params
-    params.require(:task).permit(:date, :description)
+    params.require(:task).permit(:description)
   end
 end
