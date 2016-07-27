@@ -7,6 +7,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
+      flash[:success] = "Your task as been created!"
       redirect_to task_path(@task.id)
     else
       flash.now[:error] = "description must be longer than 4 characters"
@@ -20,8 +21,8 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-
-    if Task.update(params[:id], task_params)
+    if @task.update(task_params)
+      flash[:success] = "Your task as been updated!"
       redirect_to task_path(@task.id)
     else
       flash.now[:error] = "description must be longer than 4 characters"
@@ -41,8 +42,10 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     if @task.delete
+      flash[:success] = "Your task as been destroyed!"
       redirect_to tasks_path
     else
+      flash.now[:error] = "Something went wrong. Your task was not destroyed. :("
       redirect_to tasks_path
     end
   end
