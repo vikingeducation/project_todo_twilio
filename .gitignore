@@ -17,3 +17,6 @@
 /tmp
 
 # Ignore all environment files
+
+# Ignore application configuration
+/config/application.yml
