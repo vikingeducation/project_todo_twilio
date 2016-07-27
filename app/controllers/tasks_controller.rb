@@ -1,8 +1,11 @@
 class TasksController < ApplicationController
 
   def index
-    if params[:sort_order]
+    case params[:sort_order]
+    when 'asc', 'desc'
       @tasks = Task.order(priority: params[:sort_order])
+    when 'created_at'
+      @tasks = Task.order(:created_at)
     else
       @tasks = Task.all
     end
