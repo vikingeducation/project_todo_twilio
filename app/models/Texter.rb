@@ -1,13 +1,15 @@
 require 'twilio-ruby'
-require_relative 'env'
+require '~/Desktop/env.rb'
 
 class Texter
 
-# account_sid = TWILIO_SID
-# auth_token = TWILIO_SECRET
+account_sid = TWILIO_SID
+auth_token = TWILIO_SECRET
+phone_to = PHONE
+phone_from = PHONE_FROM
 
 def initialize(text)
-  @client = Twilio::REST::Client.new "AC736c03bafc1edfe06f96e7df1e23e83d", "b9a609612a1a8b2ea3001a8392800520"
+  @client = Twilio::REST::Client.new account_sid, auth_token
   @body = text
 end
 
