@@ -13,7 +13,6 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.update_attribute
     if @task.save
       redirect_to @task
     else
@@ -44,6 +43,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require("task").permit("description")
+    params.require("task").permit("description", "completed_at")
   end
 end
