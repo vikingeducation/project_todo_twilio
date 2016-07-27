@@ -4,7 +4,7 @@
   <% else %>
     <li><%= task.description %></li>
   <% end %>
-  <li><%= task.completed_at %></li>
+  <%= content_tag(:li,task.completed_at) if task.completed_at %>
 </ul>
 <form action="<%= reminder_path %>"  method="post">
   <input type="hidden" name="task[id]" value="<%= task.id %>" />

@@ -13,7 +13,7 @@ class TasksController < ApplicationController
 
   
   def create
-    @task = Task.new(task_params)
+    @task = Task.new(description_param)
     if @task.save
       flash[:success] = "Task created."
       redirect_to @task
@@ -29,11 +29,15 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    if soft_delete_param
+    case
+    when soft_delete_param['soft_delete']
       # Toggle soft_delete attribute.
       toggle_soft_delete
       redirect_to tasks_path
-    elsif @task.update(task_params)
+    when completed_param['completed_at']
+      @task.update(completed_param)
+      redirect_to tasks_path
+    when @task.update(description_param)
       flash[:success] = "Task updated."
       redirect_to @task
     else
@@ -52,8 +56,12 @@ class TasksController < ApplicationController
 
   private
 
-    def task_params
-      params.require("task").permit("description", "completed_at")
+    def description_param
+      params.require("task").permit("description")
+    end
+
+    def completed_param
+      params.require("task").permit("completed_at")
     end
 
     def soft_delete_param

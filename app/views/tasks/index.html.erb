@@ -11,4 +11,12 @@
       <input type="submit" value="soft delete">
     </form>
   </span>
+  <span>
+    <form action="<%= task_path(task) %>", method="post">
+      <input type="hidden" name="authenticity_token"  value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="task[completed_at]" value="<%= Time.now %>">
+      <input type="submit" value="completed">
+    </form>
+  </span>
 <% end %>
