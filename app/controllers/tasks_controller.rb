@@ -34,7 +34,6 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
-    @task.date = unparse_date(@task.date)
   end
 
   def update

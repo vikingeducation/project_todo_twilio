@@ -2,3 +2,6 @@
  <h1>Description: <%= @task.description %></h1>
 
 <p><%= link_to "Edit", edit_task_path(@task) %></p>
+<% if @task.importance %>
+  <p>Important</p>
+<% end %>

@@ -11,5 +11,9 @@
     <%= link_to "Delete", task_path(task), :method => :delete %>
     <%= link_to "Edit", edit_task_path(task) %></span></p>
     <%= link_to "Send Reminder", task_send_text_path(task) %>
-    <%= link_to "Mark Important", task_path(id: task.id, importance: !task.importance) %>
+    <%= form_for task do |t| %>
+      <%= t.hidden_field :importance, :value => !task.importance %>
+      <%= t.submit "Mark Important"%>
+    <% end %>
+    <%= task.importance ? "Important" : nil %>
 </li>

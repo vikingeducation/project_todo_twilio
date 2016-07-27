@@ -15,4 +15,8 @@ module TasksHelper
     {'year' => arr[0], 'month' => arr[1], 'day' => arr[2]}
   end
 
+  def sort_by_importance(tasks)
+
+  end
+
 end
