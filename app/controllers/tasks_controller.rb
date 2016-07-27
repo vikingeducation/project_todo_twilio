@@ -45,7 +45,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     if params[:sticky]
       @task.update(:priority => 6)
-      redirect_to @task
+      redirect_to root_path
     elsif @task.update(task_params)
       flash[:notice] = "Task succesfully updated"
       redirect_to @task
@@ -69,6 +69,8 @@ class TasksController < ApplicationController
     end
 
     def sort_order(order)
+      priority_arr = @tasks.select {|task| task.priority == 6}
+      @tasks -= priority_arr
       case order
       when "asc"
         @tasks = @tasks.sort_by { |task| task.priority }.reverse
@@ -77,7 +79,11 @@ class TasksController < ApplicationController
       else
         @tasks = @tasks.sort_by { |task| task.complete_date }
       end
+
+      @tasks = priority_arr + @tasks 
     end
+
+
 
     def mark_complete
       @task.completed = true
