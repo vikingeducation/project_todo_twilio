@@ -2,6 +2,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    @tasks = @tasks.sort_by{ |task| task.complete_date }
   end
 
   def show
@@ -14,11 +15,10 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    
     if @task.save
       flash[:notice] = "Task successfully created"
       redirect_to @task
-    else 
+    else
       flash.now[:error] = "Task was not created"
       render :new
     end
@@ -32,6 +32,21 @@ class TasksController < ApplicationController
       flash[:error] = "Task was not deleted"
     end
     redirect_to root_path
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      flash[:notice] = "Task succesfully updated"
+      redirect_to @task
+    else
+      flash.now[:notice] = "Task was not updated"
+      render :edit
+    end
   end
 
   private
