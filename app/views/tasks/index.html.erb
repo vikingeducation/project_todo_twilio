@@ -1,3 +1,8 @@
+<br />
+<%= link_to "Sort by most urgent", root_path(:sort => "asc") %> |
+<%= link_to "Sort by least urgent", root_path(:sort => "desc") %> |
+<%= link_to "Sort by creation time", root_path %><br /> |
+<%= link_to "Sort by priority", root_path(:sort => "priority") %>
 <ul>
   <%= render @tasks %>
 </ul>

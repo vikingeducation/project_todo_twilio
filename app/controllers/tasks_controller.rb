@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all.order('due_date ASC')
+    get_all_by_sort
+    save_sort_preference
   end
 
   def show
@@ -52,5 +53,20 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:description, :due_date, :priority, :category)
+  end
+
+  def get_all_by_sort
+    sort =  params['sort'] || session['sort']
+    if sort == "priority"
+      @tasks = Task.all.order("priority DESC")
+    elsif sort
+      @tasks = Task.all.order("due_date #{sort.upcase}")
+    else
+      @tasks = Task.all
+    end
+  end
+
+  def save_sort_preference
+    session['sort'] = params['sort']
   end
 end
