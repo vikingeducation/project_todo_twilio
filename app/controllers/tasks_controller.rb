@@ -23,7 +23,7 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task = Task.new(description_param)
+    @task = Task.new(task_params)
     if @task.save
       flash[:success] = "Task created."
       redirect_to @task
@@ -39,28 +39,15 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    case
-    when sticky_param['sticky']
-      toggle_sticky
-      redirect_to tasks_path
-    when params[:task][:category]
-      @task.update(category: params[:task][:category])
-      redirect_to tasks_path
-    when soft_delete_param['soft_delete']
-      # Toggle soft_delete attribute.
-      toggle_soft_delete
-      redirect_to tasks_path
-    when completed_param['completed_at']
-      @task.update(completed_param)
-      redirect_to tasks_path
-    when @task.update(description_param)
+    toggle_sticky if params['task']['sticky']      
+    toggle_soft_delete if params['task']['soft_delete']
+    if @task.update(task_params)
       flash[:success] = "Task updated."
-      redirect_to @task
+      redirect_to tasks_path
     else
       flash[:danger] = "Invalid input."
-      redirect_to edit_task_path(params[:id])
+      redirect_to edit_task_path(@task)
     end
-
   end
 
   def destroy
@@ -72,20 +59,10 @@ class TasksController < ApplicationController
 
   private
 
-    def description_param
-      params.require("task").permit("description")
-    end
-
-    def completed_param
-      params.require("task").permit("completed_at")
-    end
-
-    def soft_delete_param
-      params.require("task").permit("soft_delete")
-    end
-
-    def sticky_param
-      params.require("task").permit("sticky")
+    def task_params
+      params.require('task').permit('description',
+                                    'completed_at',
+                                    'category')
     end
 
     def toggle_soft_delete
