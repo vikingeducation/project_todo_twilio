@@ -32,7 +32,9 @@ class TasksController < ApplicationController
 
 
   def index
-    @tasks = Task.sort_highest_priority
+    params[:order_by] = "sort_description" unless params[:order_by]
+    sort_method = params[:order_by].to_sym
+     @tasks = Task.send(sort_method)
   end
 
   def show
@@ -53,6 +55,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:description, :completion_date, :crossed_out, :priority)
+    params.require(:task).permit(:description, :completion_date, :crossed_out, :priority, :sticky)
   end
 end

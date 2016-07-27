@@ -1,8 +1,8 @@
 <%= render "task" %>
-<form method="post" action="/tasks">
-  <input type="radio" name="order_by" value="description">Description
-  <input type="radio" name="order_by" value="completion_date">Completion Date
-  <input type="radio" name="order_by" value="priority_asc">Priority Ascending
-  <input type="radio" name="order_by" value="priority_desc">Priority Ascending
+<form method="get" action="/tasks">
+  <input type="radio" name="order_by" value="sort_description">Description
+  <input type="radio" name="order_by" value="sort_completion_date">Completion Date
+  <input type="radio" name="order_by" value="sort_priority_asc">Priority (highest to lowest)
+  <input type="radio" name="order_by" value="sort_priority_desc">Priority (lowest to highest)
   <input type="submit" value="Sort">
 </form>
