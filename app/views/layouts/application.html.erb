@@ -12,10 +12,10 @@
   <br>
   <br>
   
-  <% if flash[:success] %>
-    <%= flash[:success] %>
-  <% elsif flash[:error] %>
-    <%= flash[:error] %>
+  <% flash.each do |type, message| %>
+    <div>
+      <strong><%= type %>! <%= message %></strong>
+    </div>
   <% end %>
   <br>
   
