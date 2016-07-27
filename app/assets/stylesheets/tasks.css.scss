@@ -7,7 +7,12 @@ body {
   font-family: sans-serif;
   }
 }
-
+.actions {
+  font-weight: bold;
+  a{
+    color: green;
+  }
+}
 .strike {
     text-decoration: line-through;
     a {

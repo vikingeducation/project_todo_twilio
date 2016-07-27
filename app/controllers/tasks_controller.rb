@@ -16,14 +16,12 @@ class TasksController < ApplicationController
   end
 
   def create
-    date = parse_date(params)
     @task = Task.new(whitelisted_task_params)
-    @task.date = date
     if @task.save
       flash[:success] = "Task Saved!"
       redirect_to @task
     else
-      flash[:alert] = "Task Not Saved!"
+      flash.now[:alert] = "Task Not Saved!"
       render :new
     end
   end
@@ -36,6 +34,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @task.date = unparse_date(@task.date)
   end
 
   def update
@@ -44,7 +43,7 @@ class TasksController < ApplicationController
       flash[:success] = "Task Updated!"
       redirect_to @task
     else
-      flash[:alert] = "Task Not Updated!"
+      flash.now[:alert] = "Task Not Updated!"
       render :edit
     end
   end
@@ -59,6 +58,6 @@ class TasksController < ApplicationController
   private
 
   def whitelisted_task_params
-    params.require(:task).permit(:description)
+    params.require(:task).permit(:description, :date, :importance)
   end
 end
