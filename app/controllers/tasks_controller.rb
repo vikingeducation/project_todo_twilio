@@ -26,7 +26,7 @@ class TasksController < ApplicationController
 
   def soft_delete
     @task = Task.find(params[:id])
-    @tasks.soft_delete = true
+    @task.soft_delete = true
     flash[:success] = "Task #{@task.title} was soft deleted(?)"
   end
 
