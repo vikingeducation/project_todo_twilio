@@ -6,6 +6,7 @@ ProjectTodoTwilio::Application.routes.draw do
   root 'tasks#index'
   resources :tasks do
     patch "soft_delete"
+    get 'send_text' => 'texts#send_text'
   end
 
   # post "soft_delete/:id" => 'tasks#soft_delete'

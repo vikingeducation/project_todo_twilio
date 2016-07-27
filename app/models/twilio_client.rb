@@ -1,4 +1,4 @@
-require "../../env"
+require_relative "env"
 require 'rubygems'
 require 'twilio-ruby'
 
@@ -16,7 +16,7 @@ class TwilioClient
     end
   end
 
-# send an SMS
+  # send an SMS
   def send_sms(body)
     @client.account.messages.create({
       from: "#{TWILIONUM}",
@@ -24,5 +24,4 @@ class TwilioClient
       body: "#{body}"
     })
   end
-
 end
