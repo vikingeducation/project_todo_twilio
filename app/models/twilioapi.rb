@@ -21,8 +21,8 @@ class TwilioAPI
 
   def text(message)
     @client.messages.create(
-      from: '15093591086',
-      to: '15092709717',
+      from: ENV['from'],
+      to: ENV['to'],
       body: message
       )
   end

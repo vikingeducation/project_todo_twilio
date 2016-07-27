@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  root 'tasks#index'  
-  resources :tasks
+  root 'tasks#index'
+  resources :tasks do
+    get 'text' => 'texts#send_text'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

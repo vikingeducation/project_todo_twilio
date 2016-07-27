@@ -2,4 +2,5 @@
 <%= link_to "See Task.", task_path(task)%>
 <%= link_to "Destroy Task.", task_path(task), method: :delete, data: {confirm: "Delete?"} %>
 <%= link_to "Edit Task.", edit_task_path(task) %>
+<%= link_to "TEXT REMINDER", task_text_path(task) %>
 </li>
