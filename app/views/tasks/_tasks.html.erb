@@ -11,4 +11,5 @@
     <%= link_to "Delete", task_path(task), :method => :delete %>
     <%= link_to "Edit", edit_task_path(task) %></p>
     <%= link_to "Send Reminder", task_send_text_path(task) %>
+    <%= link_to "Mark Important", task_path(id: task.id, importance: !task.importance) %>
 </li>

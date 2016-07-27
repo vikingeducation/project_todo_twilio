@@ -1,5 +1,5 @@
 <h1>All Tasks</h1>
 
-<% @tasks.each do |task| %>
+<% sort_by_date(@tasks).each do |task| %>
   <%= render :partial => 'tasks', :locals => { :task => task } %>
 <% end %>
