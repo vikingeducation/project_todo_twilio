@@ -1,3 +1,5 @@
 <li>
-  <p>Completion date: <%= task.date %>  Description: <%= task.description %></p>
+  <p>Completion date: <%= task.date %>  Description: <%= task.description %>
+    <%= link_to "Task", task_path(task.id)%>
+    <%= link_to "Delete", task_path(task), :method => :delete %></p>
 </li>
