@@ -9,6 +9,8 @@ class TextsController < ApplicationController
 
     ACCOUNT_SID = ENV['ACC_SID']
     AUTH_TOKEN = ENV['AUTH_TOKEN']
+    TWILIO_PHONE = ENV['TWILIO_PHONE']
+    MY_PHONE = ENV['MY_PHONE']
 
     Twilio.configure do |config|
       config.account_sid = ACCOUNT_SID
@@ -22,12 +24,11 @@ class TextsController < ApplicationController
   end
 
   def send_text
-    @twilio = self.class::TwilioAPI.new
-    raise
-    # @client.messages.create(
-    #   from: '+14159341234',
-    #   to: '+16105557069',
-    #   body: 'Hey there!'
-    # )
+    @twilio = TwilioAPI.new
+    @twilio.client.messages.create(
+      from: "#{TwilioAPI::TWILIO_PHONE}",
+      to: "#{TwilioAPI::MY_PHONE}",
+      body: "From CJ and Chris's Task Twilio app"
+    )
   end
 end
