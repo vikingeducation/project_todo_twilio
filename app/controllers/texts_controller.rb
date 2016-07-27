@@ -34,6 +34,5 @@ class TextsController < ApplicationController
     if flash[:success] = "Text message sent."
       redirect_to tasks_path
     end
-
   end
 end
