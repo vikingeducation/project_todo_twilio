@@ -1,7 +1,14 @@
 <%= render partial: 'task_detail', locals: {task: @task} %>
-<%= form_for @task, :method => "patch" do |f| %>
-  <%= f.hidden_field :soft_delete, value: true%>
-  <%= f.submit value: "Soft Delete"%>
+<% if @task.soft_delete_flag %>
+  <%= form_for @task, :method => "patch" do |f| %>
+    <%= f.hidden_field :soft_delete_flag, value: false%>
+    <%= f.submit value: "Restore"%>
+  <% end %>
+<% else %>
+  <%= form_for @task, :method => "patch" do |f| %>
+    <%= f.hidden_field :soft_delete_flag, value: true%>
+    <%= f.submit value: "Soft Delete"%>
+  <% end %>
 <% end %>
 <%= form_tag("/text") do %>
   <%= hidden_field_tag :title, @task.title %>
@@ -9,3 +16,5 @@
   <%= hidden_field_tag :completion_date, @task.completion_date%> 
   <%= submit_tag("Text Reminder") %>
 <% end%>
+
+

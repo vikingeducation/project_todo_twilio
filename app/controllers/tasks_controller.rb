@@ -5,8 +5,8 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.all
-    @tasks.sort_by {|task| task[:completion_date] }
+    @tasks = Task.order(rating: :desc)
+    #@tasks.sort_by{|task| task.completion_date}
   end
 
   def show
@@ -30,16 +30,13 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+    @task.update(task_params)
     if params[:task][:soft_delete]
-      @task.soft_delete_flag = true
-      @task.save
-      flash[:success] = "Task #{@task.title} was soft deleted(?)"
-      redirect_to tasks_path
+      flash[:success] = "Task #{@task.title} was soft deleted"
     else
-      @task.update(task_params)
       flash[:success] = "Task #{@task.title} was updated"
-      redirect_to task_path(@task)
     end
+      redirect_to task_path(@task)
   end
 
   def destroy
@@ -51,6 +48,6 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :description,:completion_date, :soft_delete_flag)
+    params.require(:task).permit(:title, :description,:completion_date, :soft_delete_flag, :rating)
   end
 end
