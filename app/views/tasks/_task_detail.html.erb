@@ -1,8 +1,10 @@
 <h3><%= task.title %></h3>
 <h5>Complete by: <%= task.completion_date.strftime("%m/%d/%Y") %></h5>
  <p>
-   Donezo: <%= check_box_tag( :task, 1, task.completed? ) %>
+   Donezo: <%= check_box_tag( :task, "blah", task.completed? ) %>
  </p>
 <p>
   <%= task.description %>
 </p>
+<%= link_to "Edit", edit_task_path(task) %>
+<%= link_to "Delete", task_path(task), :method => :delete %>
