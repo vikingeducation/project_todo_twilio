@@ -17,4 +17,4 @@
 /tmp
 
 # Ignore secrets
-/config/locales/secrets.yml
+/config/secrets.yml

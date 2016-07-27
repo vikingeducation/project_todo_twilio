@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'texts/send_text'
+
   root to: "tasks#index"
   resources :tasks
 
