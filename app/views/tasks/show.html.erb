@@ -1,8 +1,13 @@
-<h1><%= task.description %></h1>
-<h5><%= task.category %></h5>
+<h1><%= @task.description %></h1>
+<h5><%= @task.category %></h5>
 
 <p>
-  <%= "ID: #{task.id}" %><br />
-  <%= "Due Date: #{task.due_date}" %><br />
-  <%= "Priority: #{task.priority}" %><br />
+  <%= "ID: #{@task.id}" %><br />
+  <%= "Due Date: #{@task.due_date}" %><br />
+  <%= "Priority: #{@task.priority}" %><br />
 </p>
+
+<%= link_to "I don't wanna see this task ever again!",  task_path(@task), method: :delete, data: {confirm: "Delete?"} %>
+
+<%= link_to "Edit this Task.", edit_task_path(@task) %>
+

@@ -1,0 +1,11 @@
+<%= form_for @task do |t|  %>
+  <%= t.label "Description." %>
+  <%= t.text_field :description %>
+  <%= t.label "Due date." %>
+  <%= datetime_select("task", "due_date", ampm: true) %>
+  <%= t.label "Category." %>
+  <%= t.text_field :category %>
+  <%= t.label "Priority." %>
+  <%= t.text_field :priority %>
+  <%= t.submit %>
+<% end %>
