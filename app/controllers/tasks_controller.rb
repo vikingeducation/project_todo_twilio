@@ -2,7 +2,10 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
-    sort_order(params[:order])
+    if params[:order]
+      session[:order] = params[:order]
+    end
+    sort_order(session[:order])
   end
 
   def show
@@ -40,7 +43,10 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    if @task.update(task_params)
+    if params[:sticky]
+      @task.update(:priority => 6)
+      redirect_to @task
+    elsif @task.update(task_params)
       flash[:notice] = "Task succesfully updated"
       redirect_to @task
     else
