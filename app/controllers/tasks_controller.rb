@@ -51,6 +51,15 @@ class TasksController < ApplicationController
     
   end
 
+  def complete
+    @task = Task.find(params[:id])
+    @task.complete = !@task.complete
+
+    @task.save
+
+    redirect_to tasks_path
+  end
+
   private
 
   def get_params
