@@ -32,7 +32,7 @@ class TasksController < ApplicationController
 
 
   def index
-    @tasks = Task.all
+    @tasks = Task.sort_highest_priority
   end
 
   def show
@@ -53,6 +53,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:description, :completion_date, :crossed_out)
+    params.require(:task).permit(:description, :completion_date, :crossed_out, :priority)
   end
 end
