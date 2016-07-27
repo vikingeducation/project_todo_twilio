@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727172323) do
+ActiveRecord::Schema.define(version: 20160727222430) do
 
   create_table "tasks", force: :cascade do |t|
     t.text     "description"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160727172323) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.boolean  "crossed_out",     default: false
+    t.integer  "priority",        default: 0
   end
 
 end

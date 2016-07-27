@@ -9,7 +9,7 @@ class TwilioApi
     @client = Twilio::REST::Client.new account_sid, auth_token
   end
 
-  def send_message(message, to_phone)
+  def send_message(message)
   #   @client.messages.create(
   #   :from => "+13108505684",
   #   :to => to_phone,

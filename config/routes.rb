@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'texts/send_text'
+
 
   root to: "tasks#index"
   resources :tasks
 
-  get "text.:id" => "texts#get_phone_number"
-  post "text.:id" => "texts#send_text"
+  get "text.:id" => "texts#get_phone_number", as: "phone_form"
+  post "text.:id" => "texts#send_text", as: "submit_phone_form"
 
  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

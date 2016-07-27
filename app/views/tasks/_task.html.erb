@@ -12,7 +12,7 @@
       <td><%= task.completion_date %></td>
       <td><%= link_to "Delete", task_path(task), :method => :delete %></td>
       <td><%= link_to "Edit", edit_task_path(task) %></td>
-      <td><%= link_to "Remind Me", text_path(task) %></td>
+      <td><%= link_to "Remind Me", phone_form_path(task) %></td>
     </tr>
     <% end %>
 
