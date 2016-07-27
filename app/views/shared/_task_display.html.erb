@@ -6,3 +6,8 @@
   <% end %>
   <li><%= task.completed_at %></li>
 </ul>
+<form action="<%= reminder_path %>"  method="post">
+  <input type="hidden" name="task[id]" value="<%= task.id %>" />
+  <input type="hidden" name="authenticity_token"  value="<%= form_authenticity_token %>">
+  <input type="submit" value="Send text" />
+</form>
