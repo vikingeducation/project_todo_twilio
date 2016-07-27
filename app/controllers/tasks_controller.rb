@@ -2,7 +2,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
-    @tasks = @tasks.sort_by{ |task| task.complete_date }
+    sort_order(params[:order])
   end
 
   def show
@@ -60,6 +60,17 @@ class TasksController < ApplicationController
 
     def task_params
       params.require(:task).permit(:title, :description, :complete_date, :priority)
+    end
+
+    def sort_order(order)
+      case order
+      when "asc"
+        @tasks = @tasks.sort_by { |task| task.priority }.reverse
+      when "desc"
+        @tasks = @tasks.sort_by { |task| task.priority }
+      else
+        @tasks = @tasks.sort_by { |task| task.complete_date }
+      end
     end
 
     def mark_complete

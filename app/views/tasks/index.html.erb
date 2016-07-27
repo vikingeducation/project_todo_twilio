@@ -1,4 +1,14 @@
 <h1>Here is all of your tasks for today</h1>
+<form action="<%= root_path %>" method="get">
+  <p>How would you like your list sorted?</p>
+  <label for="ascending_priority">Ascending</label>
+  <input type="radio" name="order" value="asc">
+  <label for="descending_priority">Descending</label>
+  <input type="radio" name="order" value="desc">
+  <label for="original">Original</label>
+  <input type="radio" name="order" value="original">
+  <input type="submit" value="Submit Changes">
+  <input name="authenticity_token" type="hidden" value="NrOp5bsjoLRuK8IW5+dQEYjKGUJDe7TQoZVvq95Wteg=" />
+</form>
 
 <%= render partial: "task_list", locals: { tasks: @tasks } %>
-
