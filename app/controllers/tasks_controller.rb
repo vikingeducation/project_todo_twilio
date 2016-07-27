@@ -6,6 +6,8 @@ class TasksController < ApplicationController
       @tasks = Task.order(priority: params[:sort_order])
     when 'created_at'
       @tasks = Task.order(:created_at)
+    when 'category'
+      @tasks = Task.order(:category)
     else
       @tasks = Task.all
     end
@@ -40,6 +42,9 @@ class TasksController < ApplicationController
     case
     when sticky_param['sticky']
       toggle_sticky
+      redirect_to tasks_path
+    when params[:task][:category]
+      @task.update(category: params[:task][:category])
       redirect_to tasks_path
     when soft_delete_param['soft_delete']
       # Toggle soft_delete attribute.

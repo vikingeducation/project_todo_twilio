@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727223913) do
+ActiveRecord::Schema.define(version: 20160727231120) do
 
   create_table "tasks", force: :cascade do |t|
     t.text     "description"
     t.datetime "completed_at"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.boolean  "soft_delete",  default: false
     t.integer  "priority",     default: 5
     t.boolean  "sticky",       default: false
+    t.string   "category",     default: "uncategorized"
   end
 
 end
