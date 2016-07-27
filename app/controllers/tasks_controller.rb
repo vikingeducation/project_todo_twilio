@@ -1,3 +1,5 @@
+require_relative '../models/twilio_reminder'
+
 class TasksController < ApplicationController
 
   def index
@@ -16,7 +18,10 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      flash[:notice] = "Task successfully created"
+      flash[:notice] = "Task successfully created, also messaged you"
+
+      TwilioReminder.new.send_message("sup fam -Adrian")
+
       redirect_to @task
     else
       flash.now[:error] = "Task was not created"
