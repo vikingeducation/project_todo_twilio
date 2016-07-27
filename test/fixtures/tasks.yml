@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  completion_date: 2016-07-27
+
+two:
+  description: MyText
+  completion_date: 2016-07-27

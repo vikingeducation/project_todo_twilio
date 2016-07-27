@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Completion Date</th>
+  </tr>
+
+    <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.description %></td>
+
+      <td><%= task.completion_date %></td>
+    </tr>
+    <% end %>
+
+</table>

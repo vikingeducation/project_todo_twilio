@@ -4,3 +4,6 @@
 
 [Hannah Squier](github.com/hannahsquier)
 [Dylan Lynch](github.com/lynchd2)
+
+
+# Task Model with 2 attributes (description(text), completion date(date))
