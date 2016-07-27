@@ -5,7 +5,11 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.order(deadline: :asc)
+    if params[:sort] == "Rating"
+      @tasks = Task.order(rating: :desc)
+    else
+      @tasks = Task.order(deadline: :asc)
+    end
   end
 
   def show
