@@ -9,7 +9,7 @@ class TwilioApi
     @client = Twilio::REST::Client.new account_sid, auth_token
   end
 
-  def send_message(message, to_phone)
+  def send_message(message, to_phone=nil)
   #   @client.messages.create(
   #   :from => "+13108505684",
   #   :to => to_phone,
@@ -18,9 +18,9 @@ class TwilioApi
 
   begin
 
-    @client.account.sms.messages.create({
-      from: '+17322991948',
-      to: to_phone,
+    @client.account.messages.create({
+      from: '+13108505684',
+      to: "+17322991948",
       body: message
     })
   rescue Twilio::REST::RequestError => e
