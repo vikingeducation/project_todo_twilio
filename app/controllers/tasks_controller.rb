@@ -52,6 +52,7 @@ class TasksController < ApplicationController
   def complete
     @task = Task.find(params[:id])
     mark_complete
+    flash[:notice] = "Task marked as completed"
     redirect_to root_path
   end
 
