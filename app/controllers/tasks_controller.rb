@@ -46,7 +46,7 @@ class TasksController < ApplicationController
       redirect_to @task
     else
       flash.now[:Error] = "Task could not be updated! Try again."
-      render edit_task_path(@task)
+      render tasks_path#edit_task_path(@task)
     end
     
   end

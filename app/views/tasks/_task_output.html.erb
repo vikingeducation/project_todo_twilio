@@ -3,19 +3,17 @@
     <%= link_to task.title, task %>
     <br>
     <%= task.deadline %>
-  </p>
 <% else %>
   <p>
     <%= link_to task.title, task %>
     <br>
     <%= task.deadline %>
-  </p>
 <% end %>
+<br>
 Rating: <%= task.rating %>
-
 <br>
 <%= link_to "Delete", task_path(task), method: :delete %>
 <%= link_to "Completed", task_path(task), method: :post %>
 <%= link_to "Edit", edit_task_path(task) %>
 <%= link_to "Send Reminder", text_path(task) %>
-<br>
+</p>

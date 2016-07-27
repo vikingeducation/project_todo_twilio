@@ -3,6 +3,5 @@
 <ul>
   <% @tasks.each do |task| %>
   <%= render :partial => "task_output", :locals => { :task => task } %>
-  <br>
   <% end %>
 </ul>
