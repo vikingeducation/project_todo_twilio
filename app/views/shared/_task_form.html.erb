@@ -15,6 +15,11 @@
   <%= f.text_area :description %>
   <br />
 
+  <%= f.label :priority %>
+  <br />
+  <%= f.number_field :priority, :min => 0, :max => 5 %>
+  <br />
+
   <%= f.submit %>
 
 <% end %>

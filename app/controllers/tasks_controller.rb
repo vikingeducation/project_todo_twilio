@@ -1,5 +1,3 @@
-require_relative '../models/twilio_reminder'
-
 class TasksController < ApplicationController
 
   def index
@@ -58,17 +56,10 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
-  def reminder
-    @task = Task.find(params[:id])
-    message = "#{@task.title}: #{@task.description} is due on #{@task.complete_date}"
-    TwilioReminder.new.send_message(message)
-    redirect_to root_path
-  end
-
   private
 
     def task_params
-      params.require(:task).permit(:title, :description, :complete_date)
+      params.require(:task).permit(:title, :description, :complete_date, :priority)
     end
 
     def mark_complete
