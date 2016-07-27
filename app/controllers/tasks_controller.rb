@@ -53,6 +53,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:description, :completion_date)
+    params.require(:task).permit(:description, :completion_date, :crossed_out)
   end
 end
