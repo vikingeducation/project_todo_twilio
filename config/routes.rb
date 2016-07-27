@@ -4,9 +4,11 @@ ProjectTodoTwilio::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'tasks#index'
-  resources :tasks
+  resources :tasks do
+    patch "soft_delete"
+  end
 
-   post "/soft_delete" => 'task#soft_delete'
+  # post "soft_delete/:id" => 'tasks#soft_delete'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

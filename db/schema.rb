@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727160051) do
+ActiveRecord::Schema.define(version: 20160727174312) do
 
   create_table "tasks", force: true do |t|
     t.string   "date"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "cross_out",   default: false
   end
 
 end

@@ -46,8 +46,9 @@ class TasksController < ApplicationController
   end
 
   def soft_delete
-    @task = Task.find(params[:id])
-    @task.cross_out
+    @task = Task.find(params[:task_id])
+    @task.cross_out ^= true
+    @task.save
     redirect_to tasks_path
   end
 
