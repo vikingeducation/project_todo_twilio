@@ -19,9 +19,6 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     if @task.save
       flash[:notice] = "Task successfully created, also messaged you"
-
-      TwilioReminder.new.send_message("sup fam -Adrian")
-
       redirect_to @task
     else
       flash.now[:error] = "Task was not created"
@@ -58,6 +55,13 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     mark_complete
     flash[:notice] = "Task marked as completed"
+    redirect_to root_path
+  end
+
+  def reminder
+    @task = Task.find(params[:id])
+    message = "#{@task.title}: #{@task.description} is due on #{@task.complete_date}"
+    TwilioReminder.new.send_message(message)
     redirect_to root_path
   end
 
