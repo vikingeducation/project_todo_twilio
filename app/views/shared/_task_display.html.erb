@@ -1,4 +1,8 @@
 <ul>
-  <li><%= task.description %></li>
+  <% if task.soft_delete %>
+    <li><s><%= task.description %></s></li>
+  <% else %>
+    <li><%= task.description %></li>
+  <% end %>
   <li><%= task.completed_at %></li>
 </ul>

@@ -14,8 +14,10 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
+      flash[:success] = "Task created."
       redirect_to @task
     else
+      flash[:danger] = "Invalid input."
       redirect_to new_task_path
     end
   end
@@ -26,9 +28,11 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    if @task.update_attributes(task_params)
+    if @task.update(task_params)
+      flash[:success] = "Task updated."
       redirect_to @task
     else
+      flash[:danger] = "Invalid input."
       redirect_to edit_task_path(params[:id])
     end
 
@@ -37,12 +41,13 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
+    flash[:success] = "Task deleted."
     redirect_to tasks_path
   end
 
   private
 
-  def task_params
-    params.require("task").permit("description", "completed_at")
-  end
+    def task_params
+      params.require("task").permit("description", "completed_at", "soft_delete")
+    end
 end
