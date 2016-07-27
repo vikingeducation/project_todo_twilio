@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post "/tasks/:id" => "tasks#complete"
 
+  get "/texts/:id" => "texts#send_text", :as => 'text'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

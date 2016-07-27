@@ -18,3 +18,7 @@ class Caller
   end
 
 end
+
+t = Caller.new
+t.send_message("+19789870177", "+19789870177", "hey", "how's it going", "07/25/2016")
+
