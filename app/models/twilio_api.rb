@@ -18,10 +18,10 @@ class TwilioApi
 
   begin
 
-    client.messages.create({
-      from: '+13108505684',
+    @client.account.sms.messages.create({
+      from: '+17322991948',
       to: to_phone,
-      body: 'Hello world'
+      body: message
     })
   rescue Twilio::REST::RequestError => e
     puts e.message
