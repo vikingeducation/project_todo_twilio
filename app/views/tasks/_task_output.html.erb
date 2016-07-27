@@ -1,18 +1,17 @@
 <% if task.complete %>
-  <li style="text-decoration: line-through">
+  <p style="text-decoration: line-through">
     <%= link_to task.title, task %>
-  </li>
-  <li style="text-decoration: line-through">
+    <br>
     <%= task.deadline %>
-  </li>
+  </p>
 <% else %>
-  <li>
+  <p>
     <%= link_to task.title, task %>
-  </li>
-  <li>
+    <br>
     <%= task.deadline %>
-  </li>
+  </p>
 <% end %>
+Rating: <%= task.rating %>
 
 <br>
 <%= link_to "Delete", task_path(task), method: :delete %>
