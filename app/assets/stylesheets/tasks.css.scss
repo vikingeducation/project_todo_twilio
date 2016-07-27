@@ -2,11 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  h1{
+  font-family: sans-serif;
+  }
+}
+
 .strike {
     text-decoration: line-through;
-    color: grey;
     a {
         text-decoration: none;
         color: grey;
     }
+}
+
+a {
+    text-decoration: none;
+    color: blue;
 }

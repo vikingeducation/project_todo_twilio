@@ -17,7 +17,7 @@ class TasksController < ApplicationController
     @task = Task.new(whitelisted_task_params)
     if @task.save
       flash[:success] = "Task Saved!"
-      redirect_to task_path(@task)
+      redirect_to @task
     else
       flash[:alert] = "Task Not Saved!"
       render :new
@@ -38,7 +38,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     if @task.update(whitelisted_task_params)
       flash[:success] = "Task Updated!"
-      redirect_to task_path(@task)
+      redirect_to @task
     else
       flash[:alert] = "Task Not Updated!"
       render :edit

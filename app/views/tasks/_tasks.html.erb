@@ -6,8 +6,6 @@
       <%= link_to "Completion date: #{task.date} Description: #{task.description}", task_soft_delete_path(task), method: :patch %>
     <% end %>
 
-    <%= link_to "Task", task_path(task.id)%>
-
 
     <%= link_to "Task", task_path(task.id)%>
     <%= link_to "Delete", task_path(task), :method => :delete %>
