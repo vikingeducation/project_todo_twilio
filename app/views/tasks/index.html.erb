@@ -1,7 +1,12 @@
 <% @tasks.each do |task| %>
 
   <p>
-    <%= render partial: 'task_detail', locals: {task: task} %>
+    <% if task.soft_delete_flag%>
+     <%= render partial 'task_soft_delete', locals: {task:task}%>
+    <% else %>
+      <%= render partial: 'task_detail', locals: {task: task} %>
+    <%end%>
+  
     <%= link_to "Show", task_path(task) %>
   </p>
 
