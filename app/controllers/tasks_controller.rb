@@ -52,13 +52,13 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:description, :due_date, :priority, :category)
+    params.require(:task).permit(:description, :due_date, :priority, :category, :pinned)
   end
 
   def get_all_by_sort
     sort =  params['sort'] || session['sort']
     if sort == "priority"
-      @tasks = Task.all.order("priority DESC")
+      @tasks = Task.all.order("priority ASC")
     elsif sort
       @tasks = Task.all.order("due_date #{sort.upcase}")
     else
