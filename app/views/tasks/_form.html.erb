@@ -1,0 +1,13 @@
+<span style="color: red"><%= task.errors.full_messages.join(", ") %></span>
+
+<%= form_for task do |t|  %>
+  <%= t.label "Description." %>
+  <%= t.text_field :description, :value => task.description %><br />
+  <%= t.label "Due date." %>
+  <%= datetime_select("task", "due_date", ampm: true, :value => task.due_date) %><br />
+  <%= t.label "Category." %>
+  <%= t.text_field :category, :value => task.category %><br />
+  <%= t.label "Priority." %>
+  <%= t.text_field :priority,  :value => task.priority %><br />
+  <%= t.submit %>
+<% end %>

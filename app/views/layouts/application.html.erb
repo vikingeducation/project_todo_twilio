@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= flash[:error] %>
-<%= flash[:success] %><br>
+  <% flash.each do |type, message| %>
+      <div>
+        <strong><%= type.to_s.capitalize %>! <%= message %></strong>
+      </div>
+    <% end %><br>
 <%= render "shared/nav" %>
 <%= yield %>
 
