@@ -13,7 +13,8 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-     if @task.save
+    @task.update_attribute
+    if @task.save
       redirect_to @task
     else
       redirect_to new_task_path
