@@ -8,5 +8,8 @@
   <%= f.label :completion_date, "Completion Date" %>
   <%= f.date_select :completion_date %><br />
 
+  <%= f.label :rating, "Choose a priority rating:"%>
+  <%= f.select(:rating, options_for_select([1,2,3,4,5])) %>
+
   <%= f.submit%>
 <%end %>
