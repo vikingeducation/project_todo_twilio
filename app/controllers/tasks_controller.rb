@@ -45,6 +45,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def soft_delete
+    @task = Task.find(params[:id])
+    @task.cross_out
+    redirect_to tasks_path
+  end
+
   private
 
   def whitelisted_task_params

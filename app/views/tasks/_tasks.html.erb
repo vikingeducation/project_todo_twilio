@@ -1,5 +1,10 @@
 <li>
-  <p>Completion date: <%= task.date %>  Description: <%= task.description %>
+  <p>
+    <a href=/soft_delete>Completion date: <%= task.date %>  Description: <%= task.description %></a>
+
+    <%= link_to "Task", task_path(task.id)%>
+
+
     <%= link_to "Task", task_path(task.id)%>
     <%= link_to "Delete", task_path(task), :method => :delete %>
     <%= link_to "Edit", edit_task_path(task) %></p>
