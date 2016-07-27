@@ -1,1 +1,1 @@
-<li><%= "ID: #{task.id} | Description: #{task.description} | Category: #{task.category} | Due Date: #{task.due_date} | Priority: #{task.priority}" %></li>
+<li><%= link_to "Description: #{task.description} | Due Date: #{Date.parse(task.due_date.to_s).strftime("%a %b %d %l%M %p")}", task %></li>
