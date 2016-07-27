@@ -8,8 +8,19 @@
 </head>
 <body>
 
-<%= render "/layouts/navbar" %>
-<%= yield %>
+  <%= render "/layouts/navbar" %>
+  <br>
+  <br>
+  
+  <% if flash[:success] %>
+    <%= flash[:success] %>
+  <% elsif flash[:error] %>
+    <%= flash[:error] %>
+  <% end %>
+  <br>
+  
+  <%= yield %>
 
 </body>
 </html>
+
