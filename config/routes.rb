@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :tasks
   root 'tasks#index'
+  post 'tasks/soft_delete/:id' => 'tasks#soft_delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

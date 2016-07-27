@@ -19,8 +19,15 @@ class TasksController < ApplicationController
       flash[:success] = "Task #{@task.title} was created"
       redirect_to task_path(@task)
     else
+      flash.now[:error] = "Task was not created, need longer description (4 chars min)"
       render 'new'
     end
+  end
+
+  def soft_delete
+    @task = Task.find(params[:id])
+    @tasks.soft_delete = true
+    flash[:success] = "Task #{@task.title} was soft deleted(?)"
   end
 
   def edit
@@ -30,12 +37,14 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
+    flash[:success] = "Task #{@task.title} was updated"
     redirect_to task_path(@task)
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
+    flash[:success] = "Task #{@task.title} was destroyed waaa waaaaa"
     redirect_to tasks_path
   end
 
