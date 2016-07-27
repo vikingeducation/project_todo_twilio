@@ -5,8 +5,8 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.all
-    @tasks.sort_by {|task| task[:completion_date] }
+    @tasks = Task.order(rating: :desc)
+    #@tasks.sort_by{|task| task.completion_date}
   end
 
   def show
