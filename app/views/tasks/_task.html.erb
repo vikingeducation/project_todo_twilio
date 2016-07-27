@@ -7,8 +7,9 @@
     <% @tasks.each do |task| %>
     <tr>
       <td><%=link_to task.description, task_path(task) %></td>
-
       <td><%= task.completion_date %></td>
+      <td><%= link_to "Delete this task", task_path(task), :method => :delete %></td>
+      <td><%= link_to "Edit", edit_task_path(task) %></td>
     </tr>
     <% end %>
 

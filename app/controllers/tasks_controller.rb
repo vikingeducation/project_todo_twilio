@@ -9,7 +9,23 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to task_path(@task.id)
     else
+      flash.now[:error] = "description must be longer than 4 characters"
       render :new
+    end
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+
+    if Task.update(params[:id], task_params)
+      redirect_to task_path(@task.id)
+    else
+      flash.now[:error] = "description must be longer than 4 characters"
+      render :edit
     end
   end
 

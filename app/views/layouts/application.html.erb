@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <% flash.each do |type, message| %>
+    <div>
+      <strong><%= type %>! <%= message %></strong>
+    </div>
+  <% end %>
+
   <nav>
     <%= link_to "New Task", new_task_path %>
     <%= link_to "All Tasks", tasks_path %>
