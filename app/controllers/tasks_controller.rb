@@ -1,10 +1,11 @@
 class TasksController < ApplicationController
+
   def index
-    # if sort_param 
-    #   @tasks = Task.order(priority: sort_param)
-    # else
+    if params[:sort_order]
+      @tasks = Task.order(priority: params[:sort_order])
+    else
       @tasks = Task.all
-    # end
+    end
   end
 
   def show
@@ -72,7 +73,7 @@ class TasksController < ApplicationController
     end
 
     # def sort_param
-    #   params.require("task").permit("sort_order")
+    #   params.require("tasks").permit("sort_order")
     # end
 
     def toggle_soft_delete
