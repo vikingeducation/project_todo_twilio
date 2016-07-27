@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727213116) do
+ActiveRecord::Schema.define(version: 20160727235021) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160727213116) do
     t.datetime "updated_at",                    null: false
     t.boolean  "completed",     default: false
     t.integer  "priority",      default: 0
+    t.string   "category"
   end
 
 end

@@ -64,7 +64,7 @@ class TasksController < ApplicationController
   private
 
     def task_params
-      params.require(:task).permit(:title, :description, :complete_date, :priority)
+      params.require(:task).permit(:title, :description, :complete_date, :priority, :category)
     end
 
     def sort_order(order)
@@ -78,8 +78,7 @@ class TasksController < ApplicationController
       else
         @tasks = @tasks.sort_by { |task| task.complete_date }
       end
-
-      @tasks = priority_arr + @tasks 
+      @tasks = priority_arr + @tasks
     end
 
     def mark_complete
@@ -90,7 +89,7 @@ class TasksController < ApplicationController
         @task.completed = true
         flash[:notice] = "Task marked as completed"
       end
-      
+
       @task.save
     end
 end
