@@ -9,6 +9,7 @@ class TasksController < ApplicationController
     else
       @tasks = Task.all
     end
+    @stickies = Task.sticky(true)
   end
 
   def show
@@ -37,6 +38,9 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     case
+    when sticky_param['sticky']
+      toggle_sticky
+      redirect_to tasks_path
     when soft_delete_param['soft_delete']
       # Toggle soft_delete attribute.
       toggle_soft_delete
@@ -75,14 +79,21 @@ class TasksController < ApplicationController
       params.require("task").permit("soft_delete")
     end
 
-    # def sort_param
-    #   params.require("tasks").permit("sort_order")
-    # end
+    def sticky_param
+      params.require("task").permit("sticky")
+    end
 
     def toggle_soft_delete
       @task.toggle!(:soft_delete)
       msg = @task.soft_delete ? "Task has been soft deleted." : \
                                 "Task has been undeleted." 
+      flash[:success] = msg
+    end
+
+    def toggle_sticky
+      @task.toggle!(:sticky)
+      msg = @task.sticky ? "Task has been stickied" : \
+                             "Task has been unstickied." 
       flash[:success] = msg
     end
 end

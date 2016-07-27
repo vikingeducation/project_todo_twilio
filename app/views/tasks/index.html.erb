@@ -6,6 +6,11 @@
   <input type="submit" value="Sort">
 </form>
 
+<h1>Stickies</h1>
+<% @stickies.each do |sticky| %>
+  <%= render partial: 'shared/task_display', locals: { task: sticky } %>
+<% end %>
+
 <h1> All Tasks </h1>
 <% @tasks.each do |task| %>
   <%= render partial: 'shared/task_display', locals: { task: task } %>
@@ -25,6 +30,14 @@
       <input type="hidden" name="_method" value="patch">
       <input type="hidden" name="task[completed_at]" value="<%= Time.now %>">
       <input type="submit" value="completed">
+    </form>
+  </span>
+  <span>
+    <form action="<%= task_path(task) %>", method="post">
+      <input type="hidden" name="authenticity_token"  value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="task[sticky]" value="true">
+      <input type="submit" value="sticky">
     </form>
   </span>
 <% end %>
