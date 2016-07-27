@@ -3,9 +3,16 @@
   <li>
   <% if task.completed %>
     <strike> <%= task.title %> </strike>
+    <%= link_to "undo", complete_path(task), :method => :post %>
   <% else %>
-    <%= task.priority %>
-    <%= link_to "#{task.title}", task %>
+
+    <% if task.priority == 6 %>
+      <span style="background-color: yellow; border:solid"> <%= task.title %> </span>
+    <% else %>
+      <%= task.priority %>
+      <%= link_to "#{task.title}", task %>
+    <% end %>
+
     <%= link_to "edit", edit_task_path(task) %>
     <%= link_to "complete", complete_path(task), :method => :post %>
     <%= link_to "reminder", reminder_path(task), :method => :post %>

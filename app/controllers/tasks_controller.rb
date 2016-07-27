@@ -58,7 +58,6 @@ class TasksController < ApplicationController
   def complete
     @task = Task.find(params[:id])
     mark_complete
-    flash[:notice] = "Task marked as completed"
     redirect_to root_path
   end
 
@@ -83,10 +82,15 @@ class TasksController < ApplicationController
       @tasks = priority_arr + @tasks 
     end
 
-
-
     def mark_complete
-      @task.completed = true
+      if @task.completed
+        @task.completed = false
+        flash[:notice] = "Task marked as incomplete"
+      else
+        @task.completed = true
+        flash[:notice] = "Task marked as completed"
+      end
+      
       @task.save
     end
 end
