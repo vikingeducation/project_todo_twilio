@@ -3,3 +3,4 @@
 <h3>Deadline: <%= @task.deadline %></h3>
 
 <p><%= @task.description %></p>
+<%= link_to "Delete", task_path(@task), method: :delete %>

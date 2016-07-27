@@ -1,2 +1,4 @@
 <li><%= link_to task.title, task %></li>
-<li><%= task.deadline %></li>
+<%= task.deadline %>
+<br>
+<%= link_to "Delete", task_path(task), method: :delete %>
