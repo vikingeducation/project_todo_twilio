@@ -1,9 +1,19 @@
 <ul>
 <% tasks.each do |task| %>
   <li>
+  <% if task.completed %>
+    <strike> <%= task.title %> </strike>
+  <% else %>
     <%= link_to "#{task.title}", task %>
     <%= link_to "edit", edit_task_path(task) %>
-    <%= link_to "delete", task, :method => :delete %>
+    <%= link_to "complete", complete_path(task), :method => :post %>
+
+  <% end %>
+
+  
+  <%= link_to "delete", task, :method => :delete %>
+
+  
   </li>
 <% end %>
 </ul>

@@ -49,10 +49,20 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    @task = Task.find(params[:id])
+    mark_complete
+    redirect_to root_path
+  end
+
   private
 
     def task_params
       params.require(:task).permit(:title, :description, :complete_date)
     end
 
+    def mark_complete
+      @task.completed = true
+      @task.save
+    end
 end
