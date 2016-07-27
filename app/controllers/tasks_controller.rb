@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
 
   def index
-    get_all_by_sort
+    @pinned = sort_tasks(Task.where(pinned: true))
+    @unpinned = sort_tasks(Task.where(pinned:nil))
+
     save_sort_preference
   end
 
@@ -41,8 +43,12 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
-      redirect_to @task
       flash[:success] = "You updated the task."
+      if params[:task][:pinned]
+        redirect_to root_path
+      else
+        redirect_to @task
+      end
     else
       flash.now[:error] = "Try again."
       render :edit
@@ -55,15 +61,14 @@ class TasksController < ApplicationController
     params.require(:task).permit(:description, :due_date, :priority, :category, :pinned)
   end
 
-  def get_all_by_sort
+  def sort_tasks(tasks)
     sort =  params['sort'] || session['sort']
     if sort == "priority"
-      @tasks = Task.all.order("priority ASC")
+      tasks = tasks.order("priority ASC")
     elsif sort
-      @tasks = Task.all.order("due_date #{sort.upcase}")
-    else
-      @tasks = Task.all
+      tasks = tasks.order("due_date #{sort.upcase}")
     end
+    tasks
   end
 
   def save_sort_preference

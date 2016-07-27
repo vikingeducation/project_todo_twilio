@@ -3,5 +3,9 @@
 <%= link_to "Destroy Task.", task_path(task), method: :delete, data: {confirm: "Delete?"} %>
 <%= link_to "Edit Task.", edit_task_path(task) %>
 <%= link_to "TEXT REMINDER", task_text_path(task) %>
-<%= link_to "Pin Task.", task_path(:id => task.id, :task => { :pinned => true }), method: :patch %>
+<% if task.pinned == true %>
+  <%= link_to "Unpin Task.", task_path(:id => task.id, :task => { :pinned => nil }), method: :patch %>
+<% else %>
+  <%= link_to "Pin Task.", task_path(:id => task.id, :task => { :pinned => true }), method: :patch %>
+<% end %>
 </li>
