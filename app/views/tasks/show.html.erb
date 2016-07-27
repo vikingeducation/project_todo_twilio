@@ -3,3 +3,9 @@
   <%= f.hidden_field :soft_delete, value: true%>
   <%= f.submit value: "Soft Delete"%>
 <% end %>
+<%= form_tag("/text") do %>
+  <%= hidden_field_tag :title, value: @task.title %>
+  <%= hidden_field_tag :description, value: @task.description %>
+  <%= hidden_field_tag :completion_date, value: @task.completion_date%> 
+  <%= submit_tag("Text Reminder") %>
+<% end%>
