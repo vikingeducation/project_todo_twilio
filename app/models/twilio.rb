@@ -18,5 +18,5 @@ class Caller
 
 end
 
-t = Caller.new
-t.send_message("+19785281841", "+19789870177", "hey", "how's it going", "07/25/2016")
+# t = Caller.new
+# t.send_message("+19785281841", "+19789870177", "hey", "how's it going", "07/25/2016")
