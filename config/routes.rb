@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post "/tasks/:id" => "tasks#complete"
 
+  resources :texts, only: [:index, :send_text]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
