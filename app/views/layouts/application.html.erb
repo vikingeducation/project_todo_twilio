@@ -8,6 +8,12 @@
 </head>
 <body>
 
+  <% flash.each do |type, message| %>
+    <div>
+      <strong><%= type.capitalize %>! <%= message %></strong>
+    </div>
+  <% end %>
+
 <%= yield %>
 
   <%= link_to "Tasks Index", tasks_path %>
