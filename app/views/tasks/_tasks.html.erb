@@ -1,0 +1,22 @@
+<li>
+  <p>
+    <% if task.cross_out %>
+      <span class="strike"><%= link_to "Completion date: #{task.date.strftime('%x')} Description: #{task.description}", task_soft_delete_path(task), method: :patch %></span>
+    <% else %>
+      <%= link_to "Completion date: #{task.date.strftime('%x')} Description: #{task.description}", task_soft_delete_path(task), method: :patch %>
+    <% end %>
+
+
+    <span class="actions"><%= link_to "Task", task_path(task.id)%>
+    <%= link_to "Delete", task_path(task), :method => :delete %>
+    <%= link_to "Edit", edit_task_path(task) %></span></p>
+    <span>
+    <span class="bold"><%= task.importance ? "Important!" : nil %></span>
+    <%= link_to "Send Reminder", task_send_text_path(task) %>
+    <%= form_for task do |t| %>
+      <%= t.hidden_field :importance, :value => !task.importance %>
+      <%= t.submit "Mark Important"%>
+    <% end %>
+  </span>
+</li>
+<hr>
