@@ -1,6 +1,8 @@
 <h1>Here is all of your tasks for today</h1>
 <form action="<%= root_path %>" method="get">
   <p>How would you like your list sorted?</p>
+  <label for="categories">Categories: </label>
+  <input type="text_field" name="cat_order" placeholder="categories">
   <label for="ascending_priority">Ascending</label>
   <input type="radio" name="order" value="asc">
   <label for="descending_priority">Descending</label>

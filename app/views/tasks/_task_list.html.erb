@@ -12,7 +12,7 @@
       <%= task.priority %>
       <%= link_to "#{task.title}", task %>
     <% end %>
-
+    
     <%= link_to "edit", edit_task_path(task) %>
     <%= link_to "complete", complete_path(task), :method => :post %>
     <%= link_to "reminder", reminder_path(task), :method => :post %>

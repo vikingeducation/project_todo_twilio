@@ -5,7 +5,12 @@ class TasksController < ApplicationController
     if params[:order]
       session[:order] = params[:order]
     end
-    sort_order(session[:order])
+
+    if params[:cat_order]
+      sort_order(session[:order], params[:cat_order])
+    else
+      sort_order(session[:order])
+    end
   end
 
   def show
@@ -67,9 +72,17 @@ class TasksController < ApplicationController
       params.require(:task).permit(:title, :description, :complete_date, :priority, :category)
     end
 
-    def sort_order(order)
+    def sort_order(order, categories = nil)
+      if categories != nil
+        categories_arr = @tasks.select{|task| task.category == categories }
+        @tasks -= categories_arr
+      else
+        categories_arr = []
+      end
+
       priority_arr = @tasks.select {|task| task.priority == 6}
       @tasks -= priority_arr
+
       case order
       when "asc"
         @tasks = @tasks.sort_by { |task| task.priority }.reverse
@@ -78,7 +91,7 @@ class TasksController < ApplicationController
       else
         @tasks = @tasks.sort_by { |task| task.complete_date }
       end
-      @tasks = priority_arr + @tasks
+      @tasks = priority_arr + categories_arr +  @tasks
     end
 
     def mark_complete
