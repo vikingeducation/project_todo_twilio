@@ -44,7 +44,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     if @task.update(task_params)
       flash[:success] = "You updated the task."
-      if params[:task][:pinned]
+      if params[:task][:pinned] || params[:task][:completed]
         redirect_to root_path
       else
         redirect_to @task
@@ -58,14 +58,16 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:description, :due_date, :priority, :category, :pinned)
+    params.require(:task).permit(:description, :due_date, :priority, :category, :pinned, :completed)
   end
 
   def sort_tasks(tasks)
-    sort =  params['sort'] || session['sort']
+    sort =  params['sort'] || session['sort'] || "asc"
     if sort == "priority"
       tasks = tasks.order("priority ASC")
-    elsif sort
+    elsif sort == "category"
+      tasks = tasks.order("category ASC")
+    else
       tasks = tasks.order("due_date #{sort.upcase}")
     end
     tasks
