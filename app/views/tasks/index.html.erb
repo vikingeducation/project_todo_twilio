@@ -1,0 +1,10 @@
+<%= render "task" %>
+<div class="options_buttons">
+  <form method="get" action="/tasks">
+    <input type="radio" name="order_by" value="sort_description">Description
+    <input type="radio" name="order_by" value="sort_completion_date">Completion Date
+    <input type="radio" name="order_by" value="sort_priority_asc">Priority (highest to lowest)
+    <input type="radio" name="order_by" value="sort_priority_desc">Priority (lowest to highest)
+    <input type="submit" value="Sort">
+  </form>
+</div>
