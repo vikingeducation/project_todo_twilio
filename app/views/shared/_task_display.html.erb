@@ -1,0 +1,15 @@
+<ul>
+  <li><%= task.category %> </li>
+  <li><%= "Priority #{task.priority}" %></li>
+  <% if task.soft_delete %>
+    <li><s><%= task.description %></s></li>
+  <% else %>
+    <li><%= task.description %></li>
+  <% end %>
+  <%= content_tag(:li,task.completed_at) if task.completed_at %>
+</ul>
+<form action="<%= reminder_path %>"  method="post">
+  <input type="hidden" name="task[id]" value="<%= task.id %>" />
+  <input type="hidden" name="authenticity_token"  value="<%= form_authenticity_token %>">
+  <input type="submit" value="Send text" />
+</form>
