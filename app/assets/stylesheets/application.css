@@ -18,3 +18,24 @@
 .cross-out {
   text-decoration: line-through;
 }
+
+.sticky {
+  background-color:yellow;
+}
+
+body table {
+  text-align: center;
+  margin:0 auto;
+}
+
+form {
+  text-align:center;
+}
+
+tr {
+  text-align:center;
+}
+
+.table-header {
+  display:inline-block;
+}

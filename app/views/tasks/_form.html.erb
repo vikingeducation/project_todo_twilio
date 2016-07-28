@@ -1,18 +1,26 @@
-<%= form_for @task do |f| %>
-  <%= f.label :description %>
-  <%= f.text_area :description %></br>
 
-  <%= f.label :completion_date %>
-  <%= f.date_field :completion_date %></br>
-
-  <%= f.label :priority %>
-  <%= f.number_field :priority %>
-
-  <%= f.label :crossed_out %>
-  <%= f.check_box :crossed_out %>
-
-  <%= f.label :sticky %>
-  <%= f.check_box :sticky %>
-
+<div class="container">
+  <%= form_for @task do |f| %>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description %></br>
+  </div>
+<div class="form-group">
+    <%= f.label :completion_date %>
+    <%= f.date_field :completion_date %></br>
+  </div>
+  <div class="form-group">
+    <%= f.label :priority %>
+    <%= f.number_field :priority %>
+  </div>
+  <div class="checkbox">
+    <%= f.label :crossed_out %>
+    <%= f.check_box :crossed_out %>
+  </div>
+  <div class="checkbox">
+    <%= f.label :sticky %>
+    <%= f.check_box :sticky %>
+  </div>
   <%= f.submit "Submit" %>
-<% end %>
+  <% end %>
+</div>
