@@ -16,7 +16,9 @@ module TasksHelper
   end
 
   def sort_by_importance(tasks)
-
+    tasks.sort_by do |a|
+      a.importance ? 0 : 1
+    end
   end
 
 end

@@ -5,9 +5,10 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-
+<div class="container">
   <% flash.each do |type, message| %>
     <div>
       <strong><%= type.capitalize %>! <%= message %></strong>
@@ -15,8 +16,12 @@
   <% end %>
 
 <%= yield %>
-
-  <%= link_to "Index", tasks_path %>
-  <%= link_to "Create", new_task_path %>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span><%= link_to "Index", tasks_path %></span>
+    <span><%= link_to "Create", new_task_path %></span>
+  </div>
+</footer>
 </body>
 </html>
