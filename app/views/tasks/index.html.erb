@@ -1,9 +1,9 @@
-<br />
-<%= link_to "Sort by most urgent", root_path(:sort => "asc") %> |
-<%= link_to "Sort by least urgent", root_path(:sort => "desc") %> |
-<%= link_to "Sort by creation time", root_path %><br /> |
-<%= link_to "Sort by category", root_path(:sort => "category") %><br /> |
-<%= link_to "Sort by priority", root_path(:sort => "priority") %><br />
+<br />Sort by:
+<%= link_to "Most urgent", root_path(:sort => "asc") %> |
+<%= link_to "Least urgent", root_path(:sort => "desc") %> |
+<%= link_to "Creation time", root_path %> |
+<%= link_to "Category", root_path(:sort => "category") %> |
+<%= link_to "Priority", root_path(:sort => "priority") %>
 <h3>Pinned Tasks</h3>
 <ul>
   <%= render @pinned if @pinned %>
