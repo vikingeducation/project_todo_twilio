@@ -1,5 +1,6 @@
 <ul>
   <li><%= task.category %> </li>
+  <li><%= "Priority #{task.priority}" %></li>
   <% if task.soft_delete %>
     <li><s><%= task.description %></s></li>
   <% else %>
