@@ -1,3 +1,13 @@
 # todo_twilio
 
-[The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
+## Authors
+
+[Mike](https://github.com/asackofwheat) and [Vishal](https://github.com/vishallama)
+
+## Description
+
+Rails Task Manager app.
+
+## Original Source
+[Viking Code School](https://vikingcodeschool.com)
+

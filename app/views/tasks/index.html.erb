@@ -1,0 +1,12 @@
+<h1>All tasks (according to deadline)</h1>
+
+<% @tasks.each do |task| %>
+<%= render :partial => "task_output", :locals => { :task => task } %>
+<% end %>
+
+Sort by:
+<form action="/" method="get">
+  <input type="radio" name="sort" value="Deadline"> Deadline<br>
+  <input type="radio" name="sort" value="Rating"> Rating<br>
+  <input type="submit" value="Submit">
+</form>
