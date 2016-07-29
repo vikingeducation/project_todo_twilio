@@ -1,0 +1,10 @@
+<h1>Here is task <%= @task[:id] %>!</h1>
+
+<h2>Due by <%=@task[:date]%></h2>
+
+<h3>Description of task:</h3>
+<p><%=@task[:description] %></p>
+<br>
+<%= link_to "edit this task", edit_task_path(@task[:id]) %>
+<%= link_to "DELETE TASK", task_path(@task), method: "delete" %>
+<%= link_to "Back to tasks", tasks_path %>
