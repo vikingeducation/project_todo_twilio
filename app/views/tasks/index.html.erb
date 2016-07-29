@@ -5,8 +5,6 @@
   <li><%= link_to task[:id], task_path(task) %>
     <%= link_to task[:date], task_path(task)%></li>
     <%= link_to "update this task", edit_task_path(task[:id]) %>
-    <%= link_to "DELETE TASK", task_path(task[:id]), method: :delete %>
+    <%= link_to "DELETE TASK", task_path(task), method: :delete %>
     <%end%>
 </ul>
-
-<p><%= link_to "Create new task", new_task_path %></p>

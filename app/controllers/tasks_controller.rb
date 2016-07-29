@@ -13,8 +13,13 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(good_params)
-    @task.save
-    render :show
+    if @task.save
+      flash[:success] = "Your article has been created!"
+      render :show
+    else
+      flash[:error] = "Fix your error!"
+      render :new
+    end
   end
 
   def good_params
@@ -27,14 +32,20 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(good_params)
-    render :show
+    if @task.update(good_params)
+      flash.now[:success] = "Your article has been updated!"
+      render :show
+    else
+      flash.now[:error] = "Fix your error!"
+      render :edit
+    end
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
     @tasks = Task.all
+    flash[:success] = "The article has been deleted"
     render :index
   end
 end
