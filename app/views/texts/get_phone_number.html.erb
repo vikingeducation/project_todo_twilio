@@ -1,0 +1,5 @@
+<form method="post" action="<%= submit_phone_form_path %>">
+  <input  type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  Phone Number: <input name="number" type="text">
+  <input type="submit" value="Submit">
+</form>
