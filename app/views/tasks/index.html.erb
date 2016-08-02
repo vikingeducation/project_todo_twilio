@@ -1,0 +1,16 @@
+<h1>Index</h1>
+
+
+<% @tasks.each do |task| %>
+ 
+  <p><%= task.description %></p>
+
+  <p><%= task.date %></p>
+
+  <p><%= link_to "Show", task_path(task.id) %></p>
+
+  <p><%= link_to "Delete", task_path(task.id), method: "delete" %></p>
+
+  <p><%= link_to "Edit", edit_task_path(task.id) %></p>
+
+<% end %>
