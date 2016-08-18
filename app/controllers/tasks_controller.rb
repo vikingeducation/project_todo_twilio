@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = Task.order(:due_date)
   end
 
   def show
@@ -17,7 +17,8 @@ class TasksController < ApplicationController
       flash[:success] = "yeah, new task created!"
       redirect_to task_path(new_task)
     else
-      flash.now[:danger] = "Something wrong!"
+      @task = new_task
+      show_errors(@task.errors.messages)
       render :new
     end
   end
@@ -51,5 +52,11 @@ class TasksController < ApplicationController
   private
     def whitelist_params
       params.require(:task).permit(:title, :description, :due_date)
+    end
+
+    def show_errors(messages)
+      messages.each do |type, errors|
+        flash.now[:type] = errors.join
+      end
     end
 end
