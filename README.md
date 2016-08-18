@@ -1,3 +1,3 @@
-# todo_twilio
+# README
 
-[The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
+Created by Bran and Deepak
