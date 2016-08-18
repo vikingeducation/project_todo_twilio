@@ -49,6 +49,20 @@ class TasksController < ApplicationController
     end
   end
 
+  def done
+    task = Task.find(params[:id])
+    task.done = true
+    task.save
+    redirect_to tasks_path
+  end
+
+  def undone
+    task = Task.find(params[:id])
+    task.done = nil
+    task.save
+    redirect_to tasks_path
+  end
+
   private
     def whitelist_params
       params.require(:task).permit(:title, :description, :due_date)

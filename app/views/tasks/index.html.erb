@@ -1,7 +1,15 @@
 <ul>
   <% @tasks.each do |t| %>
     <%= t.due_date.strftime "%d/%m/%Y %H:%M" %>
-    <%= link_to "#{t.title}", task_path(t) %>
+    <% if t.done == true %>
+      <strike>
+        <%= link_to "#{t.title}", task_path(t) %>
+      </strike>
+      <%= link_to 'Undone', undone_path(t) %>
+    <% else %>
+      <%= link_to "#{t.title}", task_path(t) %>
+      <%= link_to 'Done', done_path(t) %>
+    <% end %>
     <%= link_to 'Edit', edit_task_path(t)%>
     <%= link_to 'Delete', task_path(t), method: :delete, data: { confirm: "Are you sure?" } %><br />
   <% end %>
