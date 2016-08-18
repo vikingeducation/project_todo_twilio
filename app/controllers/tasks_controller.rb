@@ -22,6 +22,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    task = Task.find(params[:id])
+    if task
+      task.destroy
+      flash[:success] = "task #{task.title} deleted!"
+      redirect_to tasks_path
+    else
+      render :index
+    end
+  end
+
   private
     def whitelist_params
       params.require(:task).permit(:title, :description, :due_date)
