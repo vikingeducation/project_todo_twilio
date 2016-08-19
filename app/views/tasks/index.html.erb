@@ -16,4 +16,7 @@
     <%= link_to 'Delete', task_path(t), method: :delete, data: { confirm: "Are you sure?" } %><br />
   <% end %>
 </ul>
+<%= link_to 'Sort by ascending priority', asc_sort_path %>
+<%= link_to 'Sort by descending priority', desc_sort_path %>
+<%= link_to 'Sort by default', tasks_path %>
 <%= link_to 'Create', new_task_path %>

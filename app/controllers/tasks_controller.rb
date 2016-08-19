@@ -63,6 +63,16 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def asc_sort
+    @tasks = Task.order(:priority)
+    render :index
+  end
+
+  def desc_sort
+    @tasks = Task.order(:priority => :desc)
+    render :index
+  end
+
   private
     def whitelist_params
       params.require(:task).permit(:title, :description, :due_date, :priority)
