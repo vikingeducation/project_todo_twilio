@@ -100,37 +100,3 @@
     </tbody>
   </table>
 </div>
-
-
-
-
-
-<!-- <ul>
-  <% @tasks.each do |t| %>
-    <%= t.priority %>
-    <%= t.category %>
-    <%= t.due_date.strftime "%d/%m/%Y %H:%M" %>
-    <% if t.done == true %>
-      <strike>
-        <%= link_to "#{t.title}", task_path(t) %>
-      </strike>
-      <%= link_to 'Undone', undone_path(t) %>
-    <% else %>
-      <%= link_to "#{t.title}", task_path(t) %>
-      <%= link_to 'Done', done_path(t) %>
-      <% if t.sticky == false %>
-        <%= link_to 'Sticky', sticky_path(t) %>
-      <% else %>
-        <%= link_to 'Unsticky', unsticky_path(t) %>
-      <% end %>
-    <% end %>
-    <%= link_to 'Send_text', send_text_path(t) %>
-    <%= link_to 'Edit', edit_task_path(t)%>
-    <%= link_to 'Delete', task_path(t), method: :delete, data: { confirm: "Are you sure?" } %><br />
-  <% end %>
-</ul> -->
-<!-- <%= link_to 'Sort by ascending priority', asc_sort_path %>
-<%= link_to 'Sort by descending priority', desc_sort_path %>
-<%= link_to 'Sort by default', tasks_path %>
-<%= link_to 'Sort by category', category_sort_path %>
-<%= link_to 'Create', new_task_path %> -->
