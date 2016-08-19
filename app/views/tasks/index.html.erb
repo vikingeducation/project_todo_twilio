@@ -1,5 +1,6 @@
 <ul>
   <% @tasks.each do |t| %>
+    <%= t.priority %>
     <%= t.due_date.strftime "%d/%m/%Y %H:%M" %>
     <% if t.done == true %>
       <strike>

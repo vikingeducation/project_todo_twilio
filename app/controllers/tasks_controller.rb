@@ -65,7 +65,7 @@ class TasksController < ApplicationController
 
   private
     def whitelist_params
-      params.require(:task).permit(:title, :description, :due_date)
+      params.require(:task).permit(:title, :description, :due_date, :priority)
     end
 
     def show_errors(messages)
