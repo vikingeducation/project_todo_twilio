@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :tasks
   get 'tasks/done/:id', to: 'tasks#done', as: 'done'
   get 'tasks/undone/:id', to: 'tasks#undone', as: 'undone'
+  get 'texts/send/:id', to: 'texts#send_text', as: 'send_text'
 end
