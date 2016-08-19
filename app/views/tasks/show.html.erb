@@ -1,14 +1,15 @@
-<h1>
-  <%= @task.title %>
-</h1>
-<p>
-  Priority: <%= @task.priority %>
-</p>
-<p>
-  <%= @task.description %>
-</p>
-<p>
-  <%= @task.due_date %>
-</p>
-<%= link_to 'Edit', edit_task_path(@task)%>
-<%= link_to 'Index', tasks_path%>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @task.title %></h3>
+  </div>
+  <div class="panel-body">
+    <%= @task.description %>
+  </div>
+  <div class="panel-body">
+    Due date: <%= @task.due_date.strftime "%d/%m/%Y" %>
+  </div>
+  <div class="panel-body">
+    Priority: <%= @task.priority %>
+  </div>
+</div>
+<%= link_to 'Edit', edit_task_path(@task), class: "btn btn-lg btn-primary"%>
