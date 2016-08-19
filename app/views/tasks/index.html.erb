@@ -43,7 +43,11 @@
     </thead>
     <tbody>
       <% @tasks.each do |t| %>
-      <tr>
+      <% if t.sticky %>
+        <tr class="warning">
+      <% else %>
+        <tr>
+      <% end %>
         <td>
           <%= t.priority %>
         </td>
@@ -73,9 +77,9 @@
             <ul class="dropdown-menu">
               <li>
                 <% if t.sticky == false %>
-                <%= link_to 'Sticky', sticky_path(t) %>
+                  <%= link_to 'Sticky', sticky_path(t) %>
                 <% else %>
-                <%= link_to 'Unsticky', unsticky_path(t) %>
+                  <%= link_to 'Unsticky', unsticky_path(t) %>
                 <% end %>
               </li>
               <li>
