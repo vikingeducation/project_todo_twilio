@@ -10,6 +10,11 @@
     <% else %>
       <%= link_to "#{t.title}", task_path(t) %>
       <%= link_to 'Done', done_path(t) %>
+      <% if t.sticky == false %>
+        <%= link_to 'Sticky', sticky_path(t) %>
+      <% else %>
+        <%= link_to 'Unsticky', unsticky_path(t) %>
+      <% end %>
     <% end %>
     <%= link_to 'Send_text', send_text_path(t) %>
     <%= link_to 'Edit', edit_task_path(t)%>

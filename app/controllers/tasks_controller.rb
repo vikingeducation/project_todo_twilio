@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.order(:due_date)
+    @tasks = Task.order(:sticky => :desc).order(:due_date)
   end
 
   def show
@@ -64,13 +64,27 @@ class TasksController < ApplicationController
   end
 
   def asc_sort
-    @tasks = Task.order(:priority)
+    @tasks = Task.order(:sticky => :desc).order(:priority)
     render :index
   end
 
   def desc_sort
-    @tasks = Task.order(:priority => :desc)
+    @tasks = Task.order(:sticky => :desc).order(:priority => :desc)
     render :index
+  end
+
+  def sticky
+    task = Task.find(params[:id])
+    task.sticky = true
+    task.save
+    redirect_to tasks_path
+  end
+
+  def unsticky
+    task = Task.find(params[:id])
+    task.sticky = false
+    task.save
+    redirect_to tasks_path
   end
 
   private
