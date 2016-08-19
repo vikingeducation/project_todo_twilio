@@ -10,6 +10,7 @@
       <%= link_to "#{t.title}", task_path(t) %>
       <%= link_to 'Done', done_path(t) %>
     <% end %>
+    <%= link_to 'Send_text', send_text_path(t) %>
     <%= link_to 'Edit', edit_task_path(t)%>
     <%= link_to 'Delete', task_path(t), method: :delete, data: { confirm: "Are you sure?" } %><br />
   <% end %>
