@@ -9,6 +9,8 @@
 #Destroy existing
 Task.destroy_all
 
+CATEGORY = ['book', 'journey', 'car', 'pc', 'ps4', 'java', 'ruby']
+
 #New Data
 10.times do |task_num|
   t = Task.new
@@ -17,5 +19,6 @@ Task.destroy_all
   t.description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
   t.due_date = DateTime.now + 24*rand(30)
   t.done = rand(2).even? ? true : false
+  t.category = CATEGORY.sample
   t.save!
 end

@@ -6,5 +6,7 @@
   <%= f.datetime_select :due_date %><br />
   <%= f.label :priority %><br />
   <%= f.select :priority, (0..5) %><br />
+  <%= f.label :frequency, 'Recurring frequency' %><br />
+  <%= f.select :frequency, [0, 1, 7] %><br />
   <%= f.submit %>
 <% end %>

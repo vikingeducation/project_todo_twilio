@@ -87,9 +87,14 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def category_sort
+    @tasks = Task.order(:sticky => :desc).order(:category => :asc)
+    render :index
+  end
+
   private
     def whitelist_params
-      params.require(:task).permit(:title, :description, :due_date, :priority)
+      params.require(:task).permit(:title, :description, :due_date, :priority, :frequency)
     end
 
     def show_errors(messages)
