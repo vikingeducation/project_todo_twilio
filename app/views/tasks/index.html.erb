@@ -1,0 +1,9 @@
+<% @tasks.each do |task| %>
+
+  <p>
+    <%= render partial: 'task_detail', locals: { task: task } %>
+
+    <%= link_to "Show", task_path(task) %>
+  </p>
+
+<% end %>
