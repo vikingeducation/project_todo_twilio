@@ -1,0 +1,7 @@
+<%= form_for @task do |f| %>
+  Title:
+  <%= f.text_field :title %>
+  Description:
+  <%= f.text_area :description%>
+  <%= f.submit "Update", class: "btn btn-primary btn-lg"%>
+<% end %>

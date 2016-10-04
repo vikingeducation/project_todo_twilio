@@ -1,0 +1,5 @@
+<h3><%= @task.title %></h3>
+<p>Created <i><%= time_ago_in_words(@task.created_at)%></i> ago</p>
+<p><%= @task.description %></p>
+<%= link_to "Delete", @task, method: :delete %>
+<%= link_to "Edit", edit_task_path(@task) %>
