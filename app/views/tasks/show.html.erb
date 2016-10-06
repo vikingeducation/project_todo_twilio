@@ -1,0 +1,7 @@
+<%= render partial: 'navbar' %>
+<h2><%= @task.description %></h1>
+<p><%= @task.complete_by.strftime("%m/%d/%Y") %></p>
+<%= link_to "<< Back to Tasks List", tasks_path %>
+<%= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Really delete the task?"}
+ %>
+<%= link_to "Edit", edit_task_path(@task) %>
