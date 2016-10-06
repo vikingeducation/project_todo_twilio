@@ -1,0 +1,14 @@
+<%= form_for @task do |f| %>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    Enter in DD/MM/YYYY format<br />
+    <%= f.label :complete_by %><br />
+    <%= f.date_field :complete_by %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
