@@ -26,6 +26,8 @@ class TasksController < ApplicationController
 
 		if @task.save
 
+   		flash.notice = "Task Created!"
+
 			redirect_to task_path( @task )
 
 		else
@@ -47,6 +49,8 @@ class TasksController < ApplicationController
 		@task = Task.find( params[ :id ] )
 		@task.update( task_params )
 
+   flash.notice = "Task Updated!"
+
 		redirect_to tasks_path
 
 	end
@@ -56,6 +60,8 @@ class TasksController < ApplicationController
 		@task = Task.find( params[ :id ] )
 
 		@task.destroy
+
+   flash.notice = "Task Deleted!"
 
 		redirect_to tasks_path
 
