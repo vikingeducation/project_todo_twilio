@@ -24,7 +24,15 @@ class TasksController < ApplicationController
 
 		@task = Task.new( task_params )
 
-		redirect_to @task
+		if @task.save
+
+			redirect_to task_path( @task )
+
+		else
+
+			render 'new'
+
+		end
 
 	end
 
