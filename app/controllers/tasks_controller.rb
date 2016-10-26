@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
 
+	include TasksHelper
+
 	def index
 
 		@tasks = Task.all
@@ -19,6 +21,10 @@ class TasksController < ApplicationController
 
 
 	def create
+
+		@task = Task.new( task_params )
+
+		redirect_to @task
 
 	end
 
