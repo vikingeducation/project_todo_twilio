@@ -9,7 +9,12 @@
 <body>
 
 <ul class="nav">
-	<li><%= link_to 'See Tasks', tasks_path %></li>
+	<li>
+		<%= link_to 'See Tasks', tasks_path %>
+	</li>
+	<li>
+		<%= link_to 'New Task', new_task_path %>
+	</li>
 </ul>
 
 <%= yield %>
