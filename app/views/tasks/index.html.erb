@@ -1,0 +1,10 @@
+<h1>INDEX</h1>
+
+<% @tasks = @tasks.order(:date).reverse %>
+<% @tasks.each do | task | %>
+
+<p>
+<%= task.date %>
+</p>
+<% end %>
+
