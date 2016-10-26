@@ -4,7 +4,7 @@
 <% @tasks.each do | task | %>
 
 <p>
-<%= link_to task.description, task_path( task.id ) %>----<%= task.date %>
+<%= task.description %>----<%= link_to 'See Details', task_path( task.id ) %>
 </p>
 <% end %>
 
