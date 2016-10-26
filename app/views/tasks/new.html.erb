@@ -1,0 +1,15 @@
+<h1>SHOW</h1>
+
+<%= form_for :task, url: tasks_path do |f| %>
+<p>
+	<%= f.label :description %><br>
+	<%= f.text_field :description %>
+</p>
+	<%= f.label :date %></br>
+	<%= f.text_field :date %>
+</p>
+
+<p>
+	<%= f.submit class: "button" %>
+</p>
+<% end %>
