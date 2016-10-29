@@ -1,0 +1,15 @@
+<h1>Edit</h1>
+
+<%= form_for :task, url: task_path( @task ), method: :patch do |f| %>
+<p>
+	<%= f.label :description %><br>
+	<%= f.text_field :description %>
+</p>
+	<%= f.label :date %></br>
+	<%= f.text_field :date %>
+</p>
+
+<p>
+	<%= f.submit class: "button" %>
+</p>
+<% end %>
