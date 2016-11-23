@@ -9,11 +9,18 @@ class TasksController < ApplicationController
   end
 
   def edit
-    #
+    @task = Task.find_by_id(params[:id])
   end
 
   def update
-    #
+    @task = Task.find_by_id(params[:id])
+    if @task.update(task_params)
+      flash[:success] = "Edit saved!"
+      redirect_to @task
+    else
+      flash.now[:error] = "Try again son!"
+      render "edit"
+    end
   end
 
   def new
@@ -23,6 +30,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find_by_id(params[:id])
     @task.destroy
+    flash[:success] = "We nuked it dawg!"
     redirect_to tasks_path
   end
 
@@ -32,7 +40,8 @@ class TasksController < ApplicationController
       flash[:success] = "Task created!"
       redirect_to @task
     else
-      flash[:error] = "Try again son!"
+      flash.now[:error] = "Try again son!"
+      render "new"
     end
   end
 
