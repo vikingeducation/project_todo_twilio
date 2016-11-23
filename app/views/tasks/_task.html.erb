@@ -1,1 +1,4 @@
-<li><%= task.description %>: <%= task.due %> <a href = <%= task_path(task.id)%>> to task!</a></li>
+<li><%= task.description %>:
+<%= task.due %>
+<%= link_to "to task", task_path(task.id) %>
+<%= link_to "destroy", task_path(task.id), :method => :delete %></li>
