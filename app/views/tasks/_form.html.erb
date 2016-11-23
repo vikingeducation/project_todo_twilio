@@ -1,4 +1,5 @@
 <%= form_for @task do |f| %>
+  <%= render 'error_messages' %>
   <%= f.text_field :title %>
   <br>
   <%= f.text_area :description %>
