@@ -3,7 +3,11 @@ class CreateTasks < ActiveRecord::Migration[5.0]
     create_table :tasks do |t|
       t.string :description
       t.text :additional
-      t.datetime :due 
+      t.datetime :due
+
+
+#default: false
+#rails g migration AddSoftDeleteToTask default:false
 
       t.timestamps
     end

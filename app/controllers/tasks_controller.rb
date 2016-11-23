@@ -29,9 +29,13 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find_by_id(params[:id])
-    @task.destroy
-    flash[:success] = "We nuked it dawg!"
-    redirect_to tasks_path
+    if @task.soft_delete
+      @task.destroy
+      flash[:success] = "We nuked it dawg!"
+      redirect_to tasks_path
+    else
+      @task.soft_delete = true
+    end
   end
 
   def create
