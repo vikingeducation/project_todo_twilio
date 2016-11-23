@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(whitelist_params)
     if @task.save
-      flash[:success] = "Task created!"
+      flash[:success] = "Task created! 👍"
       redirect_to @task
     else
       flash.now[:error] = "Unable to save!"

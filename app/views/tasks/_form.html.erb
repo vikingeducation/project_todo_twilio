@@ -4,7 +4,7 @@
   <br>
   <%= f.text_area :description %>
   <br>
-  <%= f.datetime_select :due_date %>
+  <%= f.datetime_select :due_date, ampm: true %>
   <br>
   <%= f.submit "Submit" %>
 <% end %>
