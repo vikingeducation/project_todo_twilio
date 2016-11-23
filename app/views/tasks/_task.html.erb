@@ -1,9 +1,17 @@
-<li class = "list-group-item <% if task.completed %> completed <% end %>">
-<%= task.description %>:
-<%= task.due %> 
-<span class = "badge"><%= task.priority %></span>
-<%= link_to "to task", task_path(task.id), { :class => "btn btn-default" }%>
-<%= link_to "edit", edit_task_path(task.id), { :class => "btn btn-default" }%>
-<%= link_to "destroy", task_path(task.id), { :class => "btn btn-default danger", :method => :delete} %>
-<%= link_to "message", "/tasks/text-message/#{task.id}", { :class => "btn btn-default" } %>
+<li class = "list-group-item <% if task.completed %> completed <% end %> task-row">
+  <div class="row">
+    <div class="col-sm-8">
+      <%= task.description %>
+      <div class="pull-right"><%= task.due %></div>
+    </div>
+    <div class="col-sm-4 text-align-right ">
+      <div class="btn-group btn-group-sm pull-right">
+        <%= link_to "to task", task_path(task.id), { :class => "btn btn-default" }%>
+        <%= link_to "edit", edit_task_path(task.id), { :class => "btn btn-default" }%>
+        <%= link_to "destroy", task_path(task.id), { :class => "btn btn-default danger", :method => :delete} %>
+        <%= link_to "message", "/tasks/text-message/#{task.id}", { :class => "btn btn-default" } %>
+        <span class = "badge"><%= task.priority %></span>
+      </div>
+    </div>
+  </div>
 </li>
