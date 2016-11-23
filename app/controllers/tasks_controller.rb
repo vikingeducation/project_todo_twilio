@@ -47,7 +47,7 @@ class TasksController < ApplicationController
     puts params[:id]
     @task = Task.find_by_id(params[:id])
     body = @task[:description]
-    if send_message(body)
+    if SmsSender.send_message(body)
       flash[:update] = "Text message sent!"
     else
       flash[:error] = "Text message could not be sent"

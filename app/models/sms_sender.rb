@@ -1,18 +1,19 @@
 require 'twilio-ruby'
 
-account_sid = ENV['twilio_sid']
-auth_token = ENV['twilio_auth_token']
-CLIENT = Twilio::REST::Client.new account_sid, auth_token
+class SmsSender
 
-FROM = ENV['twilio_phone_number']
-TO = ENV['my_phone_number']
+  CLIENT = Twilio::REST::Client.new ENV['twilio_sid'], ENV['twilio_auth_token']
 
-def send_message(body=nil)
-  return false unless body
-  CLIENT.account.messages.create(
-    :from => FROM,
-    :to => TO,
-    :body => body
-  )
-  true
+  FROM = ENV['twilio_phone_number']
+  TO = ENV['my_phone_number']
+
+  def self.send_message(body=nil)
+    return false unless body
+    CLIENT.account.messages.create(
+      :from => FROM,
+      :to => TO,
+      :body => body
+    )
+    true
+  end
 end
