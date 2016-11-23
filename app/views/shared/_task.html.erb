@@ -1,5 +1,5 @@
-<li> 
-  <%= task.due %>
+<li>
+  <%= link_to task.due, task_path(task.id) %>
   <br>
   <%= task.description %>
   <br>
