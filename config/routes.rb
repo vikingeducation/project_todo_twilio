@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
+  get 'texts/send_text'
+
   root 'tasks#index'
   resources :tasks
-  post '/tasks/:id', to: 'tasks#soft_delete'
 end

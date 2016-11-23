@@ -34,7 +34,7 @@ class TasksController < ApplicationController
 
     if @task.update( task_params )
       flash[:success] = "Task Edited"
-      redirect_to @task
+      redirect_to ( @task.completed ? root_path : @task )
     else
       flash.now[:error] = "Error: " + @task.errors.full_messages.join(', ')
       render :new
@@ -43,6 +43,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find_by_id(params[:id])
+
     if @task
       @task.delete
       flash[:success] = "Task Deleted"
@@ -53,21 +54,10 @@ class TasksController < ApplicationController
     end
   end
 
-  def soft_delete
-    @task = Task.find_by_id(params[:id])
-    if @task.update(soft_delete: "true")
-      flash[:success] = "Task Soft Deleted"
-      redirect_to root_path
-    else
-      flash.now[:error] = "Error: " + @task.errors.full_messages.join(', ')
-      render :index
-    end
-  end
-
   private
 
   def task_params
-    params.require(:task).permit(:description, :completion_date)
+    params.require(:task).permit(:description, :completion_date, :completed)
   end
 
   def sorted_tasks

@@ -1,7 +1,7 @@
 module TasksHelper
 
   def greyed_out?(task)
-    if task.soft_delete
+    if task.completed
       "greyed-out"
     else
       ""
