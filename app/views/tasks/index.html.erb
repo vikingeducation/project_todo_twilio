@@ -1,5 +1,13 @@
+<%= form_for @task do |f| %>
+
+  <%= f.text_field :description %>
+  <%= f.date_field :due %>
+  <%= f.submit "go"%>
+
+<% end %>
+
 <ul>
   <% @tasks.each do |task| %>
-    <%= render task %>
+    <%= render task %> 
   <% end %>
 </ul>
