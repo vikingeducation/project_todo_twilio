@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
 10.times do |n|
-  Task.create(description: "Task #{n}", completion_date: Time.now + 1000)
+  priority = (1..5).to_a.sample
+  Task.create(description: "Task #{n}", completion_date: Time.now + 1000, priority: priority)
 end

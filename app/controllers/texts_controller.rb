@@ -4,8 +4,8 @@ class TextsController < ApplicationController
     @twilio = TwilioClient.new
     @task = Task.find(params[:id])
     @twilio.send_sms(@task.description, @task.completion_date)
-    flash.now[:success] = "Reminder sent."
-    render Rails.application.routes.recognize_path(request.referer)[:action]
+    flash[:success] = "Reminder sent."
+    redirect_to root_path
   end
 
 end
