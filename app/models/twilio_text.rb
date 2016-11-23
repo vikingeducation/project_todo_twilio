@@ -1,4 +1,6 @@
-class Twilio
+require 'twilio-ruby'
+
+class TwilioText
 
   def initialize
     load_figaro
@@ -11,17 +13,14 @@ class Twilio
     path: File.expand_path("../../../config/application.yml")
     )
     Figaro.load
-
-    p "---------------------------------"
-    p ENV['twilio_acct_sid']
-    p "---------------------------------"
   end
 
-  def send_message
+  def send_message(msg)
     @client.messages.create(
-      from: '+17208097538',
-      to: '+17202811487',
-      body: 'Hey there!'
+      from: ENV["twilio_number"], # '+17208097538'
+      to: ENV["my_number"],
+      body: msg
     )
   end
+
 end
