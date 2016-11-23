@@ -3,8 +3,8 @@
     <%= task.description %>, complete by
     <%= task.completion_date %>
     <%= link_to "See Task", task_path(task.id) %>
-    <%= link_to "Edit", edit_task_path(task.id) %>
-    <%= link_to "Delete", task_path(task.id), method: :delete %>
-    <%= link_to "Soft Delete", task_path(task.id), method: :post %>
+    <%= render partial: 'shared/mark_complete', locals: { task: task } %>
   </div>
+  <%= link_to "Edit", edit_task_path(task.id) %>
+  <%= link_to "Delete", task_path(task.id), method: :delete %>
 </li>
