@@ -2,3 +2,4 @@
 
 <p>Description: <%= @task.description %></p>
 <p>Due Date: <%= @task.due_date %></p>
+<p><%= link_to "Delete", task_path(@task), method: "delete" %></p>
