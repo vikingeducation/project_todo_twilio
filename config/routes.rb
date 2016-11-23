@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :tasks
 
   get "/tasks/text-message/:id" => "tasks#text_message"
-
+  get "/sort/:arg" => "tasks#sort"
 end

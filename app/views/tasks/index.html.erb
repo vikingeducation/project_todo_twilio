@@ -1,10 +1,15 @@
 <%= form_for @new_task, :html => { :class => "form-group" } do |f| %>
 
   <%= f.text_field :description %>
-  <%= f.date_field :due %>
+  <%= f.datetime_field :due %>
   <%= f.submit "go" %>
 
 <% end %>
+  
+<%= link_to "Sort By Date Closest", "/sort/date" %> 
+<%= link_to "Sort By Date Futhest", "/sort/far" %> 
+<%= link_to "Sort By Ascending Priority", "/sort/important" %>
+<%= link_to "Sort By Descending Priority", "/sort/unimportant" %>
 
 <ul class="list-group">
   <% @tasks.each do |task| %>

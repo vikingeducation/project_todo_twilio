@@ -4,7 +4,10 @@ class TasksController < ApplicationController
 
   def index
     @new_task = Task.new
-    @tasks = Task.order(:due)
+    @tasks = Task.order(:priority).reverse_order if cookies[:sort_order] == "important"
+    @tasks = Task.order(:due).reverse_order if cookies[:sort_order] == "far"
+    @tasks = Task.order(:priority) if cookies[:sort_order] == "unimportant"
+    @tasks = Task.order(:due) if cookies[:sort_order] == "date" ||cookies[:sort_order] == nil
   end
 
   def show
@@ -55,9 +58,14 @@ class TasksController < ApplicationController
     redirect_to tasks_url
   end
 
+  def sort
+    cookies[:sort_order] = params[:arg]
+    redirect_to tasks_url
+  end
+
   private
   def strong_params
-    params.require(:task).permit(:due, :description, :completed)
+    params.require(:task).permit(:due, :description, :completed, :priority)
   end
 
 end

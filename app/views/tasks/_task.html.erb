@@ -1,7 +1,9 @@
-<li class = "list-group-item <% if task.completed %> completed <% end %>"><%= task.description %>:
-<%= task.due %>
-<%= link_to "to task", task_path(task.id) %>
-<%= link_to "edit", edit_task_path(task.id)%>
-<%= link_to "destroy", task_path(task.id), :method => :delete %>
-<%= link_to "message", "/tasks/text-message/#{task.id}" %>
+<li class = "list-group-item <% if task.completed %> completed <% end %>">
+<%= task.description %>:
+<%= task.due %> 
+<span class = "badge"><%= task.priority %></span>
+<%= link_to "to task", task_path(task.id), { :class => "btn btn-default" }%>
+<%= link_to "edit", edit_task_path(task.id), { :class => "btn btn-default" }%>
+<%= link_to "destroy", task_path(task.id), { :class => "btn btn-default danger", :method => :delete} %>
+<%= link_to "message", "/tasks/text-message/#{task.id}", { :class => "btn btn-default" } %>
 </li>
