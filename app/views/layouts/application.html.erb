@@ -11,7 +11,9 @@
   <body data-no-turbolinks>
     <%= render "shared/navbar" %>
     <% flash.each do |type, message| %>
-      <div>
+      <div class=
+            <% if flash[:error] %>"alert alert-warning"<% end %>
+            <% if flash[:update] %>"alert alert-success"<% end %> >
         <strong><%= type %>! <%= message %></strong>
       </div>
     <% end %>

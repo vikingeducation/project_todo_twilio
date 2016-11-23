@@ -1,4 +1,4 @@
-<li><%= task.description %>:
+<li class = <% if task.completed %> "completed" <% end %>><%= task.description %>:
 <%= task.due %>
 <%= link_to "to task", task_path(task.id) %>
 <%= link_to "edit", edit_task_path(task.id)%>
