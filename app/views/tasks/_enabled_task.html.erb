@@ -1,0 +1,14 @@
+<%= link_to task.description, task %> | Priority: <%= task.priority %>
+<br>
+<%= link_to "delete", task, method: :delete %>
+<%= link_to "disable", update_single_path(id: task.id, attribute: :disabled, 
+                                          value: true), method: :patch %> 
+<%= link_to "edit", edit_task_path(task) %>
+<%= link_to "remind me", send_sms_path(task) %>
+<% if task.sticky? %>
+  <%= link_to "unstick", update_single_path(id: task.id, attribute: :sticky, value: false),                                        method: :patch%>
+<% else %>
+  <%= link_to "stick", update_single_path(id: task.id, attribute: :sticky, value: true),                                        method: :patch%>
+<% end %>
+<br>
+<br>

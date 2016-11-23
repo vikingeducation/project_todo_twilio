@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
+    @tasks = Task.list(params[:order])
   end
 
   def show
@@ -43,16 +43,10 @@ class TasksController < ApplicationController
     end
   end
 
-  def disable
+  def update_single
     @task = Task.find(params[:id])
-    @task.update_attribute(:disabled, true)
+    @task.update_attribute(params[:attribute], params[:value])
     redirect_to :root
-  end
-
-  def enable
-    @task = Task.find(params[:id])
-    @task.update_attribute(:disabled, false)
-    redirect_to @task
   end
 
   private

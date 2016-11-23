@@ -1,13 +1,8 @@
 <li>
   <% if !task.disabled %>
-    <%= link_to task.description, task %>
-    <%= link_to "delete", task, method: :delete %>
-    <%= link_to "disable", disable_task_path(task), method: :patch %> 
-    <%= link_to "edit", edit_task_path(task) %>
-    <%= link_to "remind me", send_sms_path(task) %>
+  <%= render partial: 'enabled_task', locals: { task: task } %>
+    
   <% else%>
-    <span class="disabled"><%= task.description %></span>
-    <%= link_to "delete", task, method: :delete %>
-    <%= link_to "enable", enable_task_path(task), method: :patch %>
+    <%= render partial: 'disabled_task', locals: { task: task }%>
   <% end %>
 </li>
