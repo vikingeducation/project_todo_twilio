@@ -12,7 +12,7 @@ class Task < ApplicationRecord
   end
 
   def tag_list
-    self.tags.each { |tag| tag.name }.join(', ')
+    self.tags.map { |tag| tag.name }.join(', ')
   end
 
   def self.list(order)

@@ -52,7 +52,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:description, :completion_date)
+    params.require(:task).permit(:description, :completion_date, :tag_list)
   end
 
   def check_enabled
