@@ -1,6 +1,6 @@
 <% sort_complete_date(@tasks).each do |task| %>
   <li>
-    <%= link_to task.title, task_path(task) %>
+    <%= link_to task.title, task_path(task), class: "#{'complete' if task.complete}" %>
     <%= link_to "Delete", task_path(task), method: "delete" %>
     <%= link_to "Edit", edit_task_path(task) %>
   </li>
