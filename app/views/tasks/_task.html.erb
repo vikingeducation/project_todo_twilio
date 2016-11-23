@@ -1,5 +1,7 @@
 <li>
   <%= task.description %>, complete by
   <%= task.completion_date %>
-  <%= link_to "Link", task_path(task.id) %>
+  <%= link_to "See Task", task_path(task.id) %>
+  <%= link_to "Edit", edit_task_path(task.id) %>
+  <%= link_to "Delete", task_path(task.id), method: :delete %>
 </li>
