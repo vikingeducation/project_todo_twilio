@@ -10,6 +10,11 @@
 
   <body data-no-turbolinks>
     <%= render "shared/navbar" %>
+    <% flash.each do |type, message| %>
+      <div>
+        <strong><%= type %>! <%= message %></strong>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

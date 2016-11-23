@@ -10,13 +10,18 @@ class TasksController < ApplicationController
   end
 
   def create
-    Task.new(strong_params).save
+    if Task.new(strong_params).save
+      flash[:update] = "You created a task"
+    else 
+      flash[:error] = "Your input was too short. Try again"
+    end
     redirect_to tasks_url
   end
 
   def destroy
     @task = Task.find_by_id(params[:id])
     @task.destroy
+    flash[:update] = "You destroyed a task"
     redirect_to tasks_url
   end
 
@@ -26,9 +31,15 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find_by_id(params[:id])
-    @task.update_attributes(strong_params)
-    redirect_to tasks_url
-  end
+    if @task.update_attributes(strong_params)
+      flash[:update] = "You updated a task"
+      redirect_to tasks_url
+    else 
+      flash[:error] = "Your input was too short. Try again"
+      redirect_to :back
+    end
+    
+   end
 
   private
   def strong_params
