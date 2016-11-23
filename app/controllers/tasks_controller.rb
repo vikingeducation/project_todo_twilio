@@ -53,7 +53,19 @@ class TasksController < ApplicationController
     end
   end
 
+  def soft_delete
+    @task = Task.find_by_id(params[:id])
+    if @task.update(soft_delete: "true")
+      flash[:success] = "Task Soft Deleted"
+      redirect_to root_path
+    else
+      flash.now[:error] = "Error: " + @task.errors.full_messages.join(', ')
+      render :index
+    end
+  end
+
   private
+
   def task_params
     params.require(:task).permit(:description, :completion_date)
   end

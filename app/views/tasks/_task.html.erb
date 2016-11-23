@@ -1,7 +1,10 @@
 <li>
-  <%= task.description %>, complete by
-  <%= task.completion_date %>
-  <%= link_to "See Task", task_path(task.id) %>
-  <%= link_to "Edit", edit_task_path(task.id) %>
-  <%= link_to "Delete", task_path(task.id), method: :delete %>
+  <div class="<%= greyed_out?(task) %>">
+    <%= task.description %>, complete by
+    <%= task.completion_date %>
+    <%= link_to "See Task", task_path(task.id) %>
+    <%= link_to "Edit", edit_task_path(task.id) %>
+    <%= link_to "Delete", task_path(task.id), method: :delete %>
+    <%= link_to "Soft Delete", task_path(task.id), method: :post %>
+  </div>
 </li>
