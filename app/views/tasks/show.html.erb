@@ -1,3 +1,5 @@
 <h1>Your task:</h1>
 <p><%= @task.description %></p>
 <p>Must complete by: <%= @task.completion_date.strftime("%B %d") %></p>
+<%= link_to "Delete", @task, method: :delete %>
+<%= link_to "Edit", edit_task_path(@task) %>
