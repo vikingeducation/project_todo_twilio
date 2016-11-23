@@ -1,6 +1,6 @@
 class Text
 
-  def initialize task
+  def initialize(task)
     @description = task.description
     @due_date = task.due
     account_sid = ENV['ID_KEY']
