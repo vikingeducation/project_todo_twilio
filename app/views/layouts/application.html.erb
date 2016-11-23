@@ -10,13 +10,19 @@
 
   <body data-no-turbolinks>
     <%= render "shared/navbar" %>
-    <% flash.each do |type, message| %>
-      <div class=
-            <% if flash[:error] %>"alert alert-warning"<% end %>
-            <% if flash[:update] %>"alert alert-success"<% end %> >
-        <strong><%= type %>! <%= message %></strong>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <% flash.each do |type, message| %>
+            <div class=
+                  <% if flash[:error] %>"alert alert-warning"<% end %>
+                  <% if flash[:update] %>"alert alert-success"<% end %> >
+              <strong><%= type %>! <%= message %></strong>
+            </div>
+          <% end %>
+          <%= yield %>
+        </div>
       </div>
-    <% end %>
-    <%= yield %>
+    </div>
   </body>
 </html>
