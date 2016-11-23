@@ -4,6 +4,7 @@
     <%= f.datetime_field :due, class: "form-control" %>
     <label>Priority: <%= f.number_field :priority, { in: 0..10, class: "form-control" } %></label>
     <label>Complete? <%= f.check_box :completed %> </label>
+    <label>Sticky? <%= f.check_box :sticky %> </label>
     <%= f.submit "Update task", :class => "btn btn-primary pull-right" %>
   </div>
   <%= f.text_area :body, class: "form-control" %>

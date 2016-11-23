@@ -1,4 +1,7 @@
-<li class = "list-group-item <% if task.completed %> completed <% end %> task-row">
+<li class="list-group-item task-row
+  <% if task.completed %> completed <% end %>
+  <% if task.sticky %> bg-info <% end %>
+  ">
   <div class="row">
     <div class="col-sm-8">
       <%= task.description %>
