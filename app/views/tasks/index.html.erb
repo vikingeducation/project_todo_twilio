@@ -2,6 +2,7 @@
 
   <%= f.text_field :description %>
   <%= f.datetime_field :due %>
+  <%= f.number_field :priority, in: 0..10 %>
   <%= f.submit "go" %>
 
 <% end %>
