@@ -4,6 +4,7 @@
     <%= link_to "delete", task, method: :delete %>
     <%= link_to "disable", disable_task_path(task), method: :patch %> 
     <%= link_to "edit", edit_task_path(task) %>
+    <%= link_to "remind me", send_sms_path(task) %>
   <% else%>
     <span class="disabled"><%= task.description %></span>
     <%= link_to "delete", task, method: :delete %>

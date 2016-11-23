@@ -1,6 +1,6 @@
 require 'twilio-ruby'
 
-class Twilio
+class TwilioClient
 
   ACCOUNT_SID = ENV['TWILIO_SID']
   AUTH_TOKEN  = ENV['TWILIO_TOKEN']
@@ -8,7 +8,9 @@ class Twilio
   TO_NUM      = ENV['TO_NUM']
 
   def initialize
-    @client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
+    puts ACCOUNT_SID
+    puts AUTH_TOKEN
+    @client = Twilio::REST::Client.new(ACCOUNT_SID, AUTH_TOKEN)
   end
 
   def send_sms(description, completion_date)
