@@ -1,6 +1,10 @@
-<h1>Tasks</h1>
-<ul>
-  <% @tasks.sort_by(&:due).each do |task| %>
-    <%= render :partial => "shared/task", :locals => {:task => task} %>
+<div class="wrapper">
+  <h1>Tasks</h1>
+  <% unless @tasks.nil? %>
+  <ul>
+    <% @tasks.sort_by(&:due).each do |task| %>
+      <%= render :partial => "shared/task", :locals => {:task => task} %>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
+</div>

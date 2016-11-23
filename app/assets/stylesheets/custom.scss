@@ -1,0 +1,31 @@
+body {
+  text-align: center;
+  background-color: rgb(230, 250, 255)  
+}
+
+
+
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 150px;
+}
+
+.wrapper {
+  padding: 15px;
+  border-radius: 15px;
+  
+  background-color: rgb(0, 122, 153);
+  display: inline-block;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.soft-delete {
+  color: grey;
+  text-decoration: line-through;
+}

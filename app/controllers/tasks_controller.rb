@@ -32,10 +32,10 @@ class TasksController < ApplicationController
     if @task.soft_delete
       @task.destroy
       flash[:success] = "We nuked it dawg!"
-      redirect_to tasks_path
     else
-      @task.soft_delete = true
+      @task.update_attribute(:soft_delete, true)
     end
+    redirect_to tasks_path
   end
 
   def create
