@@ -1,8 +1,11 @@
-<%= form_for @task, :html => { :class => "form-group form-inline" } do |f| %>
-
-  <%= f.text_field :description, { placeholder: "Enter task", class: "form-control" } %>
-  <%= f.datetime_field :due, class: "form-control" %>
-  <label style="margin-left: 0.5em">Priority: <%= f.number_field :priority, { in: 0..10, class: "form-control" } %></label>
-  <%= f.submit "Update task", :class => "btn btn-primary " %>
+<%= form_for @task do |f| %>
+  <div class="form-group form-inline">
+    <%= f.text_field :description, { placeholder: "Enter task", class: "form-control" } %>
+    <%= f.datetime_field :due, class: "form-control" %>
+    <label>Priority: <%= f.number_field :priority, { in: 0..10, class: "form-control" } %></label>
+    <label>Complete? <%= f.check_box :completed %> </label>
+    <%= f.submit "Update task", :class => "btn btn-primary pull-right" %>
+  </div>
+  <%= f.text_area :body, class: "form-control" %>
 
 <% end %>

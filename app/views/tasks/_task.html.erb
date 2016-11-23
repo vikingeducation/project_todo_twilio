@@ -6,7 +6,7 @@
     </div>
     <div class="col-sm-4 text-align-right ">
       <div class="btn-group btn-group-sm pull-right">
-        <%= link_to "to task", task_path(task.id), { :class => "btn btn-default" }%>
+        <%= link_to "view", task_path(task.id), { :class => "btn btn-default" }%>
         <%= link_to "edit", edit_task_path(task.id), { :class => "btn btn-default" }%>
         <%= link_to "destroy", task_path(task.id), { :class => "btn btn-default danger", :method => :delete} %>
         <%= link_to "message", "/tasks/text-message/#{task.id}", { :class => "btn btn-default" } %>

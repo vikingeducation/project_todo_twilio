@@ -11,7 +11,8 @@ Task.destroy_all
   Task.create!(description: Faker::Lorem.sentence(3).chop,
                 due: Faker::Time.forward(23),
                 completed: Faker::Boolean.boolean(0.05),
-                priority: Faker::Number.between(0, 10))
+                priority: Faker::Number.between(0, 10),
+                body: Faker::Lorem.paragraph)
 end
 
 p "Created #{Task.count} tasks"
