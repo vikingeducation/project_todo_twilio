@@ -20,6 +20,16 @@ class TasksController < ApplicationController
     redirect_to tasks_url
   end
 
+  def edit
+    @task = Task.find_by_id(params[:id])
+  end
+
+  def update
+    @task = Task.find_by_id(params[:id])
+    @task.update_attributes(strong_params)
+    redirect_to tasks_url
+  end
+
   private
   def strong_params
     params.require(:task).permit(:due, :description)

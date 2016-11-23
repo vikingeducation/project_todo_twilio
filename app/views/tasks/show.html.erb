@@ -1,1 +1,8 @@
-<ul><li><%= @task.description %>: <%= @task.due %> <%= link_to "destroy", task_path(@task.id), :method => :delete %></li> </ul>
+<ul>
+  <li>
+    <%= @task.description %>:
+    <%= @task.due %>
+    <%= link_to "edit", edit_task_path(@task.id)%>
+    <%= link_to "destroy", task_path(@task.id), :method => :delete %>
+  </li>
+</ul>
