@@ -11,15 +11,13 @@
 <br>
 
   <%= label_tag(:rating_1, "1") %>
-  <%= f.radio_button_tag(:rating, 1) %>
+  <%= f.radio_button(:rating, 1) %>
 
   <%= label_tag(:rating_2, "2") %>
-  <%= f.radio_button_tag(:rating, 2) %>
+  <%= f.radio_button(:rating, 2) %>
 
   <%= label_tag(:rating_3, "3") %>
-  <%= f.radio_button_tag(:rating, 3) %>
-
-
+  <%= f.radio_button(:rating, 3) %>
 
   <%= f.submit "Edit!" %>
 <% end %>

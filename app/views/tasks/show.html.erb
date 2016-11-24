@@ -8,6 +8,8 @@
     <%= @task.additional %>
   </p>
 
+  Rating: <%= "*" * @task.rating %>
+
   <br>
   <%= link_to "Edit", edit_task_path(@task.id) %>
   <%= link_to "Delete", @task, method: :delete,
