@@ -1,0 +1,14 @@
+<%= form_for @task do |f| %>
+  <%= render 'error_messages' %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.text_area :description %>
+  <br>
+  <%= f.datetime_select :due_date, ampm: true %>
+  <br>
+  <%= f.radio_button :priority, 3 %> Most Important
+  <%= f.radio_button :priority, 2 %> Important
+  <%= f.radio_button :priority, 1 %> Least Important
+  <br>
+  <%= f.submit "Submit" %>
+<% end %>
