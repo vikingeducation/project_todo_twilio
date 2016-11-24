@@ -15,10 +15,10 @@ class TwilioText
     Figaro.load
   end
 
-  def send_message(msg)
+  def send_text(msg)
     @client.messages.create(
-      from: ENV["twilio_number"], # '+17208097538'
-      to: ENV["my_number"],
+      from: ENV['twilio_number'],
+      to: ENV['my_number'],
       body: msg
     )
   end

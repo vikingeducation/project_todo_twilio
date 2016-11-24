@@ -3,13 +3,11 @@ class TextsController < ApplicationController
   def send_text
     @task = Task.find_by_id(params[:id])
 
-    if @task.update( task_params )
-      flash[:success] = "Task Edited"
-      redirect_to ( @task.completed ? root_path : @task )
+    if TwilioText.new.send_text( @task.description )
+      flash[:success] = "Reminder Sent!"
     else
-      flash.now[:error] = "Error: " + @task.errors.full_messages.join(', ')
-      render :new
+      flash[:error] = "Error: " + @task.errors.full_messages.join(', ')
     end
+    redirect_to root_path
   end
-
 end
