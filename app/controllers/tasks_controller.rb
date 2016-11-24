@@ -2,6 +2,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    @sort_method = params[:sort_method]
   end
 
   def show
@@ -48,6 +49,6 @@ class TasksController < ApplicationController
   private
 
   def whitelist_params
-    params.require(:task).permit(:title, :description, :due_date, :complete, :priority)
+    params.require(:task).permit(:title, :description, :due_date, :complete, :priority, :sort_method)
   end
 end
