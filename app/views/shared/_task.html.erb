@@ -3,6 +3,8 @@
   <br>
   <%= task.description %>
   <br>
+<%= '*' * task.rating %>
+  <br>
   <%= link_to "Edit", edit_task_path(task.id) %>
   <br>
   <%= link_to "Delete", task_path(task.id), method: :delete, data: {confirm: "Really delete the article?"} %>
