@@ -2,7 +2,7 @@ class TasksController < ApplicationController
  # TODO Add before hook?
 
   def index
-    @tasks = sorted_tasks
+    @tasks = sorted_tasks(params[:sort_by])
   end
 
   def show
@@ -54,10 +54,11 @@ class TasksController < ApplicationController
     end
   end
 
+
   private
 
   def task_params
-    params.require(:task).permit(:description, :completion_date, :completed)
+    params.require(:task).permit(:description, :completion_date, :completed, :priority)
   end
 
   def sorted_tasks

@@ -1,3 +1,18 @@
 <ul>
   <%= render @tasks %>
 </ul>
+
+<form method="post" action="<%= root_path %>">
+  <label>Sort By:</label>
+  <select name="sort_by">
+    <option value="date_ascending">Date Ascending</option>
+    <option value="date_descending">Date Descending</option>
+    <option value="priority">Priority</option>
+  </select>
+  <input  type="hidden"
+          name="authenticity_token"
+          value="<%= form_authenticity_token %>">
+  <input type="submit" value="Sort">
+</form>
+
+
