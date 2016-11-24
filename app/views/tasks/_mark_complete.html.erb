@@ -1,0 +1,4 @@
+<%= form_for @task do |f| %>
+  <%= f.hidden_field :complete, :value => !@task.complete %>
+  <%= f.submit(@task.complete ? "Mark Incomplete" : "Mark Complete") %>
+<% end %>

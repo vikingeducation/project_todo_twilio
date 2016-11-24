@@ -1,3 +1,9 @@
-# todo_twilio
+Project To Do Twilio
 
-[The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
+[John Popenuck](https://github.com/popenuj)
+
+[Catherine Kwak](https://github.com/khopsickle)
+
+[Jacob Tingley](https://github.com/jtingley)
+
+An app to track tasks
