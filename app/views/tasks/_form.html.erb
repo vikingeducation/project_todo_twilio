@@ -6,5 +6,9 @@
   <br>
   <%= f.datetime_select :due_date, ampm: true %>
   <br>
+  <%= f.radio_button :priority, value: 1 %> Most Important
+  <%= f.radio_button :priority, value: 2 %> Important
+  <%= f.radio_button :priority, value: 3 %> Least Important
+  <br>
   <%= f.submit "Submit" %>
 <% end %>

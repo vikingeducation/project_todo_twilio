@@ -48,6 +48,6 @@ class TasksController < ApplicationController
   private
 
   def whitelist_params
-    params.require(:task).permit(:title, :description, :due_date, :complete)
+    params.require(:task).permit(:title, :description, :due_date, :complete, :priority)
   end
 end
