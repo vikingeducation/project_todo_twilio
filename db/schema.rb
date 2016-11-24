@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123233835) do
+ActiveRecord::Schema.define(version: 20161124001701) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "description"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20161123233835) do
     t.integer  "priority",    default: 0
     t.text     "body"
     t.boolean  "sticky",      default: false
+    t.string   "tags"
   end
 
 end

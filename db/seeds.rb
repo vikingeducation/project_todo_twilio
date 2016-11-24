@@ -12,8 +12,9 @@ Task.destroy_all
                 due: Faker::Time.forward(23),
                 completed: Faker::Boolean.boolean(0.05),
                 priority: Faker::Number.between(0, 10),
-                body: Faker::Lorem.paragraph,
-                sticky: Faker::Boolean.boolean(0.05))
+                body: Faker::Lorem.paragraph(6, true),
+                sticky: Faker::Boolean.boolean(0.05),
+                tags: Faker::GameOfThrones.house)
 end
 
 p "Created #{Task.count} tasks"

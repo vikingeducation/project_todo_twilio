@@ -3,9 +3,14 @@
   <% if task.sticky %> bg-info <% end %>
   ">
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-4">
       <%= task.description %>
-      <div class="pull-right"><%= task.due %></div>
+    </div>
+    <div class=col-sm-3>
+      <%= task.due.strftime("%c")%> 
+    </div>
+    <div class=col-sm-1>
+      <%= task.tags%> 
     </div>
     <div class="col-sm-4 text-align-right ">
       <div class="btn-group btn-group-sm pull-right">

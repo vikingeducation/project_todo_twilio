@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get "/tasks/text-message/:id" => "tasks#text_message"
   get "/sort/:arg" => "tasks#sort"
+  get "search" => "tasks#search_form"
 end

@@ -6,8 +6,16 @@
      <%= f.text_field :tags, { placeholder: "Enter tags", class: "form-control" } %>
     <label>Complete? <%= f.check_box :completed %> </label>
     <label>Sticky? <%= f.check_box :sticky %> </label>
-    <%= f.submit "Update task", :class => "btn btn-primary pull-right" %>
+    <%= f.submit "Search", :class => "btn btn-primary pull-right" %>
   </div>
   <%= f.text_area :body, class: "form-control" %>
 
 <% end %>
+
+<ul class="list-group">
+  <% if @tasks %>
+    <% @tasks.each do |task| %>
+      <%= render task %>
+    <% end %>
+  <% end %>
+</ul>
