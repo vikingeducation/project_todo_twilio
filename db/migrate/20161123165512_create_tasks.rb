@@ -5,10 +5,8 @@ class CreateTasks < ActiveRecord::Migration[5.0]
       t.text :additional
       t.datetime :due
 
-
 #default: false
-#rails g migration AddSoftDeleteToTask default:false
-
+#rails g migration AddSoftDeleteToTask default:false 
       t.timestamps
     end
   end
