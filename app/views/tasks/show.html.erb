@@ -2,7 +2,12 @@
 <p><%= @task.description %></p>
 <p>Must complete by: <%= @task.completion_date.strftime("%B %d") %></p>
 <p>Priority: <%= @task.priority %></p>
-<p>Tags: <%= @task.tag_list %></p>
+<p>
+  Tags: 
+  <% @task.tags.each do |tag| %>
+    <%= link_to tag.name, tag %>
+  <% end %>
+</p>
 <%= link_to "Delete", @task, method: :delete %>
 <%= link_to "Edit", edit_task_path(@task) %>
 <%= link_to "remind me", send_sms_path(@task) %>
