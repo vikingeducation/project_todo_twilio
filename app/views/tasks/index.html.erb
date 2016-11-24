@@ -1,16 +1,9 @@
-<div class="wrapper">
-  <h1>Tasks</h1>
-
-  <!-- <h2>Sort by:</h2>
-  <input type="button" name="Date" value="due">
-  <input type="button" name="Highest Rating" value="rating">
-  <input type="button" name="Lowest Rating" value="3"> -->
-  <% unless @tasks.nil? %>
-
-  <ul>
-    <% @tasks.sort_by(&:due).each do |task| %>
-      <%= render :partial => "shared/task", :locals => {:task => task} %>
-    <% end %>
-  </ul>
+<% unless @tasks.nil? %>
+<div class="panel-body">
+<ul>
+  <% @tasks.sort_by(&:due).each do |task| %>
+  <%= render :partial => "shared/task", :locals => {:task => task} %>
   <% end %>
+</ul>
+<% end %>
 </div>

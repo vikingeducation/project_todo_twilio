@@ -1,5 +1,8 @@
-<nav>
-  <%= link_to "Tasks Index", tasks_path %>
-  <%= link_to "Create Task", new_task_path %>
-</nav>
-<hr>
+<div class="panel-heading">
+  <%= link_to tasks_path do %>
+  <i class="glyphicon glyphicon-th col-xs-offset-3 col-xs-4"></i>
+  <% end %>
+  <%= link_to new_task_path do %>
+  <i class="glyphicon glyphicon-plus col-xs-offset-1"></i>
+  <% end %>
+</div>

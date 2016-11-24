@@ -8,10 +8,12 @@
     <%= @task.additional %>
   </p>
 
-  Rating: <%= "*" * @task.rating %>
+  <% @task.rating.times do %>
+  <%= "<span id='rating' class='glyphicon glyphicon glyphicon-star'></span>".html_safe %>
+  <% end %>
 
   <br>
   <%= link_to "Edit", edit_task_path(@task.id) %>
   <%= link_to "Delete", @task, method: :delete,
-      data: {confirm: "Really delete the article?"} %>
+  data: {confirm: "Really delete the article?"} %>
 </div>
