@@ -1,0 +1,8 @@
+<li>
+  <% if !task.disabled %>
+  <%= render partial: 'enabled_task', locals: { task: task } %>
+    
+  <% else%>
+    <%= render partial: 'disabled_task', locals: { task: task }%>
+  <% end %>
+</li>

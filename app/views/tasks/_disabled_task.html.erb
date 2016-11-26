@@ -1,0 +1,6 @@
+ <span class="disabled"><%= task.description %> | Priorty: <%= task.priority %></span>
+<%= link_to "delete", task, method: :delete %>
+<%= link_to "enable", update_single_path(id: task.id, attribute: :disabled, 
+                                         value: false), method: :patch %>
+<br>
+<br>

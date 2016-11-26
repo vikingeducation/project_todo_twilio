@@ -1,0 +1,15 @@
+<h1>Tasks</h1>
+<ul>
+  <li>
+    <%= link_to "highest priority first", root_path(:order => 'priority DESC' ) %>
+  </li>
+  <li>
+    <%= link_to "lowest priority first", root_path(:order => 'priority' ) %>
+  </li>
+  <li>
+    <%= link_to "Oldest first", root_path(:order => nil ) %>
+  </li>
+</ul>
+<ul>
+  <%= render @tasks %>
+</ul>

@@ -1,3 +1,5 @@
-# todo_twilio
+# CRUD Task Manager
 
-[The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
+Completed by [Christian](https://github.com/ChristianCarey/project_todo_twilio.git) and [Luke](https://github.com/luke-schleicher/project_todo_twilio.git) 
+
+Building a CRUDDY Task Manager with Rails
