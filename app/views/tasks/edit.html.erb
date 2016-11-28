@@ -1,0 +1,23 @@
+<h1>Edit Task</h1>
+<%= form_for @task do |f| %>
+  <%= label_tag(:description, "Description") %>
+  <%= f.text_field :description %>
+  <br>
+  <%= label_tag(:additional, "Additional stuff") %>
+  <%= f.text_area :additional %>
+  <br>
+  <%= label_tag(:due, "Task due") %>
+  <%= f.date_select :due %>
+<br>
+
+  <%= label_tag(:rating_1, "1") %>
+  <%= f.radio_button(:rating, 1) %>
+
+  <%= label_tag(:rating_2, "2") %>
+  <%= f.radio_button(:rating, 2) %>
+
+  <%= label_tag(:rating_3, "3") %>
+  <%= f.radio_button(:rating, 3) %>
+
+  <%= f.submit "Edit!" %>
+<% end %>

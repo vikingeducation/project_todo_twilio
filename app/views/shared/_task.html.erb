@@ -1,0 +1,13 @@
+<li class="well<%= " soft-delete" if task.soft_delete %>">
+  <%= link_to task.due, task_path(task.id) %>
+  <br>
+  <%= task.description %>
+  <br>
+  <% task.rating.times do %>
+  <%= "<span id='rating' class='glyphicon glyphicon glyphicon-star'></span>".html_safe %>
+  <% end %>
+  <br>
+  <%= link_to "Edit", edit_task_path(task.id) %>
+  <%= link_to "Delete", task_path(task.id), method: :delete, data: {confirm: "Really delete the article?"} %>
+  <%= link_to "Text Reminder", "/send_reminder/#{task.id}" %>
+</li>

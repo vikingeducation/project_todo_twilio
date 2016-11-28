@@ -1,0 +1,19 @@
+<div class="wrapper <%= "soft-delete" if @task.soft_delete %>">
+  <h1><%= @task.due %></h1>
+  <p>
+    <%= @task.description %>
+  </p>
+
+  <p>
+    <%= @task.additional %>
+  </p>
+
+  <% @task.rating.times do %>
+  <%= "<span id='rating' class='glyphicon glyphicon glyphicon-star'></span>".html_safe %>
+  <% end %>
+
+  <br>
+  <%= link_to "Edit", edit_task_path(@task.id) %>
+  <%= link_to "Delete", @task, method: :delete,
+  data: {confirm: "Really delete the article?"} %>
+</div>

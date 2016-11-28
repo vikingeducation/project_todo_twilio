@@ -1,0 +1,20 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.glyphicon { font-size: 50px; }
+
+#rating { font-size: 25px; }
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.soft-delete {
+  color: grey;
+  text-decoration: line-through;
+}
