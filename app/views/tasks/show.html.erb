@@ -1,0 +1,27 @@
+<li class = "list-group-item <% if @task.completed %> completed <% end %> task-row">
+  <div class="row">
+    <div class="col-sm-4">
+      <%= @task.description %>
+    </div>
+    <div class="col-sm-3">
+      <%= @task.due.strftime("%c") %>
+    </div>
+    <div class= "col-sm-2">
+     <%= @task.tags %>
+    </div>
+    <div class="col-sm-3 text-align-right ">
+      <div class="btn-group btn-group-sm pull-right">
+        <%= link_to "edit", edit_task_path(@task.id), { :class => "btn btn-default" }%>
+        <%= link_to "destroy", task_path(@task.id), { :class => "btn btn-default danger", :method => :delete} %>
+        <%= link_to "message", "/tasks/text-message/#{@task.id}", { :class => "btn btn-default" } %>
+        <span class = "badge"><%= @task.priority %></span>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= @task.body %>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,21 @@
+<%= form_for @new_task, :html => { :class => "form-group form-inline" } do |f| %>
+
+  <%= f.text_field :description, { placeholder: "Enter task", class: "form-control" } %>
+  <%= f.datetime_field :due, class: "form-control" %>
+  <label style="margin-left: 0.5em">Priority: <%= f.number_field :priority, { in: 0..10, class: "form-control" } %></label>
+  <%= f.submit "Create task", :class => "btn btn-primary " %>
+
+<% end %>
+
+<div class="btn-group" style="margin: 0 0 1em 0">
+  <%= link_to "Sort By Date Closest", "/sort/date", class: "btn btn-default" %>
+  <%= link_to "Sort By Date Furthest", "/sort/far", class: "btn btn-default" %>
+  <%= link_to "Sort By Ascending Priority", "/sort/important", class: "btn btn-default" %>
+  <%= link_to "Sort By Descending Priority", "/sort/unimportant", class: "btn btn-default" %>
+</div>
+
+<ul class="list-group">
+  <% @tasks.each do |task| %>
+    <%= render task %>
+  <% end %>
+</ul>

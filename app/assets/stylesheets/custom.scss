@@ -1,0 +1,28 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.completed {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.danger:hover {
+  background-color: #d9534f;
+  color: white;
+}
+
+.task-row .badge {
+  margin: .5em
+}
+
+.task-row .col-sm-8 {
+  margin-top: .25em;
+}
+
+label {
+  margin-left: 0.5em;
+}
+
+li.bg-info {
+  background-color: #d9edf7;
+}
