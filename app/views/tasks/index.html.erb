@@ -1,0 +1,12 @@
+<h1>INDEX</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= link_to "Task:", task %>
+      <%= render :partial => 'shared/task', :locals => {:task => task} %> 
+      <%= link_to "delete", task, :method => :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to "edit", edit_task_path(task) %>
+    </li>
+  <% end %>
+
+</ul>
