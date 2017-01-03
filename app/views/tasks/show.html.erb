@@ -1,0 +1,5 @@
+<p>
+  <%= @task.description %>
+</p>
+
+ <%= link_to "delete", @task, :method => :delete, data: { confirm: "Are you sure?" } %>
