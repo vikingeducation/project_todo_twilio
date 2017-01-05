@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <%= link_to "#{@task.title}", task_path(@task) %>
+    </h3>
+    <%= @task.created_at.strftime("%m-%d-%Y") %>
+  </div>
+  <div class="panel-body">
+    <%= content_tag :p, @task.description %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3 col-xs-offset-6">
+    <%= link_to "Edit Task", edit_task_path, :class => "btn btn-block btn-default " %>
+  </div>
+  <div class="col-xs-3">
+    <%= link_to "Delete Task", task_path(@task), :class => "btn btn-block  btn-danger", method: :delete %>
+  </div>
+</div>
