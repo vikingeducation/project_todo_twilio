@@ -11,7 +11,12 @@ class TasksController < ApplicationController
   end
 
   def new
+    
     @task = Task.new
+    @task = Task.new(1)
+    @task = Task.new(31)
+    @task = Task.new('test')
+    
   end
 
   def create
