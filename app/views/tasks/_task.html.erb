@@ -1,0 +1,5 @@
+<td><%= task.name %></td>
+<td><%= task.completion %></td>
+<td><%= link_to "View Details", task_path(task.id) %></td>
+<td><%= link_to "Delete", task_path(task.id), method: "delete" %></td>
+<td><%= link_to "Edit", edit_task_path(task.id) %></td>

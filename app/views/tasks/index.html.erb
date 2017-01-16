@@ -1,0 +1,23 @@
+<div class="container">
+	<h1> Here are all tasks </h1><br><br><br><br>
+	<table class="table">
+		<thead>
+	    	<tr>
+	        	<th>Task Name</th>
+	        	<th>Completion Date</th>
+	        	<th>Link</th>
+	        	<th>Action Delete</th>
+	        	<th>Action Edit</th>
+	      	</tr>
+	    </thead>
+	    <tbody>
+	    	<% @tasks.each do |task| %>
+	      		<tr>
+	        		<%= render :partial => "task", :locals => { :task => task } %>
+	      		</tr>
+	      	<% end %>
+	    </tbody>
+	</table>
+	<br><br><br>
+</div>
+<br><br>
