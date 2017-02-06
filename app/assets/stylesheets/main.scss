@@ -1,0 +1,12 @@
+@import 'partials/navbar';
+
+body {
+  /* prevent bootstrap resizing for screen width <300px */
+  min-width: 300px;
+  width: auto !important;
+
+  /* to account for height of navbar */ 
+  margin-top: 50px;
+
+  background-color: #eef7fa;
+}
