@@ -1,0 +1,35 @@
+/* task index page */
+.list-group-style {
+  margin-bottom: 0;
+}
+.badge-style {
+  font-weight: normal;
+  border-radius: 8px;
+}
+
+/* task show page */
+.table-style {
+  tbody tr {
+    td {
+      border: none;
+    }
+    th {
+      border: none;
+    }
+  }
+  tbody > tr {
+    border-bottom: 1px solid #ddd;
+  }
+  margin-bottom: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* buttons */
+.btn-custom {
+  font-size: 12px; 
+  padding: 4px 8px;
+  margin-top: 15px;
+  margin-right: 5px;
+}

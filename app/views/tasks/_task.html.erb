@@ -1,0 +1,5 @@
+<span class="badge badge-style"><%= task.completion_date.strftime("%m-%d-%y") %></span>
+<%= link_to "#{task.name}", task_path(task.id) %>
+<br class="clear">
+<%= link_to "Edit", edit_task_path(task.id), class: "btn btn-primary btn-custom" %>
+<%= link_to "Delete", task_path(task.id), method: :delete, class: "btn btn-primary btn-custom", data: {confirm: "Really delete the task?"} %>
