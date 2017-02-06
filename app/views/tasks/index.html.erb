@@ -1,0 +1,9 @@
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= task.name %><br>
+      <%= task.description %><br>
+      <%= task.completion_date %>  
+    </li>
+  <% end %>
+</ul>
