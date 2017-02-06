@@ -4,19 +4,37 @@
     <li><%= error %></li>
   <% end %>
   </ul>
-  <p>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br/>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :completion_date %><br/>
-    <%= f.date_field :completion_date, min: Time.now.to_date %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="row">
+    <div class="form-group form-group-container">
+      <div class="col-xs-3">
+        <%= f.label :name, class: "control-label" %>
+      </div>
+      <div class="col-xs-9">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group form-group-container">
+      <div class="col-xs-3">
+        <%= f.label :description, class: "control-label" %>
+      </div>
+      <div class="col-xs-9">
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group form-group-container">
+      <div class="col-xs-3">
+        <%= f.label :completion_date, class: "control-label" %>
+      </div>
+      <div class="col-xs-9">
+        <%= f.date_field :completion_date, min: Time.now.to_date, class: "form-control"  %>
+      </div>
+    </div>
+  </div>
+  <% if action == 'new' %>
+    <%= f.submit "Create Task", class: "btn btn-default btn-primary" %> 
+  <% elsif action == 'edit' %>
+    <%= f.submit "Update Task", class: "btn btn-default btn-primary" %> 
+  <% end %>
+  <hr class="hr-style">
+  <%= link_to "<< All Tasks", tasks_path, class: "btn btn-primary" %> 
 <% end %>
