@@ -1,11 +1,16 @@
 <div class="container">
-  <div class="jumbotron bg-photo" style="background-image: url(https://apod.nasa.gov/apod/image/1504/MysticMountain_HubbleForteza_960.jpg); background-size: 100%; object-fit: cover; opacity: 0.92">
-    <h1 class="display-3">Hello, world!</h1>
-    <p class="lead"><%= link_to 'All Tasks', tasks_path %></p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
+  <div class="jumbotron bg-photo" style="background-image: url(https://apod.nasa.gov/apod/image/1504/MysticMountain_HubbleForteza_960.jpg)">
+    <div class="row">
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5 test">
+        <h3>For Team Members:</h3>
+        <p><a class="btn btn-primary" href="<%= tasks_path %>" role="button">View Tasks &raquo;</a></p>
+      </div>
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-2 test2">
+      </div>
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5 test">
+        <h3>For Project Managers:</h3>
+        <p><a class="btn btn-primary" href="#" role="button">Manage Projects &raquo;</a></p>
+      </div>
+    </div>
   </div>
 </div>
