@@ -1,13 +1,19 @@
 <div class="container">
-  <div class="jumbotron bg-photo" style="background-image: url(https://apod.nasa.gov/apod/image/1504/MysticMountain_HubbleForteza_960.jpg)">
+  <div class="jumbotron bg-photo" style="background-image: url(<%= @url %>)">
+    <div class="jumbotron-item copyright">
+      <% if @copyright %>
+        <p>&copy; <%= @copyright %></p>
+      <% end %>
+    </div>
     <div class="row">
-      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5 test">
+
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5 jumbotron-item jumbotron-item-style">
         <h3>For Team Members:</h3>
         <p><a class="btn btn-primary" href="<%= tasks_path %>" role="button">View Tasks &raquo;</a></p>
       </div>
-      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-2 test2">
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-2 spacing">
       </div>
-      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5 test">
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5 jumbotron-item jumbotron-item-style">
         <h3>For Project Managers:</h3>
         <p><a class="btn btn-primary" href="#" role="button">Manage Projects &raquo;</a></p>
       </div>

@@ -40,14 +40,7 @@
   align-items: center;
 }
 
-/* jumbotron */
-.container {
-  .bg-photo {
-    width: 100%;
-    height: calc(100vh - 100px);
-    background-size: cover;
-    border-radius: 0;
-    margin-bottom: 0;
-    text-align: center;
-  }
+/* alerts */
+.alert-style {
+  margin-bottom: 0;
 }

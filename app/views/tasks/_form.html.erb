@@ -1,9 +1,4 @@
 <%= form_for(@task) do |f| %>
-  <ul>
-  <% @task.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
-  <% end %>
-  </ul>
   <div class="row">
     <div class="form-group form-group-container">
       <div class="col-xs-3">
@@ -26,7 +21,7 @@
         <%= f.label :completion_date, class: "control-label" %>
       </div>
       <div class="col-xs-9">
-        <%= f.date_field :completion_date, min: Time.now.to_date, class: "form-control"  %>
+        <%= f.date_field :completion_date, min: Time.now.to_date, class: "form-control", placeholder: "yyyy-mm-dd"  %>
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@
 @import 'partials/footer';
 @import 'partials/color_scheme';
 @import 'partials/bootstrap_overide';
+@import 'partials/home';
 
 body {
   /* prevent bootstrap resizing for screen width <300px */
@@ -19,16 +20,4 @@ html {
 
 .main-content {
   padding-top: 20px;
-}
-
-.test {
-  background-color: #323232;
-  opacity: 0.9;
-  border: 1px solid #fff;
-  border-radius: 10px;
-  color: #fff;
-}
-
-.test2 {
-  height: 20px;
 }

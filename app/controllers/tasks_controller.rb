@@ -15,8 +15,13 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create(whitelisted_task_params)
-    flash.notice = "Task '#{@task.name}' Created!"
-    redirect_to task_path(@task.id)
+    if @task.valid?
+      flash[:success] = "Task '#{@task.name}' Created!"
+      redirect_to task_path(@task.id)
+    else
+      flash[:error] = @task.errors.full_messages
+      redirect_to new_task_path
+    end
   end
 
   def edit
@@ -25,15 +30,19 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(whitelisted_task_params)
-    flash.notice = "Task '#{@task.name}' Updated!"
-    redirect_to task_path(@task.id)
+    if @task.update(whitelisted_task_params)
+      flash[:success] = "Task '#{@task.name}' Updated!"
+      redirect_to task_path(@task.id)
+    else
+      flash[:error] = @task.errors.full_messages
+      redirect_to edit_task_path(@task.id)
+    end
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.delete
-    flash.notice = "Task '#{@task.name}' Deleted!"
+    flash[:success] = "Task '#{@task.name}' Deleted!"
     redirect_to tasks_path
   end
 end

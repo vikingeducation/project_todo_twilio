@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Task Manager</title>
+  <title>Task Buddy</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render 'shared/navbar' %>
-  <% if flash.notice %>
-  <div class="alert alert-success" role="alert">
-    <div class="container">
-      <%= flash.notice %>
+  <% if flash[:success] %>
+    <div class="alert alert-success alert-style" role="alert">
+      <div class="container">
+        <%= flash[:success] %>
+      </div>
     </div>
-  </div>
+  <% elsif flash[:error] %>
+    <div class="alert alert-danger alert-style" role="alert">
+      <div class="container">
+        <% flash[:error].each do |error| %>
+          <%= error %>.<br>
+        <% end %>
+      </div>
+    </div>
   <% end %>
   <%= yield %>
   <%= render 'shared/footer' %>
