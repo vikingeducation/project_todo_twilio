@@ -1,6 +1,6 @@
 <h1><%= @task.title %></h1>
 <p><%= @task.description %></p>
-<p>Deadline: <%= @task.deadline %></p>
+<p>Deadline: <%= @task.deadline.strftime('%e/%m/%y  %l:%M%p') %></p>
 <%= link_to "Edit Task", edit_task_path %>
 <%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: 'Are you sure?'} %>
 <%= link_to "Toggle Done", task_done_path(@task), method: :patch %> <%= link_to "SMS Task", send_text_path(@task) %>
