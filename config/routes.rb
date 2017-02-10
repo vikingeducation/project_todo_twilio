@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :tasks do
     patch 'done' => 'tasks#mark_done'
   end
+
+  get 'send_text/:id(.:format)' => 'texts#send_text', as: :send_text
+
 end
