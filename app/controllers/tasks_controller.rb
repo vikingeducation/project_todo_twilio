@@ -33,8 +33,19 @@ class TasksController < ApplicationController
       flash[:success] = "Your task has been updated"
       redirect_to task_path(@task)
     else
-      flas[:error] = "Your task was not updated"
+      flash[:error] = "Your task was not updated"
       render :edit
+    end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    if @task.destroy
+      flash[:success] = "Your task was deleted"
+      redirect_to tasks_path
+    else
+      flash[:error] = "Task not deleted"
+      redirect_to task_path(@task)
     end
   end
 
