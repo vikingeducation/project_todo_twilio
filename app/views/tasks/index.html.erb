@@ -1,4 +1,10 @@
 <h1>Tasks</h1>
+<h2>Sticky Tasks</h2>
+<ul>
+<%= render @sticky %>
+</ul>
+<hr>
+<h2>Regular Tasks</h2>
 <%= render 'sort_priority' %>
 <ul>
   <%= render @tasks %>

@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = sort
+    tasks = Task.all
+    @sticky = tasks.select {|t| t.sticky }
+    @tasks = sort(tasks - @sticky)
   end
 
   def show
@@ -64,15 +66,15 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :description, :deadline, :importance)
+    params.require(:task).permit(:title, :description, :deadline, :importance, :sticky)
   end
 
-  def sort
+  def sort(tasks)
     session[:sort] = params[:sort] || :unsorted
     case session[:sort].to_sym
-    when :unsorted then Task.all
-    when :asc then Task.all.sort_by(&:importance)
-    when :desc then Task.all.sort_by(&:importance).reverse
+    when :unsorted then tasks
+    when :asc then tasks.sort_by(&:importance)
+    when :desc then tasks.sort_by(&:importance).reverse
     end
   end
 end

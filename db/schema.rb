@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210034024) do
+ActiveRecord::Schema.define(version: 20170210061738) do
 
   create_table "tasks", force: :cascade do |t|
     t.text     "description"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170210034024) do
     t.text     "title"
     t.boolean  "done"
     t.integer  "importance"
+    t.boolean  "sticky"
   end
 
 end

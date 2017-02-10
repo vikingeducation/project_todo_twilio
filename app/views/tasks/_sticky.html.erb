@@ -1,0 +1,4 @@
+<li>
+	<span <%= sticky.done ? " class=done" : '' %>><%= sticky.description %> [<b><%= sticky.importance %></b>]</span><br>
+<%= link_to "Details", task_path(sticky) %> <%= link_to "Edit", edit_task_path(sticky) %> <%= link_to "Delete", task_path(sticky), method: :delete, data: { confirm: 'Are you sure?'} %> <%= link_to "Toggle Done", task_done_path(sticky), method: :patch %> <%= link_to "SMS Task", send_text_path(sticky) %>
+</li>
