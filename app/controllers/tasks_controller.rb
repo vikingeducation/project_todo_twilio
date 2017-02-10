@@ -49,6 +49,19 @@ class TasksController < ApplicationController
     end
   end
 
+  def mark_done
+    @task = Task.find(params[:task_id])
+    @task.done = @task.done ? false : true
+    if @task.save
+      flash[:success] = "Your task has been marked as done!"
+      redirect_to tasks_path
+    else
+      flash[:error] = "We couldn't mark your task as done"
+      redirect_to tasks_path
+    end
+
+  end
+
   private
   def task_params
     params.require(:task).permit(:title, :description, :deadline)
