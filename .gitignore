@@ -22,3 +22,4 @@
 
 # ignore secret keys and stuff
 config/application.yml
+config/secrets.yml
