@@ -3,7 +3,7 @@
 [The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
 
 Keep track of your tasks with this simple app: 
-- Set deadlines, priority levels add poetic descriptions to your tasks 
+- Set deadlines, priority levels, and add poetic descriptions to your tasks 
 - View tasks in ascending and descending order, according to priority levels  
 - Create sticky tasks if you prefer to organise them as important / not important
 
