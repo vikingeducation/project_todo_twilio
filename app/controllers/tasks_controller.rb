@@ -10,8 +10,10 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
+      flash[:success] = "Your task has been created"
       redirect_to task_path(@task)
     else
+      flash.now[:error] = "Your task was not created"
       render :new
     end
   end
@@ -27,8 +29,10 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
+      flash[:success] = "Your task has been updated"
       redirect_to task_path(@task)
     else
+      flas[:error] = "Your task was not updated"
       render :edit
     end
   end
