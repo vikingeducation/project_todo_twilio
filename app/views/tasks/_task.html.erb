@@ -1,4 +1,4 @@
 <li>
-<span <%= task.done ? " class=done" : '' %>><%= task.description %></span><br>
+<span <%= task.done ? " class=done" : '' %>><%= task.description %> [<b><%= task.importance %></b>]</span><br>
 <%= link_to "Details", task_path(task) %> <%= link_to "Edit", edit_task_path(task) %> <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: 'Are you sure?'} %> <%= link_to "Toggle Done", task_done_path(task), method: :patch %> <%= link_to "SMS Task", send_text_path(task) %>
 </li>
