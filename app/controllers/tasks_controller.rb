@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+
   def index
     @tasks = Task.all
   end
@@ -13,7 +14,7 @@ class TasksController < ApplicationController
       flash[:success] = "Your task has been created"
       redirect_to task_path(@task)
     else
-      flash.now[:error] = "Your task was not created"
+      flash.now[:error] = "Your task she be at least 4 characters long"
       render :new
     end
   end
