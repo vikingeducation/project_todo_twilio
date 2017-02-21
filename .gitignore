@@ -22,3 +22,6 @@
 
 # ignore secret keys and stuff
 config/application.yml
+
+.DS_Store
+db/.DS_Store

@@ -1,10 +1,18 @@
-Sort by Priority:
 <form action="<%= tasks_path %>" method="get" name="form">
-<input type="radio" name="sort" value="asc" <% if session[:sort] == 'asc' %> checked="true" <% end %>>
-asc
-<input type="radio" name="sort" value="desc" <% if session[:sort] == 'desc' %> checked="true" <% end %>>  
-desc
-<input type="radio" name="sort" value="unsorted" <% unless session[:sort] == 'asc' || session[:sort] == 'desc' %> checked="true" <% end %>  >
-unsorted
+<label>Sort by Priority:</label>
+<div class="row">
+  <div class="columns three">
+    <select name="sort" class="u-full-width">
+  <option value="asc" <%= 'selected' if session[:sort] == 'asc' %>>Priority: ASC</option>
+  <option value="desc" <%= 'selected' if session[:sort] == 'desc' %>>Priority: DESC</option>
+  <option value="unsorted" <%= 'selected' unless session[:sort] == 'asc' || session[:sort] == 'desc' %>>Creation Date</option>
+</select>
+  </div>
+  <div class="columns one">
 <button type="submit">Submit</button>
+    
+  </div>
+</div>
+
 </form>
+
