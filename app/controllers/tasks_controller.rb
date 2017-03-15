@@ -4,4 +4,8 @@ class TasksController < ApplicationController
     @task = Task.order(:completion_date => :desc).all
   end
 
+  def show
+    @task = Task.find(params[:id])
+  end
+
 end
