@@ -14,14 +14,23 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(whitelisted_params)
-    @task.save
-
-    render :show
+    if @task.save
+      flash[:success] = "You have successfully created task"
+      render :show
+    else
+      flash.now[:error] = "Something went wrong, you didn't create the task!"
+      render :new
+    end
   end
 
   def destroy
     @task = Task.find(params[:id])
-    @task.destroy
+    if @task.destroy
+      flash[:success] = "You have successfully deleted task"
+      redirect_to root_path
+    else
+      flash.now[:error] = "Something went wrong, you didn't delete the task!"
+    end
   end
 
   def edit
@@ -30,9 +39,13 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update_attributes(whitelisted_params)
-
-    redirect_to task_path
+    if @task.update_attributes(whitelisted_params)
+      flash[:success] = "You have successfully edited task"
+      redirect_to task_path
+    else
+      flash.now[:error] = "Something went wrong, your edit wasn't successful!"
+      render :edit
+    end
   end
 
 

@@ -15,8 +15,20 @@
   </head>
 
   <body>
-  
+
     <%= render "shared/navbar"  %>
+
+    <% flash.each do |type, message| %>
+
+      <div class="alert alert-<%= bootstrap_type(type) %>">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong><%= message %></strong>
+      </div>
+
+    <% end %>
+
+
+
     <%= yield %>
   </body>
 </html>

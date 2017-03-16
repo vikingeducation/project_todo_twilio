@@ -1,5 +1,11 @@
 
 <%= form_for @task do |t| %>
+  
+  <ul>
+  <% @task.errors.full_messages.each do |err| %>
+    <li><%= err %></li>
+  <% end %>
+  </ul>
 
   <%= t.label :description, "Describe your task:" %>
   <%= t.text_field :description %>
