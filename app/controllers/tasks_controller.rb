@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    @task = Task.order(:completion_date => :asc).all
+    @tasks = Task.order(:completion_date => :asc).all
   end
 
   def show
