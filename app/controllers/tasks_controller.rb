@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    @task = Task.order(:completion_date => :desc).all
+    @task = Task.order(:completion_date => :asc).all
   end
 
   def show
@@ -17,6 +17,22 @@ class TasksController < ApplicationController
     @task.save
 
     render :show
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update_attributes(whitelisted_params)
+
+    redirect_to task_path
   end
 
 

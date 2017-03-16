@@ -1,0 +1,12 @@
+
+<%= form_for @task do |t| %>
+
+  <%= t.label :description, "Describe your task:" %>
+  <%= t.text_field :description %>
+
+  <%= t.label :completion_date, "When is it due?" %>
+  <%= t.text_field :completion_date %>
+
+  <%= t.submit %>
+
+<% end %>

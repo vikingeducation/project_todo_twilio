@@ -5,3 +5,9 @@
 <h3>Due on: <%= @task.completion_date %></h3>
 
 <p>Created on: <%= @task.created_at %></p>
+
+<%= link_to "Delete", 
+          task_path(@task), 
+          :method => :delete %>
+<%= link_to "Edit", 
+          edit_task_path(@task) %>

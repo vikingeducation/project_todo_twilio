@@ -4,8 +4,11 @@
   <% end %>
 </h3>
 <p>
-  due to:
+  due for:  <%= task.completion_date %>
+            <%= link_to "Delete", 
+                      task_path(task), 
+                      :method => :delete %>
+            <%= link_to "Edit", 
+                      edit_task_path(task) %>
 </p>
-<p>
-  <%= task.completion_date %>
-</p>
+
