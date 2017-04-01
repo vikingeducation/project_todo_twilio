@@ -1,0 +1,8 @@
+<% tasks.each do |task| %>
+  <h3><%= task.title %></h3>
+  <ul>
+    <li><b>Created at</b>: <%= task.created_at %></li>
+    <li><b>Description</b>: <%= task.description %></li>
+    <li><b>Required Completion Date</b>: <%= task.required_completion_date %></li>
+  </ul>
+<% end %>
