@@ -1,8 +1,12 @@
 <% tasks.each do |task| %>
-  <h3><%= link_to task.title, task_path(task.id) %></h3>
-  <ul>
-    <li><b>Created at</b>: <%= task.created_at %></li>
-    <li><b>Description</b>: <%= task.description %></li>
-    <li><b>Required Completion Date</b>: <%= task.required_completion_date %></li>
-  </ul>
+  <p>
+    <strong><%= link_to task.title, task_path(task.id) %></strong>
+
+    [<%= link_to "Delete", task_path(task.id), :method => :delete %>]
+  </p>
+
+  <p>
+
+  </p>
+
 <% end %>

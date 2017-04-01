@@ -22,4 +22,10 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :description, :required_completion_date)
   end
 
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to root_path
+  end
+
 end
