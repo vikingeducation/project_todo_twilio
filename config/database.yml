@@ -1,14 +1,19 @@
 development:
   adapter: postgresql
-  database: my_database_development
+  encoding: unicode
+  database: twillio_development
   pool: 5
-  timeout: 5000
+  username: efraimmgon
+  password:
 
 test:
   adapter: postgresql
-  database: my_database_development
+  encoding: unicode
+  database: twillio_test
   pool: 5
   timeout: 5000
+  username: efraimmgon
+  password:
 
 production:
   adapter: postgresql
