@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProjectTodoTwilio</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <%= render partial: "shared/navbar" %>
+
+    <% flash.each do |type, message| %>
+      <div class="">
+        <strong><%= message %></strong>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
