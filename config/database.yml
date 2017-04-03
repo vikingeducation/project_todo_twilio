@@ -33,4 +33,5 @@ test:
 #   database: db/production.sqlite3
 
 production:
+  <<: *defaultt
   url: <%= ENV['DATABASE_URL'] %>
