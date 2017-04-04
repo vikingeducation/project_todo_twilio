@@ -1,0 +1,25 @@
+<%= form_for @task do |f| %>
+<%= f.label :title, 'Task' %>
+<%= f.text_field :title, class: 'u-full-width' %>
+<%= f.label :description %>
+<%= f.text_area :description, class: 'u-full-width'  %>
+<div class="row">
+  <div class="column one-third">
+    <%= f.label :deadline %>
+    <%= f.date_field :deadline, :value => Time.now.strftime('%Y-%m-%d'), class:'u-full-width' %>
+  </div>
+  <div class="column one-third">
+    <%= f.label :importance %>
+    <%= f.select :importance, ['1', '2', '3', '4', '5'], {prompt: '3', selected: '3'}, { class: 'u-full-width'} %>
+  </div>
+  <div class="column one-third">
+     <%= f.label :sticky %>
+      <%= f.check_box :sticky %>
+  </div>
+</div>
+
+
+<br>
+
+<%= f.submit class: 'button-primary' %>
+<% end %>

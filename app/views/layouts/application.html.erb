@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProjectTodoTwilio</title>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Amiko" rel="stylesheet">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="container">
+  	<%= render 'shared/nav' %>
+     <% flash.each do |type, message| %>
+      <strong><%= type %>! <%= message %></strong>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>

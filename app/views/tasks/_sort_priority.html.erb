@@ -1,0 +1,18 @@
+<form action="<%= tasks_path %>" method="get" name="form">
+<label>Sort by Priority:</label>
+<div class="row">
+  <div class="columns three">
+    <select name="sort" class="u-full-width">
+  <option value="asc" <%= 'selected' if session[:sort] == 'asc' %>>Priority: ASC</option>
+  <option value="desc" <%= 'selected' if session[:sort] == 'desc' %>>Priority: DESC</option>
+  <option value="unsorted" <%= 'selected' unless session[:sort] == 'asc' || session[:sort] == 'desc' %>>Creation Date</option>
+</select>
+  </div>
+  <div class="columns one">
+<button type="submit">Submit</button>
+    
+  </div>
+</div>
+
+</form>
+

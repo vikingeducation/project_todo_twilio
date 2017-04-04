@@ -1,0 +1,38 @@
+$fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+body {
+  font-family: $fonts;
+}
+span.done {
+  text-decoration: line-through;
+  color: #666;
+}
+nav {
+  padding: 20px 20px 20px 0;
+
+  a {
+    margin-right: 20px;
+  }
+}
+h1, h2, h3 {
+  letter-spacing: 0;
+}
+input[type=date] {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  font-family: $fonts;
+}
+.tasks span {
+  font-size: 1.25em;
+}
+.tasks p, .sticky .tasks p {
+  margin-left: 2em;
+}
+.sticky .tasks span {
+  font-size: 1.5em;
+}
