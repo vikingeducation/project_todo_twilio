@@ -6,6 +6,11 @@ class TasksController < ApplicationController
   end
 
   def show
+    @task = Task.find(params[:id])    
+    @attributes = Task.attribute_names
+  end
+
+  def new
     
   end
 end

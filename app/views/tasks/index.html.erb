@@ -4,14 +4,18 @@
       <th> <%= @attributes[i] %> </th>
     <% end %>  
   </thead>
+
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td> <%= task.category%> </td>
-        <td> <%= task.description%> </td>
-        <td> <%= task.due_date%> </td>
+        <td> <%= task.category %> </td>
+        <td> <%= task.description %> </td>
+        <td> <%= task.due_date %> </td>
+        <td> <%= link_to "View Task", task_path(task.id) %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
   
