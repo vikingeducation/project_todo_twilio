@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <% 1.upto(3) do |i|%>
+      <th> <%= @attributes[i] %> </th>
+    <% end %>  
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td> <%= task.category%> </td>
+        <td> <%= task.description%> </td>
+        <td> <%= task.due_date%> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  
