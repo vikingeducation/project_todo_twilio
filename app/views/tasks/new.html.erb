@@ -1,0 +1,7 @@
+<h1> Create A New Task </h1>
+<%= form_for @task  do |f| %>
+  <%= f.text_field :category, placeholder: "Enter category" %><br>
+  <%= f.text_area :description, placeholder: "Enter a description for your task" %><br>
+  <%= f.text_area :due_date, placeholder: "Enter a due date" %> <br>
+  <%= f.submit %>
+<% end %>
