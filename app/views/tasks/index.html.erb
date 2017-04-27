@@ -13,6 +13,7 @@
         <td> <%= task.due_date %> </td>
         <td> <%= link_to "View Task", task_path(task.id) %> </td>
         <td> <%= link_to "Delete Task", task_path(task.id), :method => :delete %> </td>
+        <td> <%= link_to "Edit Task", edit_task_path(task.id) %> </td>
       </tr>
     <% end %>
   </tbody>
