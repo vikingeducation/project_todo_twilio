@@ -2,5 +2,6 @@
   <%= t.title %>
   <%= t.description %>
   <%= t.completion_date %>
+  <%= link_to "See task", task_path(t.id) %>
   <br />
 <% end %>
