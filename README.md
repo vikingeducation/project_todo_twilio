@@ -1,3 +1,9 @@
-# todo_twilio
+# README
 
-[The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
+Project name: Todo_Twilio
+
+Developer: Ann Allan
+Github: https://github.com/AnnAllan
+
+Description:
+ This project is to create a RESTful Rails task manager app.  This project will employ very little styling.
