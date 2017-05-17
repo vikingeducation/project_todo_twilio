@@ -2,3 +2,4 @@
   <%= @task.description %>
   <%= @task.completion_date %>
   <%= link_to "Delete task", @task, :method => :delete %>
+  <%= link_to "Edit task", edit_task_path(@task.id) %>

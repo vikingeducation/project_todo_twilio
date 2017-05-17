@@ -26,7 +26,14 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
-  
+  def update
+    @task = Task.find(params[:id])
+    if @task.update_attributes(white_listed_params)
+      redirect_to @task
+    else
+      render :edit
+    end
+  end
 
   def destroy
     Task.find(params[:id]).destroy
