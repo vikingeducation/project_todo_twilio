@@ -8,6 +8,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+
   def new
     @task = Task.new
   end
@@ -19,6 +20,11 @@ class TasksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    Task.find(params[:id]).destroy
+      redirect_to tasks_path
   end
 
   private
