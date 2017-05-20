@@ -1,4 +1,5 @@
 class TextsController < ApplicationController
+	
 	require 'twilio-ruby'
 	def send_text
 		account_sid = ENV["ID"]
