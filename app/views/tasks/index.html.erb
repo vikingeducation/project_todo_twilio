@@ -1,0 +1,30 @@
+<h1>Hello World</h1>
+
+<% @tasks.each do |todo| %>
+	<ul>
+	   <li>
+	     <%= link_to todo do %> 
+	       <h2>
+	         <%=todo.task %>
+	       </h2>
+	  
+		   <%end%>
+
+	       <p>Complete by
+		      <%=todo.time_to_be_completed.to_formatted_s(:time) %>
+		   </p>
+		   <%= link_to "Delete Task", task_path(todo), :method => :delete %>
+	   </li> 
+	</ul>
+
+<% end %>
+
+<%=link_to "New Task", new_task_path  %>
+
+
+<% @tasks.each do |todo| %>
+	<%=todo %>
+
+<% end %>
+
+
