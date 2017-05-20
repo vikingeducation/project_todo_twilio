@@ -1,0 +1,7 @@
+<h1>hi</h1>
+
+<%= @client.messages.create(
+			from: '+15862092757',
+			to: ENV['PHONE_NUM'],
+			body: 'hello')
+%>
