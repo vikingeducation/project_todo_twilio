@@ -51,3 +51,12 @@ group :development do
   gem 'better_errors'
 end
 
+ruby '2.3.4'
+
+group :production do 
+	gem 'rails_12factor'
+
+	gem 'pg', '~>0.18.4'
+end
+
+
