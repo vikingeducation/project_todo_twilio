@@ -13,12 +13,25 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+
     if @task.save
       flash[:success] = "Your task was successfully saved!"
       redirect_to @task
     else
-      flash.now[:notice] = "Your task had errors. Please correct them and try again."
+      flash.now[:error] = "Your task had errors. Please correct them and try again."
       render :new
+    end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+
+    if @task.destroy
+      flash[:success] = "Your task was successfully deleted!"
+      redirect_to tasks_path
+    else
+      flash.now[:error] = "There was an error deleting your task."
+      render :show
     end
   end
 
