@@ -18,7 +18,7 @@ class TasksController < ApplicationController
       flash[:success] = "Your task was successfully saved!"
       redirect_to @task
     else
-      flash.now[:error] = "Your task had errors. Please correct them and try again."
+      flash.now[:error] = @task.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
       flash[:success] = "Your task was successfully deleted!"
       redirect_to tasks_path
     else
-      flash.now[:error] = "There was an error deleting your task."
+      flash.now[:error] = @task.errors.full_messages.to_sentence
       render :show
     end
   end
@@ -45,7 +45,7 @@ class TasksController < ApplicationController
       flash[:success] = "Your task was successfully updated!"
       redirect_to @task
     else
-      flash[:error] = "There was an error updating your task."
+      flash.now[:error] = @task.errors.full_messages.to_sentence
       render :show
     end
   end
