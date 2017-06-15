@@ -1,5 +1,12 @@
-<%= form_for task do |f| %>
+<h3>
+  <% unless task.persisted? %>
+    Create a Task
+  <% else %>
+    Edit your Task
+  <% end %>
+</h3>
 
+<%= form_for task do |f| %>
   <div>
     <strong><%= f.label :name %></strong>
     <br>

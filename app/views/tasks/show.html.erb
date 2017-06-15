@@ -2,5 +2,7 @@
 <p><%= @task.description %></p>
 <p>Due by: <em><%= @task.due_date %></em></p>
 <p>
+  <em><%= link_to "Edit", edit_task_path(@task) %>
+  |
   <em><%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: "Are you sure?" } %></em>
 </p>
