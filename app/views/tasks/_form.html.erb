@@ -1,0 +1,32 @@
+<h3>
+  <% unless task.persisted? %>
+    Create a Task
+  <% else %>
+    Edit your Task
+  <% end %>
+</h3>
+
+<%= form_for task do |f| %>
+  <div>
+    <strong><%= f.label :name %></strong>
+    <br>
+    <%= f.text_field :name %>
+  </div>
+  <br>
+
+  <div>
+    <strong><%= f.label :description %></strong>
+    <br>
+    <%= f.text_area :description %>
+  </div>
+  <br>
+
+  <div>
+    <strong><%= f.label :due_date %></strong>
+    <br>
+    <%= f.datetime_select :due_date %>
+  </div>
+  <br>
+
+  <%= f.submit %>
+<% end %>

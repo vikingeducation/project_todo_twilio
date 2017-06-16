@@ -1,0 +1,9 @@
+<div>
+  <p>
+    <strong><%= link_to task.name, task %></strong>
+    |
+    <em><%= link_to "Edit", edit_task_path(task) %></em>
+    |
+    <em><%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></em>
+  </p>
+<div>
