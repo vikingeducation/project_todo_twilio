@@ -16,5 +16,6 @@ Task.destroy_all
   t.description = "This is the task for the project X"
   t.owner = "Owner #{i+1}"
   t.effort = rand(20)
+  t.completion_date = Date.today+rand(20)
   t.save!
 end
