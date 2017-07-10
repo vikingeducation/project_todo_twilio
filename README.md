@@ -1,3 +1,12 @@
-# todo_twilio
+# README
 
-[The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
+CRUDdy Task Management
+======================
+
+Project_todo_twilio
+----------------------
+
+# Andrea A
+
+CRUD app which allows you to manage a series of task items so an imaginary Project Manager can manage her team
+
