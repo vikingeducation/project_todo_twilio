@@ -2,4 +2,5 @@
 
 <% @tasks.each do |task| %>
  <%= render task %>
+ <%= link_to "Show Task", task_path(task) %>
 <% end %>
