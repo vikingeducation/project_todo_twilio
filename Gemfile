@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.3'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -52,13 +53,12 @@ group :development do
   gem "binding_of_caller"
 end
 
-ruby '2.3.3'
+
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-...
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
