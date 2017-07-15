@@ -9,3 +9,7 @@ CRUD app which allows you to manage a series of task items so an imaginary Proje
 
 * The type `localhost:3000` from browser
 
+* To run the deployed version
+
+```https://project-todo.herokuapp.com```
+
