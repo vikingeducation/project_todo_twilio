@@ -2,4 +2,4 @@
 
 [The Twilio API project on Ruby on Rails from the Viking Code School](http://www.vikingcodeschool.com)
 
-# Sean Kelly
+# [Sean Kelly](https://github.com/skel11417) 3
