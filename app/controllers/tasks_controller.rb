@@ -1,9 +1,18 @@
 class TasksController < ApplicationController
+  include TasksHelper
   def index
     @tasks = Task.all
   end
 
   def new
+    @task = Task.new
+  end
+
+  def create
+    @task = Task.new(whitelisted_parameters)
+    if @task.save
+      redirect_to task_path(@task)
+    end
   end
 
   def show

@@ -1,0 +1,21 @@
+<%= form_for(@task) do |f| %>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :due_date %>
+    <%= f.date_field :due_date %>
+  </p>
+  <p>
+    <%= f.label :urgency %>
+    <%= f.range_field :urgency, in: 1..5 %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+
+  <input type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
