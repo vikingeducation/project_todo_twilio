@@ -1,5 +1,5 @@
-<h1>Create New Task</h1>
-<%= form_for(@task, url: {action: "create"}) do |t| %>
+<h1>Edit Task</h1>
+<%= form_for(@task, url: {action: "update"}) do |t| %>
   <p>
     <%= t.label :description %><br />
     <%= t.text_field :description %>
