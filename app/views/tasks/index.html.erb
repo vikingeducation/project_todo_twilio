@@ -1,6 +1,18 @@
 <%= render 'navbar'%>
 <br>
+<br>
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Due by</th>
+    <th>Urgency<th>
+  </tr>
 <% @tasks.each do |task| %>
-<p>
-  <%= render partial: "task", locals: {description: task.description, due_date: task.due_date, urgency: task.urgency} %>
+  <tr>
+  <%= render partial: "task_table", locals: {description: task.description, due_date: task.due_date, urgency: task.urgency} %>
+  <td>
+    <%= link_to "Show", task_path(task) %>
+  </td>
+  </tr>
 <% end %>
+</table>
