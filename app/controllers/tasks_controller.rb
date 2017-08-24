@@ -18,8 +18,10 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(whitelisted_task_params)
     if @task.save
+      flash[:success] = "You've successfully created a new task!"
       redirect_to task_path(@task)
     else
+      flash[:error] = "Sorry, unable to create your task"
       render 'new'
     end
   end
@@ -28,6 +30,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
+    flash[:success] = "Task successfully destroyed!"
     redirect_to tasks_path(@tasks)
   end
 
@@ -40,6 +43,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(whitelisted_task_params)
+    flash[:success] = "Task successfully updated!"
     redirect_to task_path(@task)
   end
 
