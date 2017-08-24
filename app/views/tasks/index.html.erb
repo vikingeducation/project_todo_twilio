@@ -1,0 +1,6 @@
+<%= render 'navbar'%>
+<br>
+<% @tasks.each do |task| %>
+<p>
+  <%= render partial: "task", locals: {description: task.description, due_date: task.due_date, urgency: task.urgency} %>
+<% end %>
