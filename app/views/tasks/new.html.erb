@@ -1,0 +1,13 @@
+<%= form_for(@task, url: {action: "create"}) do |t| %>
+  <p>
+    <%= t.label :description %><br />
+    <%= t.text_field :description %>
+  </p>
+  <p>
+    <%= t.label :complete_by_date %><br />
+    <%= t.text_field :complete_by_date %>
+  </p>
+  <p>
+    <%= t.submit %>
+  </p>
+<% end %>

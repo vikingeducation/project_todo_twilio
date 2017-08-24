@@ -1,0 +1,25 @@
+<article>
+  <table>
+    <thead>
+      <th>Description</th>
+      <th>Complete By:</th>
+      <th>See Details</th>
+    </thead>
+    <tbody>
+      <tr>
+        <% @tasks.each do |task| %>
+          <td>
+            <%= task.description %>
+          </td>
+          <td>
+            <%= task.complete_by_date %>
+          </td>
+          <td>
+            <%= link_to "Link", task_path(task) %>
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
