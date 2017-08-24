@@ -1,4 +1,9 @@
-<%= form_for(@task, url: {action: "update"}) do |t| %>
+<% if @task.persisted? %>
+  <% action_type = "update" %>
+<% else %>
+  <% action_type = "create" %>
+<% end %> 
+  <%= form_for(@task, url: {action: action_type}) do |t| %>
   <p>
     <%= t.label :description %><br />
     <%= t.text_field :description %>
