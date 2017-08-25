@@ -15,6 +15,16 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(whitelisted_parameters)
+    redirect_to task_path(@task)
+  end
+
   def show
     @task = Task.find(params[:id])
   end
