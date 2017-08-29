@@ -9,6 +9,11 @@
   </head>
   <%= render 'navbar'%>
   <body>
+    <% flash.each do |type, message| %>
+      <div>
+        <strong><%= message %></strong>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
