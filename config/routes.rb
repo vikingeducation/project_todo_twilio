@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: 'tasks#index'
   resources :tasks
 
-  get "tasks/:id/soft_delete(.:format)", :to => 'tasks#soft_delete'
+  post "tasks/:id/soft_delete", :to => 'tasks#soft_delete', as: 'soft_delete'
 
 end

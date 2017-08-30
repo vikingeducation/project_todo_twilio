@@ -50,7 +50,8 @@ class TasksController < ApplicationController
 
   def soft_delete
     @task = Task.find(params[:id])
-    @task[:soft_delete] = true
+    @task.soft_delete = true
+    @task.save
     redirect_to 'index'
   end
 
