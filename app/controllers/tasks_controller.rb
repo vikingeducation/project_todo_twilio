@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
   include TasksHelper
   def index
-    @tasks = Task.all
+    # @tasks = Task.all.sort_by {|t| t.due_date}  BASIC
+    @tasks = Task.order(:due_date)
   end
 
   def new
