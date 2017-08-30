@@ -48,10 +48,17 @@ class TasksController < ApplicationController
   end
 
 
+  def soft_delete
+    @task = Task.find(params[:id])
+    @task[:soft_delete] = true
+    redirect_to 'index'
+  end
+
+
   private
 
   def whitelisted_task_params
-    params.require(:task).permit(:complete_by_date, :description)
+    params.require(:task).permit(:complete_by_date, :description, :soft_delete)
   end
 
 end
