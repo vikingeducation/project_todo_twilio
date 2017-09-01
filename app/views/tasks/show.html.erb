@@ -1,0 +1,15 @@
+<h1>Task</h1>
+
+<h3>Description</h3>
+<p>
+  <%= @task.description %>
+</p>
+
+<h3>Complete By Date</h3>
+<p>
+  <%= @task.complete_by_date %>
+</p>
+
+<%= link_to "Edit", edit_task_path(@task) %>
+<%= link_to "Soft Delete", task_path(@task) %> 
+<%= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure you want to delete this task?"} %>

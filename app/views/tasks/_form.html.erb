@@ -1,0 +1,18 @@
+<% if @task.persisted? %>
+  <% action_type = "update" %>
+<% else %>
+  <% action_type = "create" %>
+<% end %> 
+  <%= form_for(@task, url: {action: action_type}) do |t| %>
+  <p>
+    <%= t.label :description %><br />
+    <%= t.text_field :description %>
+  </p>
+  <p>
+    <%= t.label :complete_by_date %><br />
+    <%= t.text_field :complete_by_date %>
+  </p>
+  <p>
+    <%= t.submit %>
+  </p>
+<% end %>
