@@ -31,7 +31,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
     flash[:success] = "Task successfully destroyed!"
-    redirect_to tasks_path(@tasks)
+    redirect_to tasks_path(@task)
   end
 
 
