@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
 
 group :development, :test do
