@@ -1,0 +1,18 @@
+<br>
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Due by</th>
+    <th>Urgency<th>
+  </tr>
+<% @tasks.each do |task| %>
+  <tr>
+  <%= render partial: "task_table", locals: {description: task.description, due_date: task.due_date, urgency: task.urgency} %>
+  <td>
+    <%= link_to "Show", task_path(task) %>
+    <%= link_to "Edit", edit_task_path(task) %>
+    <%= link_to "Delete", task_path(task), :method => :delete %>
+  </td>
+  </tr>
+<% end %>
+</table>
