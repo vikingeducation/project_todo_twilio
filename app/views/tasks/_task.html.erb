@@ -1,0 +1,15 @@
+<h3>
+  <%= link_to task_path(task) do %>
+    <%= task.description %>
+  <% end %>
+</h3>
+<p>
+  due for:  <%= task.completion_date %>
+            <%= link_to "Delete", 
+                      task_path(task), 
+                      :method => :delete, 
+                      data: {confirm: "Really delete the task?"} %>
+            <%= link_to "Edit", 
+                      edit_task_path(task) %>
+</p>
+
