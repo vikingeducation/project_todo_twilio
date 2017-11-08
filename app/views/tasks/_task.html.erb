@@ -2,4 +2,8 @@
   <h3><%= link_to task.name, task_path(task) %></h3>
   <p>Points: <%= task.point_value %></p>
   <p>Completed: <%= task.completed_on if task.completed_on %></p>
+  <p>
+    <%= link_to 'edit', edit_task_path(task) %> |
+    <%= link_to 'delete', task, method: :delete, data: {confirm: "Are you sure about this? Tasks can not be recovered after deletion."} %>
+  </p>
 </article>
