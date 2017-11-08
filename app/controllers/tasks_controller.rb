@@ -29,7 +29,7 @@ class TasksController < ApplicationController
       flash.notice = 'Hooray! Task has been added to the docket!'
       redirect_to tasks_url
     else
-      flash.now.alert = 'Uh ho! Something went wrong...'
+      flash.now.alert = 'Uh oh! Something went wrong...'
       render :new
     end
   end
@@ -38,9 +38,19 @@ class TasksController < ApplicationController
   end
 
   def update
+    if @task.update(task_params)
+      flash.notice = "Hooray! '#{@task.name}' has been updated!"
+      redirect_to tasks_url
+    else
+      flash.now.alert = 'Uh oh! Something went wrong...'
+      render :new
+    end
   end
 
   def destroy
+    @task.delete
+    flash.notice = "As you wish. '#{@task.name}' has been deleted."
+    redirect_to tasks_url
   end
 
   private
