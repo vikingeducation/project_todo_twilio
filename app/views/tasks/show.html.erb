@@ -1,9 +1,10 @@
-<h1>Tasks#show</h1>
+<h1>Task Details</h1>
 
 <article class='task'>
   <h3><%= @task.name %></h3>
   <p>Points: <%= @task.point_value %></p>
   <p>Completed: <%= @task.completed_on if @task.completed_on %></p>
+  <p><%= link_to 'edit', edit_task_path(@task) %></p>
 </article>
 
 
