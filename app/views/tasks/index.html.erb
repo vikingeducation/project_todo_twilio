@@ -1,2 +1,6 @@
 <h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+
+<h3>Status <%= @percent_complete %>% Finished</h3>
+<p><%= @completed_points %> of <%= @total_points %> Points Complete</p>
+
+<%= render partial: 'task', collection: @tasks %>
