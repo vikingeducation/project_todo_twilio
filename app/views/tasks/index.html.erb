@@ -3,4 +3,7 @@
 <h3>Status <%= @percent_complete %>% Finished</h3>
 <p><%= @completed_points %> of <%= @total_points %> Points Complete</p>
 
-<%= render partial: 'task', collection: @tasks %>
+<h4>To Do (<%= @percent_incomplete %>%)</h4>
+<%= render partial: 'task', collection: @incomplete_tasks %>
+<h4>Completed Tasks (<%= @percent_complete %>%)</h4>
+<%= render partial: 'task', collection: @complete_tasks %>
