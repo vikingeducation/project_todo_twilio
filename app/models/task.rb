@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
 
-  validates :name, :point_value, presence: true
+  validates :name, presence: true, length: { minimum: 4, maximum: 50 }
+  validates :point_value, presence: true
 
   def self.incomplete_tasks
     where(completed_on: nil)
