@@ -18,7 +18,11 @@ class Task < ApplicationRecord
   end
 
   def self.calculate_remaining_points
-    incomplete_tasks.pluck('point_value').reduce(&:+)
+    if incomplete_tasks.empty?
+      0
+    else
+      incomplete_tasks.pluck('point_value').reduce(&:+)
+    end
   end
 
   def self.calculate_complete_points
