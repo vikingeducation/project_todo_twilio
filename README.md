@@ -8,4 +8,4 @@ Anne Richardson
 
 ## About the Project
 
-This is a super fast CRUD practice rails app.
+This WIP app is designed to tack my progress through the VCS curriculum with metrics on current progress, velocity, and projected completion dates. It does not have a twilio integration as that's not needed.
