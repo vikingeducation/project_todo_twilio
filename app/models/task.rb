@@ -1,6 +1,8 @@
 class Task < ApplicationRecord
 
-  validates :name, presence: true, length: { minimum: 4, maximum: 50 }
+  belongs_to :category
+
+  validates :name, presence: true, length: { minimum: 3, maximum: 50 }
   validates :point_value, presence: true
 
   def self.incomplete_tasks
