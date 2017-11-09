@@ -13,15 +13,19 @@
 
   <p>
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.label :category_id %><br>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, { class: 'form-control' }) %>
   </p>
   <p>
     <%= f.label :point_value %><br>
-    <%= f.number_field :point_value %>
+    <%= f.number_field :point_value, class: 'form-control' %>
   </p>
   <p>
     <%= f.label :completed_on %><br>
-    <%= f.date_field :completed_on %>
+    <%= f.date_field :completed_on, class: 'form-control' %>
   </p>
   <%= f.submit %>
 <% end %> <!-- form_for @task -->
