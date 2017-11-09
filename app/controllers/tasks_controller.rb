@@ -13,6 +13,9 @@ class TasksController < ApplicationController
     @percent_incomplete = Task.calculate_percent_incomplete
     @percent_complete = Task.calculate_percent_complete
 
+    # @current_velocity = Task.calculate_current_velocity
+    @projected_completion_date = Task.calculate_completion_date
+
   end
 
   def show
