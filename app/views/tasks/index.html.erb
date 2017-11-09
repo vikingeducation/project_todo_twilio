@@ -2,7 +2,10 @@
 
 <h3>Status <%= @percent_complete %>% Finished</h3>
 <p><%= @completed_points %> of <%= @total_points %> Points Complete</p>
-<p>Projected Completion by: <%= @projected_completion_date %></p>
+<p><%= @complete_tasks.count %> of <%= @total_task_count %> Tasks Complete</p>
+<p>Current Velocity: <%= @current_velocity %></p>
+<p>Remaining Days: <%= @remaining_days %></p>
+<p>Projected Completion by: <%= @projected_completion_date.to_s(:long) %></p>
 
 <h4>To Do (<%= @percent_incomplete %>%)</h4>
 <%= render partial: 'task', collection: @incomplete_tasks %>

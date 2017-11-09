@@ -47,12 +47,20 @@ class Task < ApplicationRecord
     (task.point_value / days).to_f
   end
 
-  def self.calculate_completion_date
+  def self.calculate_remaining_days
     velocity = calculate_current_velocity
-
     remaining_points = calculate_remaining_points
-    remaining_days = (remaining_points / velocity).to_i
+    (remaining_points / velocity).to_i
+  end
 
+  def self.calculate_completion_date
+    remaining_days = calculate_remaining_days
     Date.today + remaining_days
+  end
+
+  def projected_completion
+    velocity = Task.calculate_current_velocity
+    remaining_days = (point_value / velocity).to_i
+    started_on + remaining_days
   end
 end
