@@ -8,13 +8,21 @@ module TasksHelper
     end
   end
 
-  def display_date(task)
+  def display_start_date(task)
+    task.started_on ? task.started_on : 'TBD'
+  end
+
+  def display_end_date(task)
     if task.completed_on
       task.completed_on
     elsif task.started_on
-      task.projected_completion
+      "projected #{task.projected_completion}"
     else
       'TBD'
     end
+  end
+
+  def display_velocity(task)
+    task.started_on ?  task.velocity : 'TBD'
   end
 end

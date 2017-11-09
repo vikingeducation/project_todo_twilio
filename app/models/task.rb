@@ -41,9 +41,14 @@ class Task < ApplicationRecord
     completed_tasks.order('completed_on DESC').first
   end
 
+  def self.calculate_days_taken(task)
+    days = (task.completed_on - task.started_on).to_i
+    days == 0 ? 1 : days # compensates for same-day completion
+  end
+
   def self.calculate_current_velocity
     task = most_recently_completed
-    days = (task.completed_on - task.started_on).to_i
+    days = calculate_days_taken(task)
     (task.point_value / days).to_f
   end
 
@@ -62,5 +67,30 @@ class Task < ApplicationRecord
     velocity = Task.calculate_current_velocity
     remaining_days = (point_value / velocity).to_i
     started_on + remaining_days
+  end
+
+  def velocity
+    task_before = Task.where('completed_on <= ?', started_on).last
+    backfill = Task.new(completed_on: Date.today, started_on: Date.yesterday, point_value: 1, name: 'filler')
+
+    task_before = backfill if task_before == nil
+
+    days_to_finish = (task_before.completed_on - task_before.started_on).to_i
+
+    if days_to_finish == 0
+      task_before.point_value / 1
+    else
+      task_before.point_value / days_to_finish
+    end
+  end
+
+  def days_spent
+    if started_on && completed_on
+      (completed_on - started_on).to_i
+    elsif started_on
+      (Date.today - started_on).to_i
+    else
+      'TBD'
+    end
   end
 end

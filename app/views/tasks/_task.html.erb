@@ -1,17 +1,29 @@
 <article class="task <%= completion_status_class(task) %>">
   <h2><%= task.category.name %></h2>
-  <h1><%= link_to task.name, task_path(task) %></h1>
   <div class="row">
     <div class="col-sm">
-      <p>Points: <%= task.point_value %></p>
+      <h1><%= link_to task.name, task_path(task) %></h1>
     </div> <!-- col-sm -->
-    <div class="col-sm date">
-      <p><%= display_date(task) %></p>
-    </div> <!-- col-sm -->
-    <div class="col-sm links">
+    <div class="col-sm align-right">
       <p>
-        <%= link_to 'edit', edit_task_path(task) %> |
-        <%= link_to 'delete', task, method: :delete, data: {confirm: "Are you sure about this? Tasks can not be recovered after deletion."} %>
+        <%= link_to '', edit_task_path(task), class: "fa fa-pencil-square-o" %> |
+        <%= link_to '', task, class: "fa fa-minus-circle", method: :delete, data: {confirm: "Are you sure about this? Tasks can not be recovered after deletion."} %>
+      </p>
+    </div> <!-- col-sm -->
+  </div> <!-- row -->
+
+  <div class="row">
+    <div class="col-sm">
+      <p>
+        Points: <%= task.point_value %> |
+        Velocity: <%= display_velocity(task) %> |
+        Days Spent: <%= task.days_spent %>
+      </p>
+    </div> <!-- col-sm -->
+    <div class="col-sm align-right">
+      <p>
+        Start: <%= display_start_date(task) %> |
+        End: <%= display_end_date(task) %>
       </p>
     </div> <!-- col-sm -->
   </div> <!-- row -->
