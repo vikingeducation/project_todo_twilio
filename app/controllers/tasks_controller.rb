@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @tasks = Task.all.order('completed_on DESC')
+    @total_task_count = Task.all.count
     @incomplete_tasks = Task.incomplete_tasks.by_date
     @complete_tasks = Task.completed_tasks.by_date
 
@@ -13,7 +13,8 @@ class TasksController < ApplicationController
     @percent_incomplete = Task.calculate_percent_incomplete
     @percent_complete = Task.calculate_percent_complete
 
-    # @current_velocity = Task.calculate_current_velocity
+    @current_velocity = Task.calculate_current_velocity
+    @remaining_days = Task.calculate_remaining_days
     @projected_completion_date = Task.calculate_completion_date
 
   end
