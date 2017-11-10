@@ -5,13 +5,8 @@ class Task < ApplicationRecord
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
   validates :point_value, presence: true
 
-  def self.incomplete_tasks
-    where(completed_on: nil)
-  end
-
-  def self.completed_tasks
-    where.not(completed_on: nil)
-  end
+  scope :incomplete_tasks, -> { where(completed_on: nil) }
+  scope :completed_tasks, -> { where.not(completed_on: nil) }
 
   def self.by_date
     order('completed_on DESC')
