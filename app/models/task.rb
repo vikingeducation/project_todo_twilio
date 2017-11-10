@@ -13,10 +13,6 @@ class Task < ApplicationRecord
     order('completed_on DESC')
   end
 
-  # def self.most_recently_completed_task
-  #   completed_tasks.order('completed_on DESC').first
-  # end
-
   def velocity
     task_before = Task.where('completed_on <= ?', started_on).last
     backfill = Task.new(completed_on: Date.today, started_on: Date.yesterday, point_value: 1, name: 'filler')
