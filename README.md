@@ -20,9 +20,10 @@ This WIP app is designed to tack my progress through the VCS curriculum with met
 - Add sample seeds
 - Convert to postgres
 - Heroku deployment
+- Devise lockdown
+- Data import
 
 ### To Do
 
 - CRUD for categories
 - Point totals for categories
-- Devise lockdown
