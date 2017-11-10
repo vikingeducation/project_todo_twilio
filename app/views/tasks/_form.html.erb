@@ -11,21 +11,28 @@
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :name %><br>
+  <div class="field">
+    <%= f.label :name, "Name*" %><br>
     <%= f.text_field :name, class: 'form-control' %>
-  </p>
-  <p>
-    <%= f.label :category_id %><br>
+  </div>
+
+  <div class="field">
+    <%= f.label :category_id, "Category*" %><br>
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, { class: 'form-control' }) %>
-  </p>
-  <p>
-    <%= f.label :point_value %><br>
+  </div>
+
+  <div class="field">
+    <%= f.label :point_value, "Point Value*" %><br>
     <%= f.number_field :point_value, class: 'form-control' %>
-  </p>
-  <p>
+  </div>
+
+  <div class="field">
     <%= f.label :completed_on %><br>
     <%= f.date_field :completed_on, class: 'form-control' %>
-  </p>
-  <%= f.submit %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+
 <% end %> <!-- form_for @task -->

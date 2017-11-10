@@ -1,7 +1,36 @@
-<nav>
-  <p>
-    <strong>Course Progress Tracker</strong>
-    <%= link_to 'Tasks', tasks_path %> |
-    <%= link_to 'New Task', new_task_path %>
-  </p>
+<nav class="navbar navbar-expand-md navbar-light">
+  <%= link_to 'VCS Progress Tracker', root_url, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to 'Tasks', tasks_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'New Task', new_task_path, class: 'nav-link' %></li>
+
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.email %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Edit profile', edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: 'nav-link'  %></li>
+        <li class="nav-item"><%= link_to "Log In", new_user_session_path, class: 'nav-link' %></li>
+      <% end %>
+
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
 </nav>
