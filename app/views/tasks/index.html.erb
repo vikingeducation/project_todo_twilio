@@ -9,6 +9,6 @@
 <p>Projected Completion by: <%= @task_set.projected_completion_date.to_s(:long) %></p>
 
 <h4>To Do (<%= @task_set.percent_incomplete %>%)</h4>
-<%= render partial: 'task', collection: @task_set.incomplete %>
+<%= render partial: 'task', collection: @task_set.incomplete.order('lesson_number') %>
 <h4>Completed Tasks (<%= @task_set.percent_complete %>%)</h4>
 <%= render partial: 'task', collection: @task_set.completed.order('completed_on DESC') %>

@@ -22,8 +22,18 @@
   </div>
 
   <div class="field">
+    <%= f.label :lesson_number, "Lesson Number*" %><br>
+    <%= f.number_field :lesson_number, class: 'form-control' %>
+  </div>
+
+  <div class="field">
     <%= f.label :point_value, "Point Value*" %><br>
     <%= f.number_field :point_value, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :started_on %><br>
+    <%= f.date_field :started_on, class: 'form-control' %>
   </div>
 
   <div class="field">

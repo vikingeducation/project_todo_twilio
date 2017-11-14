@@ -2,7 +2,7 @@ class Task < ApplicationRecord
   belongs_to :category
 
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
-  validates :point_value, presence: true
+  validates :point_value, :lesson_number, presence: true
 
   scope :incomplete_tasks, -> { where(completed_on: nil) }
   scope :completed_tasks, -> { where.not(completed_on: nil) }
