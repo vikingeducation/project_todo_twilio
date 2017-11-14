@@ -11,4 +11,4 @@
 <h4>To Do (<%= @task_set.percent_incomplete %>%)</h4>
 <%= render partial: 'task', collection: @task_set.incomplete %>
 <h4>Completed Tasks (<%= @task_set.percent_complete %>%)</h4>
-<%= render partial: 'task', collection: @task_set.completed %>
+<%= render partial: 'task', collection: @task_set.completed.order('completed_on DESC') %>
