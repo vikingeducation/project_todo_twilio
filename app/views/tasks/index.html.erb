@@ -4,9 +4,9 @@
 <p><%= @task_set.points_completed %> of <%= @task_set.total_points %> Points Complete</p>
 <p><%= @task_set.completed.count %> of <%= @task_set.all.count %> Tasks Complete</p>
 
-<p>Current Velocity: <%= @task_set.current_velocity %></p>
+<p>Current Velocity: <%= display_task_set_velocity(@task_set) %></p>
 <p>Remaining Days: <%= @task_set.remaining_days %></p>
-<p>Projected Completion by: <%= @task_set.projected_completion_date.to_s(:long) %></p>
+<p>Projected Completion by: <%= display_task_set_projected_completion_date(@task_set) %></p>
 
 <h4>To Do (<%= @task_set.percent_incomplete %>%)</h4>
 <%= render partial: 'task', collection: @task_set.incomplete.order('lesson_number') %>

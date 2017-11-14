@@ -25,4 +25,12 @@ module TasksHelper
   def display_velocity(task)
     task.started_on ?  task.velocity : 'TBD'
   end
+
+  def display_task_set_velocity(set)
+    set.current_velocity.to_i
+  end
+
+  def display_task_set_projected_completion_date(set)
+    set.projected_completion_date.to_s(:long)
+  end
 end
