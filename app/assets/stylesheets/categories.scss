@@ -15,11 +15,27 @@
     }
     ul {
       padding: 0px;
-      input {margin-right: 5px;}
+      .current {
+        background-color: lighten($yellow, 40%);
+        display: inline-block;
+        padding: 1px 7px;
+        margin-left: -7px;
+      } /* .current */
+      .arrow-right {
+        width: 0;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 15px solid $yellow;
+        float: left;
+        margin-right: 5px;
+        margin-top: 5px;
+      }
       li {
         margin-top: 0px;
         font-weight: normal;
         list-style-type: none;
+        input {margin-right: 5px;}
       }
     }
   }
