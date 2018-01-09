@@ -1,10 +1,11 @@
 class TaskSet
-  attr_reader :tasks, :incomplete, :completed
+  attr_reader :tasks, :current, :incomplete, :completed
 
   def initialize(tasks)
     @tasks = tasks
-    @incomplete = tasks.incomplete_tasks
-    @completed = tasks.completed_tasks
+    @current = tasks.incomplete.started
+    @incomplete = tasks.incomplete.not_started.order('lesson_number')
+    @completed = tasks.completed.order('completed_on DESC')
   end
 
   include TaskShared

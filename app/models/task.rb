@@ -4,8 +4,10 @@ class Task < ApplicationRecord
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
   validates :point_value, :lesson_number, presence: true
 
-  scope :incomplete_tasks, -> { where(completed_on: nil) }
-  scope :completed_tasks, -> { where.not(completed_on: nil) }
+  scope :started, -> { where.not(started_on: nil) }
+  scope :not_started, -> { where(started_on: nil) }
+  scope :completed, -> { where.not(completed_on: nil) }
+  scope :incomplete, -> { where(completed_on: nil) }
 
   include TaskShared
 
@@ -29,7 +31,7 @@ class Task < ApplicationRecord
   end
 
   def projected_completion
-    velocity = current_velocity(Proc.new { Task.completed_tasks })
+    velocity = current_velocity(Proc.new { Task.completed })
     remaining_days = (point_value / velocity).to_i
     started_on + remaining_days
   end
