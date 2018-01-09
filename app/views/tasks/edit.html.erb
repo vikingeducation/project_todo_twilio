@@ -1,5 +1,11 @@
+<div class="right">
+  <%= link_to 'Cancel', task_path(@task), class: button_classes %>
+</div> <!-- right -->
+
 <h1>Editing <%= @task.name %></h1>
 
 <%= render partial: 'form', locals: {task: @task} %>
 
-<%= link_to 'cancel', @task %>
+<div class="right">
+  <%= link_to 'Delete', @task, method: :delete, data: {confirm: "Are you sure about this? Tasks can not be recovered after deletion."}, class: button_classes('danger') %>
+</div> <!-- right -->

@@ -1,5 +1,9 @@
 @import 'colors';
 
+.right {
+  float: right;
+} /* .right */
+
 .status-box {
   border: 1px solid lighten($dark-blue, 30%);
   padding: 5% 5% 1% 5%;
