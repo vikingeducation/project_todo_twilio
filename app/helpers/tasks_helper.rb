@@ -1,7 +1,7 @@
 module TasksHelper
 
   def completion_status_class(task)
-    if task.completed_on
+    if task.complete?
       'complete'
     else
       'incomplete'
@@ -9,13 +9,13 @@ module TasksHelper
   end
 
   def display_start_date(task)
-    task.started_on ? task.started_on : 'TBD'
+    task.started? ? task.started_on : 'TBD'
   end
 
   def display_end_date(task)
-    if task.completed_on
+    if task.complete?
       task.completed_on
-    elsif task.started_on
+    elsif task.started?
       "projected #{task.projected_completion}"
     else
       'TBD'
@@ -23,7 +23,7 @@ module TasksHelper
   end
 
   def display_velocity(task)
-    task.started_on ?  task.velocity : 'TBD'
+    task.started? ?  task.velocity : 'TBD'
   end
 
   def display_task_set_velocity(set)

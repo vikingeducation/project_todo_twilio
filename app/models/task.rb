@@ -46,4 +46,12 @@ class Task < ApplicationRecord
     end
   end
 
+  def complete?
+    completed_on != nil
+  end
+
+  def started?
+    started_on != nil
+  end
+
 end
