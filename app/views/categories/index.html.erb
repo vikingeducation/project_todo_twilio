@@ -1,0 +1,16 @@
+<div class="curriculum">
+  <h1>Curriculum</h1>
+  <p>All tasks organized by their category.</p>
+  <ol>
+  <% @categories.each do |category| %>
+    <li>
+      <%= category.name %> <span>(<%= category.sum_points %> Points)</span>
+      <ul>
+        <% category.tasks.order(:lesson_number).each do |task| %>
+          <li><%= status_checkbox(task) %> <%= task.name %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+  </ol>
+</div> <!-- curriculum -->

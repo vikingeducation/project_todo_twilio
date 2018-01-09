@@ -1,0 +1,26 @@
+@import 'colors';
+
+
+.curriculum {
+  ol {
+    li {
+      margin-top: 10px;
+      font-weight: bold;
+      span {
+        font-size: 0.9em;
+        color: gray;
+        font-style: italic;
+        font-weight: normal;
+      }
+    }
+    ul {
+      padding: 0px;
+      input {margin-right: 5px;}
+      li {
+        margin-top: 0px;
+        font-weight: normal;
+        list-style-type: none;
+      }
+    }
+  }
+} /* .curriculum */
