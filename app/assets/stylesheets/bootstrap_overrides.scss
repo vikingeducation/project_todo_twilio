@@ -1,6 +1,14 @@
 @import 'colors';
 
+.row {
+  // margin: 10px 0px;
+} /* .row */
+
 .navbar {
   background-color: $yellow;
   margin-bottom: 20px;
+  img {
+    width: 30px;
+    margin-right: 10px;
+  }
 } /* .navbar */
