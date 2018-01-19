@@ -1,14 +1,11 @@
 <article class="task <%= completion_status_class(task) %>">
-  <h2><%= task.category.name %></h2>
   <div class="row">
     <div class="col-sm">
-      <h1><%= link_to task.name, task_path(task) %></h1>
-    </div> <!-- col-sm -->
-    <div class="col-sm align-right">
-      <p>
-        <%= link_to '', edit_task_path(task), class: "fa fa-pencil-square-o" %> |
-        <%= link_to '', task, class: "fa fa-minus-circle", method: :delete, data: {confirm: "Are you sure about this? Tasks can not be recovered after deletion."} %>
+      <p class="right">
+        <%= link_to '', task, class: "fa fa-times-circle delete-link", method: :delete, data: {confirm: "Are you sure about this? Tasks can not be recovered after deletion."} %>
       </p>
+      <h2><%= task.category.name %></h2>
+      <h1><%= link_to task.name, edit_task_path(task) %></h1>
     </div> <!-- col-sm -->
   </div> <!-- row -->
 
@@ -22,8 +19,8 @@
     </div> <!-- col-sm -->
     <div class="col-sm align-right">
       <p>
-        Start: <%= display_start_date(task) %><br>
-        End: <%= display_end_date(task) %>
+        Start: <%= link_to display_start_date(task), edit_task_path(task) %><br>
+        End: <%= link_to display_end_date(task), edit_task_path(task) %>
       </p>
     </div> <!-- col-sm -->
   </div> <!-- row -->

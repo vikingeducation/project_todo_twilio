@@ -1,9 +1,5 @@
 @import 'colors';
 
-.row {
-  // margin: 10px 0px;
-} /* .row */
-
 .navbar {
   background-color: $yellow;
   margin-bottom: 20px;
@@ -12,3 +8,8 @@
     margin-right: 10px;
   }
 } /* .navbar */
+
+a {
+  color: $blue;
+  &:hover { text-decoration: none; }
+}

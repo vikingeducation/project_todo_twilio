@@ -42,6 +42,10 @@ article.task {
   }
   .date { text-align: center;}
   .align-right { text-align: right; }
+  .delete-link {
+    color: $pink;
+    &:hover { color: $yellow; }
+  }
 } /* article.task */
 
 .complete {
