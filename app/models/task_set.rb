@@ -1,10 +1,10 @@
 class TaskSet
-  attr_reader :tasks, :current, :incomplete, :completed
+  attr_reader :tasks, :current, :to_do, :completed
 
   def initialize(tasks)
     @tasks = tasks
-    @current = tasks.incomplete.started
-    @incomplete = tasks.incomplete.not_started.order('lesson_number')
+    @current = tasks.incomplete.started.not_paused
+    @to_do = tasks.incomplete.not_started.or(tasks.incomplete.where(paused: true)).order('lesson_number')
     @completed = tasks.completed.order('completed_on DESC')
   end
 
@@ -15,7 +15,7 @@ class TaskSet
   end
 
   def points_remaining
-    incomplete.empty? ? 0 : sum(incomplete, 'point_value')
+    to_do.empty? ? 0 : sum(to_do, 'point_value')
   end
 
   def points_completed

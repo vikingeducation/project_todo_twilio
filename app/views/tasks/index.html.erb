@@ -49,7 +49,7 @@
     <%= render partial: 'task', collection: @task_set.current %>
 
     <h2>To Do (<%= @task_set.percent_incomplete %>%)</h2>
-    <%= render partial: 'task', collection: @task_set.incomplete %>
+    <%= render partial: 'task', collection: @task_set.to_do %>
 
     <h2>Completed Tasks (<%= @task_set.percent_complete %>%)</h2>
     <%= render partial: 'task', collection: @task_set.completed %>
