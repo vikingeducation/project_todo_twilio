@@ -4,32 +4,35 @@
 .curriculum {
   ol {
     li {
-      margin-top: 10px;
+      margin-top: 25px;
       font-weight: bold;
-      span {
-        font-size: 0.9em;
-        color: gray;
-        font-style: italic;
-        font-weight: normal;
-      }
     }
     ul {
       padding: 0px;
+      li {
+        margin: 5px 0px;
+        font-weight: normal;
+        list-style-type: none;
+        input {margin-right: 5px;}
+      }
       .current {
         background-color: lighten($teal, 45%);
         border: 1px solid $teal;
-        display: inline-block;
-        padding: 1px 7px;
+        padding: 2px 7px;
         margin-left: -7px;
         i {color: darken($teal, 10%);}
       } /* .current */
       .paused {
         background-color: lighten($yellow, 43%);
-        display: inline-block;
-        padding: 1px 7px;
+        padding: 2px 7px;
         margin-left: -7px;
         i {color: lighten($yellow, 20%);}
       } /* .current */
+      .complete {
+        color: gray;
+        font-style: italic;
+        font-weight: normal;
+      }
       // .arrow-right {
       //   width: 0;
       //   height: 0;
@@ -40,12 +43,6 @@
       //   margin-right: 5px;
       //   margin-top: 5px;
       // }
-      li {
-        margin-top: 0px;
-        font-weight: normal;
-        list-style-type: none;
-        input {margin-right: 5px;}
-      }
     }
   }
 } /* .curriculum */

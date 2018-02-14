@@ -7,7 +7,7 @@
       <%= category.name %> <span>(<%= category.sum_points %> Points)</span>
       <ul>
         <% category.tasks.order(:lesson_number).each do |task| %>
-          <li class="<%= status_indicator(task) %>"><%= status_checkbox(task) %> <%= task.name %></li>
+          <li><span class="<%= status_indicator(task) %>"><%= status_checkbox(task) %> <%= task.name %></span></li>
         <% end %>
       </ul>
     </li>

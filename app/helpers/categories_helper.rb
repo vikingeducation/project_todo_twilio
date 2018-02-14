@@ -14,9 +14,11 @@ module CategoriesHelper
 
   def status_indicator(task)
     if task.paused?
-      raw('paused')
+      'paused'
     elsif task.current?
-      raw('current')
+      'current'
+    elsif task.complete?
+      'complete'
     end
   end
 
