@@ -1,8 +1,10 @@
 module CategoriesHelper
 
   def status_checkbox(task)
-    if task.current?
-      raw('<div class="arrow-right"></div>')
+    if task.paused?
+      raw('<i class="fas fa-pause"></i>')
+    elsif task.current?
+      raw('<i class="fas fa-arrow-right"></i>')
     elsif task.complete?
       raw('<input type="checkbox" checked="checked" disabled="true">')
     else
@@ -11,7 +13,11 @@ module CategoriesHelper
   end
 
   def status_indicator(task)
-    raw('current') if task.current?
+    if task.paused?
+      raw('paused')
+    elsif task.current?
+      raw('current')
+    end
   end
 
 end

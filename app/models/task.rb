@@ -9,6 +9,8 @@ class Task < ApplicationRecord
   scope :completed, -> { where.not(completed_on: nil) }
   scope :incomplete, -> { where(completed_on: nil) }
 
+  before_save :unpause_completes
+
   include TaskShared
 
   def self.by_date
@@ -54,8 +56,18 @@ class Task < ApplicationRecord
     started_on != nil
   end
 
+  def paused?
+    paused == true
+  end
+
   def current?
     started? && (complete? == false)
+  end
+
+  def unpause_completes
+    if complete? && paused?
+      self.paused = false
+    end
   end
 
 end

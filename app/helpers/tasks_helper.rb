@@ -1,7 +1,11 @@
 module TasksHelper
 
   def completion_status_class(task)
-    if task.complete?
+    if task.paused? && !task.complete?
+      'paused'
+    elsif task.current?
+      'current-task'
+    elsif task.complete?
       'complete'
     else
       'incomplete'
