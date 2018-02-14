@@ -8,8 +8,10 @@ class Task < ApplicationRecord
   scope :not_started, -> { where(started_on: nil) }
   scope :completed, -> { where.not(completed_on: nil) }
   scope :incomplete, -> { where(completed_on: nil) }
+  scope :not_paused, -> { where(paused: false) }
 
-  before_save :unpause_completes
+  before_save :unpause_completes_and_not_starteds
+  after_save :pause_other_current_tasks
 
   include TaskShared
 
@@ -18,7 +20,7 @@ class Task < ApplicationRecord
   end
 
   def velocity
-    task_before = Task.where('completed_on <= ?', started_on).last
+    task_before = Task.where('paused = ? AND completed_on <= ?', false, started_on).last
     backfill = Task.new(completed_on: Date.today, started_on: Date.yesterday, point_value: 1, name: 'filler')
 
     task_before = backfill if task_before == nil
@@ -64,8 +66,30 @@ class Task < ApplicationRecord
     started? && (complete? == false)
   end
 
+  def pause_other_current_tasks
+    if started? && !complete? && !paused?
+      currently_active_tasks = Task.started.incomplete.not_paused.to_a - [self]
+      currently_active_tasks.each do |task|
+        task.update_attributes(paused: true)
+      end
+    end
+  end
+
+  def unpause_completes_and_not_starteds
+    unpause_completes
+    unpause_not_starteds
+  end
+
+  private
+
   def unpause_completes
     if complete? && paused?
+      self.paused = false
+    end
+  end
+
+  def unpause_not_starteds
+    if !started? && paused?
       self.paused = false
     end
   end
