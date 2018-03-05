@@ -20,17 +20,17 @@ class Task < ApplicationRecord
   end
 
   def velocity
-    task_before = Task.where('paused = ? AND completed_on <= ?', false, started_on).last
+    previous_task = Task.where('paused = ? AND completed_on <= ?', false, started_on).last
     backfill = Task.new(completed_on: Date.today, started_on: Date.yesterday, point_value: 1, name: 'filler')
 
-    task_before = backfill if task_before == nil
+    previous_task = backfill if previous_task == nil
 
-    days_to_finish = (task_before.completed_on - task_before.started_on).to_i
+    days_to_finish = (previous_task.completed_on - previous_task.started_on).to_i
 
     if days_to_finish == 0
-      task_before.point_value / 1
+      previous_task.point_value / 1
     else
-      task_before.point_value / days_to_finish
+      previous_task.point_value / days_to_finish
     end
   end
 
