@@ -6,14 +6,14 @@
 
 ## About the Project
 
-Much like other apps I've built, this one was inspired by my need for a tool. I was working my way through a self-paced software engineering curriculum and wanted to be able 1) track my progress and 2) estimate my completion date. So built this app and it sure has made my day easier. People with login credentials can see it here [vcs-progress-tracker.herokuapp.com](https://vcs-progress-tracker.herokuapp.com/)
+Much like other apps I've built, this one was inspired by my need for a specific tool to make my life easier. I was working my way through a self-paced software engineering curriculum and wanted to be able to primarily 1) track my progress and 2) estimate my completion date. I built this app and it has, indeed, solved my problem. People with login credentials can see it here [vcs-progress-tracker.herokuapp.com](https://vcs-progress-tracker.herokuapp.com/)
 
 # Tour of The App
-The home page is a dashboard that displays calculations of velocity and a list of all of my tasks. In this view, the tasks are separated into sections: "Current Task", "To Do", and perpetually rewarding "Completed" section.
+The home page contains a dashboard that displays calculations of velocity and a list of all of my tasks. In this view, the tasks are separated into sections: "Current Task", "To Do", and the perpetually rewarding "Completed" section.
 
 ![Alt text](/app/assets/images/screenshots/tasks_index.png?raw=true "Home Page - Dashboard")
 
-Each task's status is visually indicated by color, which is handled by a view helper:
+Below the dashboard, each task's status is visually indicated by color, which is handled by a view helper:
 ```erb
 <!-- app/views/tasks/_task.html.erb -->
 
@@ -86,7 +86,7 @@ RubyCritic gives this codebase an overall score of 97.79.
 
 ![Alt text](/app/assets/images/screenshots/rubycritic.png?raw=true "RubyCritic Stats")
 
-Tha majority of the dots are in the lower left quadrant, i.e. the [healthy closure region](https://github.com/chad/turbulence#hopefully-meaningful-metrics). I attribute that to single-purpose objects. One of my favorites is the `TaskSet`, which takes the responsibilty of defining sets of tasks away from `Task` model -- which should really only know about an individual task. It also makes for easy-to-understand view logic for rendering partials:
+Tha majority of the dots are in the lower left quadrant, i.e. the [healthy closure region](https://github.com/chad/turbulence#hopefully-meaningful-metrics). I attribute that to single-purpose objects. One of my favorites is the `TaskSet`, which takes the responsibilty of defining sets of tasks away from the `Task` model, as the `Task` model should really only know about an individual task. It also makes for easy-to-understand view logic for rendering partials:
 
 ```erb
 <!-- app/views/tasks/index.html.erb -->
@@ -162,7 +162,7 @@ def sum(set, method)
 end
 ```
 
-In the process of creating this suite of simple single-purpose, I discovered that `Task` and `TaskSet` had some redundant methods. I took this opportunity to pull them out into `TaskShared` module, and then include that module in the other two models.
+In the process of creating this suite of simple single-purpose methods, I discovered that `Task` and `TaskSet` had some redundant methods. I took this opportunity to pull them out into `TaskShared` module, and then include that module in the other two models.
 
 ```ruby
 # app/models/task.rb
@@ -181,7 +181,7 @@ class TaskSet
 ...
 ```
 
-I've enjoyed
+I've enjoyed using this app emmensely -- especially as I accomplished large-point-value tasks and my completion date drew nearer and nearer.  Connect with me if you'd like to know more.
 
 
 
