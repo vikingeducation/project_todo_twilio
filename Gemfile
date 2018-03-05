@@ -50,6 +50,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "rubycritic", require: false # provides stats on code build
+  gem 'rails-erd', require: false # generates table diagram
 end
 
 group :production do
