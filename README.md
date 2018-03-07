@@ -181,7 +181,7 @@ class TaskSet
 ...
 ```
 
-I've enjoyed using this app emmensely -- especially as I accomplished large-point-value tasks and my completion date drew nearer and nearer.  Connect with me if you'd like to know more.
+I've enjoyed using this app immensely -- especially as I accomplished large-point-value tasks and my completion date drew nearer and nearer.  Connect with me if you'd like to know more.
 
 
 
