@@ -21,14 +21,26 @@
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, { class: 'form-control' }) %>
   </div>
 
+  <div class="row">
+    <div class="field col-sm-6">
+      <%= f.label :lesson_number, "Lesson Number*" %><br>
+      <%= f.number_field :lesson_number, class: 'form-control' %>
+    </div>
+
+    <div class="field col-sm-6">
+      <%= f.label :point_value, "Point Value*" %><br>
+      <%= f.number_field :point_value, class: 'form-control' %>
+    </div>
+  </div> <!-- row -->
+
   <div class="field">
-    <%= f.label :lesson_number, "Lesson Number*" %><br>
-    <%= f.number_field :lesson_number, class: 'form-control' %>
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :point_value, "Point Value*" %><br>
-    <%= f.number_field :point_value, class: 'form-control' %>
+    <%= f.label :url %><br>
+    <%= f.text_field :url, class: 'form-control' %>
   </div>
 
   <div class="row">

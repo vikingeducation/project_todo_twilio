@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214173625) do
+ActiveRecord::Schema.define(version: 20180317153425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20180214173625) do
     t.integer  "category_id"
     t.integer  "lesson_number"
     t.boolean  "paused",        default: false
+    t.string   "url",           default: ""
+    t.text     "description",   default: ""
     t.index ["category_id"], name: "index_tasks_on_category_id", using: :btree
   end
 

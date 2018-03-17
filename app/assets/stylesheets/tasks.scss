@@ -51,6 +51,11 @@ article.task {
     color: $pink;
     &:hover { color: $yellow; }
   }
+  .description {
+    color: gray;
+    font-style: italic;
+    font-size: 80%;
+  }
 } /* article.task */
 
 

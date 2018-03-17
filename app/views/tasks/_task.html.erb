@@ -10,18 +10,23 @@
   </div> <!-- row -->
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-6">
       <p>
         Points: <%= task.point_value %> |
         Velocity: <%= display_velocity(task) %><br>
         Days Spent: <%= task.days_spent %>
       </p>
     </div> <!-- col-sm -->
-    <div class="col-sm align-right">
+    <div class="col-sm-6 align-right">
       <p>
         Start: <%= link_to display_start_date(task), edit_task_path(task) %><br>
         End: <%= link_to display_end_date(task), edit_task_path(task) %>
       </p>
     </div> <!-- col-sm -->
+  </div> <!-- row -->
+  <div class="row">
+    <div class="col-sm-12">
+      <%= link_to 'Go to Coursework', task.url, target: '_blank' %> <span class="description"><%= task.description %></span>
+    </div> <!-- col-sm-12 -->
   </div> <!-- row -->
 </article>
