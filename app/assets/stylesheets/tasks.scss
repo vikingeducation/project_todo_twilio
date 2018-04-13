@@ -6,6 +6,7 @@
 
 .status-box {
   border: 1px solid lighten($dark-blue, 30%);
+  background-color: white;
   padding: 5% 5% 1% 5%;
   text-align: center;
   margin-bottom: 20px;
@@ -40,6 +41,7 @@ article.task {
   padding: 2% 5% 1% 5%;
   margin: 1em 0em;
   border-radius: $radius;
+  background-color: white;
   h1 { font-size: 1.25em; }
   h2 {
     font-size: 0.95em;
