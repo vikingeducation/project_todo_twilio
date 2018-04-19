@@ -38,9 +38,12 @@ module TasksHelper
     set.projected_completion_date.to_s(:long)
   end
 
-  def favorite(task)
+  def favorite_unfavorite(task)
     if task.favorite
-      "fa fa-star favorite"
+      link_to raw("<i class='fa fa-star favorite'></i>"), favorite_path(task), method: :delete
+    else
+      link_to raw("<i class='far fa-star'></i>"), favorite_path(task), method: :patch
     end
   end
+
 end

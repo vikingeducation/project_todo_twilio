@@ -80,6 +80,16 @@ class Task < ApplicationRecord
     unpause_not_starteds
   end
 
+  def favorite!
+    self.favorite = true
+    self.save!
+  end
+
+  def unfavorite!
+    self.favorite = false
+    self.save!
+  end
+
   private
 
   def unpause_completes

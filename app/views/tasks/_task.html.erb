@@ -5,7 +5,7 @@
         <%= link_to '', task, class: "fa fa-times-circle delete-link", method: :delete, data: {confirm: "Are you sure about this? Tasks can not be recovered after deletion."} %>
       </p>
       <h2><%= task.category.name %></h2>
-      <h1><i class="<%= favorite(task) %>"></i> <%= link_to task.name, edit_task_path(task) %></h1>
+      <h1><%= favorite_unfavorite(task) %> <%= link_to task.name, edit_task_path(task) %></h1>
     </div> <!-- col-sm -->
   </div> <!-- row -->
 

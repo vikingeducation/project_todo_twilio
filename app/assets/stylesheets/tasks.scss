@@ -60,6 +60,14 @@ article.task {
   }
 } /* article.task */
 
-.favorite {color: $yellow;}
+.fa-star {
+  float: left;
+  color: $blue;
+  font-size: 70%;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.favorite { color: $yellow; }
 
 
