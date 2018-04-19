@@ -11,10 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, "Name*" %><br>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
+  <div class="row">
+    <div class="field col-sm-10">
+      <%= f.label :name, "Name*" %><br>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="field col-sm-2 checkbox">
+      <%= f.label :favorite %><br>
+      <%= f.check_box :favorite %>
+    </div>
+  </div><!-- row -->
 
   <div class="field">
     <%= f.label :category_id, "Category*" %><br>
@@ -44,19 +51,19 @@
   </div>
 
   <div class="row">
-    <div class="field col-sm-4">
+    <div class="field col-sm-5">
       <%= f.label :started_on %><br>
       <%= f.date_field :started_on, class: 'form-control' %>
     </div>
 
-    <div class="field col-sm-4">
+    <div class="field col-sm-5">
       <%= f.label :completed_on %><br>
       <%= f.date_field :completed_on, class: 'form-control' %>
     </div>
 
-    <div class="field col-sm-4">
+    <div class="field col-sm-2 checkbox">
       <%= f.label :paused %><br>
-      <%= f.check_box :paused, class: 'form-control' %>
+      <%= f.check_box :paused %>
     </div>
   </div> <!-- row -->
 

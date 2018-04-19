@@ -37,4 +37,10 @@ module TasksHelper
   def display_task_set_projected_completion_date(set)
     set.projected_completion_date.to_s(:long)
   end
+
+  def favorite(task)
+    if task.favorite
+      "fa fa-star favorite"
+    end
+  end
 end
