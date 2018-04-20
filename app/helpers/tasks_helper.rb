@@ -40,9 +40,11 @@ module TasksHelper
 
   def favorite_unfavorite(task)
     if task.favorite
-      link_to raw("<i class='fa fa-star favorite'></i>"), favorite_path(task), method: :delete
+      # Show full star and link to un-fave
+      link_to raw("<i class='fa fa-star favorite'></i>"), favorite_path(task), remote: true, method: :delete
     else
-      link_to raw("<i class='far fa-star'></i>"), favorite_path(task), method: :patch
+      # Show hollow star and link to fave
+      link_to raw("<i class='far fa-star'></i>"), favorite_path(task), remote: true, method: :patch
     end
   end
 

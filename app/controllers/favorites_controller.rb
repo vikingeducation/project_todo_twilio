@@ -5,13 +5,11 @@ class FavoritesController < ApplicationController
 
   def update
     @task.favorite!
-    redirect_to tasks_url
 
   end
 
   def destroy
     @task.unfavorite!
-    redirect_to tasks_url
   end
 
   private
