@@ -45,14 +45,11 @@
 <div class="row tasks-section">
   <div class="col-12">
 
-    <h2>Current Task</h2>
-    <%= render partial: 'task', collection: @task_set.current %>
+    <%= render_task_set('Current Task', @task_set.current) %>
 
-    <h2>To Do (<%= @task_set.percent_incomplete %>%)</h2>
-    <%= render partial: 'task', collection: @task_set.to_do %>
+    <%= render_task_set('To Do', @task_set.to_do) %>
 
-    <h2>Completed Tasks (<%= @task_set.percent_complete %>%)</h2>
-    <%= render partial: 'task', collection: @task_set.completed %>
+    <%= render_task_set('Completed Tasks', @task_set.completed) %>
 
   </div> <!-- col-12 -->
 </div> <!-- row -->

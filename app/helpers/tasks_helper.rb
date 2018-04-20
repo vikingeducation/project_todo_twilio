@@ -48,4 +48,11 @@ module TasksHelper
     end
   end
 
+  def render_task_set(header_name, task_set)
+    unless task_set.empty?
+      raw("<h2>#{header_name}</h2>
+      #{render partial: 'task', collection: task_set}")
+    end
+  end
+
 end
