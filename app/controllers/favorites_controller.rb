@@ -5,7 +5,6 @@ class FavoritesController < ApplicationController
 
   def update
     @task.favorite!
-
   end
 
   def destroy

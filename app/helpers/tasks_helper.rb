@@ -38,7 +38,7 @@ module TasksHelper
     set.projected_completion_date.to_s(:long)
   end
 
-  def favorite_unfavorite(task)
+  def toggle_favorite(task)
     if task.favorite
       # Show full star and link to un-fave
       link_to raw("<i class='fa fa-star favorite'></i>"), favorite_path(task), remote: true, method: :delete

@@ -1,5 +1,5 @@
 let starIcon = document.querySelector("#task_<%= @task.id %>").querySelector('.fa-star')
 
-starIcon.parentElement.outerHTML = "<%= escape_javascript(favorite_unfavorite(@task)) %>"
+starIcon.parentElement.outerHTML = "<%= escape_javascript(toggle_favorite(@task)) %>"
 
 
