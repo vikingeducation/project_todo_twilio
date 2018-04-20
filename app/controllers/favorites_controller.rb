@@ -1,9 +1,9 @@
 class FavoritesController < ApplicationController
 
-  before_action :set_task, only: [:update, :destroy]
+  before_action :set_task, only: [:create, :destroy]
   before_action :require_admin
 
-  def update
+  def create
     @task.favorite!
   end
 
