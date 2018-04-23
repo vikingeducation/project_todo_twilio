@@ -9,17 +9,14 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    respond_to :js
   end
 
   def create
     @task = Task.new(task_params)
-    if @task.save
-      flash.notice = "Hooray! '#{@task.name}' has been added to the docket!"
-      redirect_to tasks_url
-    else
-      flash.now.alert = 'Uh oh! Something went wrong...'
-      render :new
-    end
+    @task.save
+    flash.notice = "Hooray! '#{@task.name}' has been added to the docket!"
+    respond_to :js
   end
 
   def edit

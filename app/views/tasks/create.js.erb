@@ -1,0 +1,8 @@
+console.log('create.js.erb reporting for duty')
+
+let todosHeading = document.querySelector('#todo h2')
+todosHeading.insertAdjacentHTML('afterend', "<%= escape_javascript(render partial: 'task', locals: { task: @task } ) %>")
+
+document.querySelector('#form_placeholder').innerHTML = ""
+
+document.querySelector('#stats_section').classList.remove('hidden')

@@ -1,0 +1,9 @@
+<div class="card card-body">
+  <div class="right">
+    <%= link_to 'Cancel', tasks_path, class: button_classes %>
+  </div> <!-- right -->
+
+  <h3>New Task</h3>
+
+  <%= render partial: 'form', locals: {task: @task} %>
+</div> <!-- card card-body -->

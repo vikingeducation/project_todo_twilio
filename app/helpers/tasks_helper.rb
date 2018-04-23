@@ -27,7 +27,7 @@ module TasksHelper
   end
 
   def display_velocity(task)
-    task.started? ?  task.velocity : 'TBD'
+    task.started? ? task.velocity : 'TBD'
   end
 
   def display_task_set_velocity(set)
