@@ -48,10 +48,12 @@ module TasksHelper
     end
   end
 
-  def render_task_set(header_name, task_set)
+  def render_task_set(header_name, task_set, dom_id)
     unless task_set.empty?
-      raw("<h2>#{header_name}</h2>
-      #{render partial: 'task', collection: task_set}")
+      raw("<div id='#{dom_id}'>
+            <h2>#{header_name}</h2>
+            #{render partial: 'task', collection: task_set}
+          </div>")
     end
   end
 

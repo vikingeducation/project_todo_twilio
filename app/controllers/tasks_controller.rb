@@ -35,7 +35,7 @@ class TasksController < ApplicationController
   def destroy
     @task.delete
     flash.notice = "As you wish. '#{@task.name}' has been deleted."
-    redirect_to tasks_url
+    respond_to :js
   end
 
   private

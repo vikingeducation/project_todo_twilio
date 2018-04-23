@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm">
       <p class="right">
-        <%= link_to '', task, class: "fa fa-times-circle delete-link", method: :delete, data: {confirm: "Are you sure about this? Tasks can not be recovered after deletion."} %>
+        <%= link_to '', task, remote: true, class: "fa fa-times-circle delete-link", method: :delete, data: {confirm: "Are you sure about this? Tasks can not be recovered after deletion."} %>
       </p>
       <h2><%= task.category.name %></h2>
       <h1><%= toggle_favorite(task) %> <%= link_to task.name, edit_task_path(task) %></h1>
