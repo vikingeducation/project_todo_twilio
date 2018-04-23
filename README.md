@@ -9,6 +9,16 @@
 
 Much like other apps I've built, this one was inspired by my need for a specific tool to make my life easier. I was working my way through a self-paced software engineering curriculum and wanted to be able to primarily 1) track my progress and 2) estimate my completion date. I built this app and it has, indeed, solved my problem. People with login credentials can see it here [vcs-progress-tracker.herokuapp.com](https://vcs-progress-tracker.herokuapp.com/)
 
+### App Features
+
+- Tracks tasks
+- Calculates velocity based on point value and dates
+- Uses Ajax for CRUD actions
+- Allows pausing of a task
+- User can star favorite tasks
+- Shows task status by color
+
+
 # Tour of The App
 The home page contains a dashboard that displays calculations of velocity and a list of all of my tasks. In this view, the tasks are separated into sections: "Current Task", "To Do", and the perpetually rewarding "Completed" section.
 
@@ -57,7 +67,11 @@ The view helper takes advantage of `Task` state methods to assign the appropriat
 }
 ```
 
-As a user, when I start or complete a task, I edit the task to add the appropriate date.
+Adding a task is simple because the new task form appears at the top of the index page and then the new task is then added to the page via javascript.
+
+![Alt text](/app/assets/images/screenshots/task_new.png?raw=true "Adding a new task")
+
+As a user, when I start or complete a task, I edit the task via javascript to add the appropriate date.
 
 ![Alt text](/app/assets/images/screenshots/tasks_edit.png?raw=true "Editing a task")
 
@@ -183,9 +197,3 @@ class TaskSet
 ```
 
 I've enjoyed using this app immensely -- especially as I accomplished large-point-value tasks and my completion date drew nearer and nearer.  Connect with me if you'd like to know more.
-
-
-
-
-
-
