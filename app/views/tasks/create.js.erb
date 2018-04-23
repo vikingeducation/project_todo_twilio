@@ -5,4 +5,6 @@ todosHeading.insertAdjacentHTML('afterend', "<%= escape_javascript(render partia
 
 document.querySelector('#form_placeholder').innerHTML = ""
 
-document.querySelector('#stats_section').classList.remove('hidden')
+let statsSection = document.querySelector('#stats_section')
+statsSection.classList.remove('hidden')
+statsSection.innerHTML = "<%= escape_javascript(render partial: 'stats', locals: { task_set: @task_set } ) %>"

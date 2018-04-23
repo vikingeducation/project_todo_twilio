@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
 
   before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_task_set, only: [:index, :create, :update, :destroy]
   before_action :require_admin
 
   def index
-    @task_set = TaskSet.new(Task.all)
   end
 
   def new
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.save
-    flash.notice = "Hooray! '#{@task.name}' has been added to the docket!"
+    # flash.notice = "Hooray! '#{@task.name}' has been added to the docket!"
     respond_to :js
   end
 
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.delete
-    flash.notice = "As you wish. '#{@task.name}' has been deleted."
+    # flash.notice = "As you wish. '#{@task.name}' has been deleted."
     respond_to :js
   end
 
@@ -48,4 +48,7 @@ class TasksController < ApplicationController
     @task = Task.find(params['id'])
   end
 
+  def set_task_set
+    @task_set = TaskSet.new(Task.all)
+  end
 end

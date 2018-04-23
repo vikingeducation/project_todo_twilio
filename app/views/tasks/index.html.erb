@@ -7,42 +7,7 @@
 <div id="form_placeholder"></div>
 
 <div class="row" id="stats_section">
-  <div class="col-sm-4">
-    <div class="status-box">
-      <p>Projected Completion by</p>
-      <h4><%= display_task_set_projected_completion_date(@task_set) %></h4>
-    </div> <!-- status-box -->
-  </div> <!-- col-sm-4 -->
-  <div class="col-sm-4">
-    <div class="status-box">
-      <p>Percent Complete</p>
-      <h4><%= @task_set.percent_complete %>%</h4>
-    </div> <!-- status-box -->
-  </div> <!-- col-sm-4 -->
-  <div class="col-sm-4">
-    <div class="status-box">
-      <p>Points Complete</p>
-      <h4><%= @task_set.points_completed %> of <%= @task_set.total_points %></h4>
-    </div> <!-- status-box -->
-  </div> <!-- col-sm-4 -->
-  <div class="col-sm-4">
-    <div class="status-box">
-      <p>Tasks Complete</p>
-      <h4><%= @task_set.completed.count %> of <%= @task_set.all.count %> </h4>
-    </div> <!-- status-box -->
-  </div> <!-- col-sm-4 -->
-  <div class="col-sm-4">
-    <div class="status-box">
-      <p>Current Velocity</p>
-      <h4><%= display_task_set_velocity(@task_set) %></h4>
-    </div> <!-- status-box -->
-  </div> <!-- col-sm-4 -->
-  <div class="col-sm-4">
-    <div class="status-box">
-      <p>Remaining Days</p>
-      <h4><%= @task_set.remaining_days %></h4>
-    </div> <!-- status-box -->
-  </div> <!-- col-sm-4 -->
+  <%= render partial: 'stats', locals: {task_set: @task_set} %>
 </div> <!-- row -->
 
 <div class="row" id="tasks-section">
