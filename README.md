@@ -3,6 +3,7 @@
 * Ruby 2.4.2
 * Rails 5.0.6
 * PostgreSQL
+* Vanilla Javascript
 
 ## About the Project
 
