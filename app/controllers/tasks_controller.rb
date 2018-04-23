@@ -20,16 +20,12 @@ class TasksController < ApplicationController
   end
 
   def edit
+    respond_to :js
   end
 
   def update
-    if @task.update(task_params)
-      flash.notice = "Hooray! '#{@task.name}' has been updated!"
-      redirect_to tasks_url
-    else
-      flash.now.alert = 'Uh oh! Something went wrong...'
-      render :new
-    end
+    @task.update(task_params)
+    respond_to :js
   end
 
   def destroy

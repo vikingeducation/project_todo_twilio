@@ -1,0 +1,7 @@
+console.log('update.js.erb reporting for duty')
+
+let task = document.querySelector("#<%= dom_id(@task) %>")
+task.outerHTML = "<%= escape_javascript(render partial: 'task', locals: { task: @task } ) %>"
+
+let statsSection = document.querySelector('#stats_section')
+statsSection.innerHTML = "<%= escape_javascript(render partial: 'stats', locals: { task_set: @task_set } ) %>"
