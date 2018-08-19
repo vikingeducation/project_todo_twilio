@@ -1,5 +1,7 @@
 # README
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/a40b86288d324bfa4363/maintainability)](https://codeclimate.com/github/lortza/project_todo_twilio/maintainability)
+
 * Ruby 2.4.2
 * Rails 5.0.6
 * PostgreSQL
