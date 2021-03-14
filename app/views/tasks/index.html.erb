@@ -1,0 +1,23 @@
+<div class="right">
+  <%= link_to 'New Task', new_task_path, remote: true, class: button_classes %>
+</div> <!-- right -->
+
+<h1>Tasks</h1>
+
+<div id="form_placeholder"></div>
+
+<div class="row" id="stats_section">
+  <%= render partial: 'stats', locals: {task_set: @task_set} %>
+</div> <!-- row -->
+
+<div class="row" id="tasks-section">
+  <div class="col-12">
+
+    <%= render_task_set('Current Task', @task_set.current, 'current') %>
+
+    <%= render_task_set('To Do', @task_set.to_do, 'todo') %>
+
+    <%= render_task_set('Completed Tasks', @task_set.completed, 'completed') %>
+
+  </div> <!-- col-12 -->
+</div> <!-- row -->

@@ -1,0 +1,6 @@
+console.log('destroy.js.erb reporting for duty')
+
+document.querySelector("#<%= dom_id(@task) %>").remove()
+
+let statsSection = document.querySelector('#stats_section')
+statsSection.innerHTML = "<%= escape_javascript(render partial: 'stats', locals: { task_set: @task_set } ) %>"

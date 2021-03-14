@@ -1,0 +1,6 @@
+console.log('edit.js.erb reporting for duty')
+
+let task = document.querySelector("#<%= dom_id(@task) %>")
+
+task.insertAdjacentHTML('beforeend', "<%= escape_javascript(render partial: 'edit', locals: {task: @task} ) %>")
+

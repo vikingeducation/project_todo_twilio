@@ -1,0 +1,38 @@
+@import 'colors';
+
+
+.curriculum {
+  ol {
+    li {
+      margin-top: 25px;
+      font-weight: bold;
+    }
+    ul {
+      padding: 0px;
+      li {
+        margin: 5px 0px;
+        font-weight: normal;
+        list-style-type: none;
+        input {margin-right: 5px;}
+      }
+      .current {
+        background-color: lighten($teal, 45%);
+        border: 1px solid $teal;
+        padding: 2px 7px;
+        margin-left: -7px;
+        i {color: darken($teal, 10%);}
+      } /* .current */
+      .paused {
+        background-color: lighten($yellow, 43%);
+        padding: 2px 7px;
+        margin-left: -7px;
+        i {color: lighten($yellow, 20%);}
+      } /* .current */
+      .complete {
+        color: gray;
+        font-style: italic;
+        font-weight: normal;
+      }
+    }
+  }
+} /* .curriculum */

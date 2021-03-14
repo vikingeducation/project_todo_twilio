@@ -1,0 +1,74 @@
+<%= form_for(task, remote: true) do |f| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="field col-sm-10">
+      <%= f.label :name, "Name*" %><br>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="field col-sm-2 checkbox">
+      <%= f.label :favorite %><br>
+      <%= f.check_box :favorite %>
+    </div>
+  </div><!-- row -->
+
+  <div class="field">
+    <%= f.label :category_id, "Category*" %><br>
+    <%= f.collection_select(:category_id, Category.all.order(:name), :id, :name, {}, { class: 'form-control' }) %>
+  </div>
+
+  <div class="row">
+    <div class="field col-sm-6">
+      <%= f.label :lesson_number, "Lesson Number*" %><br>
+      <%= f.number_field :lesson_number, class: 'form-control' %>
+    </div>
+
+    <div class="field col-sm-6">
+      <%= f.label :point_value, "Point Value*" %><br>
+      <%= f.number_field :point_value, class: 'form-control' %>
+    </div>
+  </div> <!-- row -->
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url, class: 'form-control' %>
+  </div>
+
+  <div class="row">
+    <div class="field col-sm-5">
+      <%= f.label :started_on %><br>
+      <%= f.date_field :started_on, class: 'form-control' %>
+    </div>
+
+    <div class="field col-sm-5">
+      <%= f.label :completed_on %><br>
+      <%= f.date_field :completed_on, class: 'form-control' %>
+    </div>
+
+    <div class="field col-sm-2 checkbox">
+      <%= f.label :paused %><br>
+      <%= f.check_box :paused %>
+    </div>
+  </div> <!-- row -->
+
+  <div class="actions">
+    <%= f.submit class: button_classes('success') %>
+  </div>
+
+<% end %> <!-- form_for @task -->

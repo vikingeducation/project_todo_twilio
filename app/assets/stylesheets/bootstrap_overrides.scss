@@ -1,0 +1,15 @@
+@import 'colors';
+
+.navbar {
+  background-color: $yellow;
+  margin-bottom: 20px;
+  img {
+    width: 30px;
+    margin-right: 10px;
+  }
+} /* .navbar */
+
+a {
+  color: $blue;
+  &:hover { text-decoration: none; }
+}

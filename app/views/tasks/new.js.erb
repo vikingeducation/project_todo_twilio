@@ -1,0 +1,9 @@
+console.log('new.js.erb reporting for duty')
+
+let statsSection = document.querySelector('#stats_section')
+statsSection.classList.add('hidden')
+
+let formPlaceholder = document.querySelector('#form_placeholder')
+formPlaceholder.innerHTML = "<%= escape_javascript(render partial: 'new' ) %>"
+
+

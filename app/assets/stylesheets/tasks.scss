@@ -1,0 +1,67 @@
+@import 'colors';
+
+.right {
+  float: right;
+} /* .right */
+
+.status-box {
+  border: 1px solid lighten($dark-blue, 30%);
+  background-color: white;
+  padding: 5% 5% 1% 5%;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: $radius;
+  min-height: 110px;
+  p {
+    font-size: 0.8em;
+    margin-bottom: 0px;
+  } /* p */
+  h4 { font-size: 1.5em; }
+} /* .status-box */
+
+
+#tasks-section {
+  margin-top: 20px;
+  border-top: 1px solid gray;
+  padding-top: 20px;
+  .current-task { border: 1px solid $teal; }
+  .incomplete { border: 1px solid $pink; }
+  .paused { border: 1px solid $yellow; }
+  .complete {
+    border: 1px solid lightgray;
+    background-color: $gray;
+  } /* .complete */
+} /* .tasks-section */
+
+article.task {
+  padding: 2% 5% 1% 5%;
+  margin: 1em 0em;
+  border-radius: $radius;
+  background-color: white;
+  h1 { font-size: 1.25em; }
+  h2 {
+    font-size: 0.95em;
+    font-weight: bold;
+  }
+  .date { text-align: center;}
+  .align-right { text-align: right; }
+  .delete-link {
+    color: $pink;
+    &:hover { color: $yellow; }
+  }
+  .description {
+    color: gray;
+    font-style: italic;
+    font-size: 80%;
+  }
+} /* article.task */
+
+.fa-star {
+  float: left;
+  color: $blue;
+  font-size: 70%;
+  margin-top: 5px;
+  margin-right: 5px;
+  color: $yellow;
+}
+

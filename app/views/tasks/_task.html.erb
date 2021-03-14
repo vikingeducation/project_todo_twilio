@@ -1,0 +1,33 @@
+<article class="task <%= completion_status_class(task) %>" id="<%= dom_id(task) %>">
+  <div class="row">
+    <div class="col-sm">
+      <p class="right">
+        <%= link_to '', edit_task_path(task), remote: true, class: 'far fa-edit mr-2' %>
+        <%= link_to '', task, remote: true, class: "fa fa-times-circle delete-link", method: :delete, data: {confirm: "Are you sure about this? Tasks can not be recovered after deletion."} %>
+      </p>
+      <h2><%= task.category.name %></h2>
+      <h1><%= toggle_favorite(task) %> <%= task.name %></h1>
+    </div> <!-- col-sm -->
+  </div> <!-- row -->
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p>
+        Points: <%= task.point_value %> |
+        Velocity: <%= display_velocity(task) %><br>
+        Days Spent: <%= task.days_spent %>
+      </p>
+    </div> <!-- col-sm -->
+    <div class="col-sm-6 align-right">
+      <p>
+        Start: <%= display_start_date(task) %><br>
+        End: <%= display_end_date(task) %>
+      </p>
+    </div> <!-- col-sm -->
+  </div> <!-- row -->
+  <div class="row">
+    <div class="col-sm-12">
+      <%= link_to 'Go to Coursework', task.url, target: '_blank' unless task.url.empty? %> <span class="description"><%= task.description %></span>
+    </div> <!-- col-sm-12 -->
+  </div> <!-- row -->
+</article>
